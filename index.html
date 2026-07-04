@@ -1,41 +1,11 @@
-<section class="stats">
+const API_URL = "https://script.google.com/macros/s/AKfycby2yVYxKopIBeqN2BAeaGCw4zlQC6n-wZwnsTyddCKjZyYwKyD-q2UZAh-pFYub_ZdiNQ/exec";
 
-<div class="card">
-    <h2>👦</h2>
-    <h3>Total Readers</h3>
-    <h1 id="totalReaders">Loading...</h1>
-</div>
-
-<div class="card">
-    <h2>📚</h2>
-    <h3>Books Read</h3>
-    <h1>3480</h1>
-</div>
-<div class="card">
-    <h2>📖</h2>
-    <h3>Books Read</h3>
-    <h1>3480</h1>
-</div>
-
-<div class="card">
-    <h2>📄</h2>
-    <h3>Pages Read</h3>
-    <h1>56230</h1>
-</div>
-
-<div class="card">
-    <h2>⏱</h2>
-    <h3>Reading Minutes</h3>
-    <h1>125000</h1>
-</div>
-
-</section>
-
-<footer>
-    <h3>© 2026 Readathon | Read • Imagine • Grow</h3>
-</footer>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+fetch(API_URL)
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("totalReaders").textContent = data.totalReaders;
+  })
+  .catch(error => {
+    console.error("Error:", error);
+    document.getElementById("totalReaders").textContent = "Error";
+  });
