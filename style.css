@@ -1,758 +1,98 @@
-/* ===========================
-   READATHON 2026
-=========================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
-
-body{
-
-    font-family:'Poppins',sans-serif;
-
-    background:#f5f7fb;
-
-    color:#333;
-
-}
-
-/* ===========================
-HEADER
-=========================== */
-
-.header{
-
-    position:sticky;
-
-    top:0;
-
-    background:#4f46e5;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    padding:18px 50px;
-
-    z-index:999;
-
-    box-shadow:0 4px 15px rgba(0,0,0,.15);
-
-}
-
-.logo{
-
-    color:white;
-
-    font-size:28px;
-
-    font-weight:700;
-
-}
-
-nav{
-
-    display:flex;
-
-    gap:25px;
-
-}
-
-nav a{
-
-    color:white;
-
-    text-decoration:none;
-
-    font-weight:600;
-
-    transition:.3s;
-
-}
-
-nav a:hover{
-
-    color:#ffe066;
-
-}
-
-/* ===========================
-HERO
-=========================== */
-
-.hero{
-
-    text-align:center;
-
-    padding:100px 20px;
-
-    background:linear-gradient(135deg,#4f46e5,#6d5dfc);
-
-    color:white;
-
-}
-
-.hero h1{
-
-    font-size:60px;
-
-    margin-bottom:15px;
-
-}
-
-.hero h2{
-
-    font-size:32px;
-
-    margin-bottom:20px;
-
-}
-
-.hero p{
-
-    max-width:850px;
-
-    margin:auto;
-
-    font-size:20px;
-
-    line-height:1.8;
-
-}
-
-.hero-buttons{
-
-    margin-top:40px;
-
-}
-
-.btn{
-
-    display:inline-block;
-
-    margin:10px;
-
-    padding:15px 30px;
-
-    border-radius:50px;
-
-    text-decoration:none;
-
-    background:white;
-
-    color:#4f46e5;
-
-    font-weight:bold;
-
-    transition:.3s;
-
-}
-
-.btn:hover{
-
-    transform:translateY(-4px);
-
-}
-
-.secondary{
-
-    background:#ffd43b;
-
-    color:#222;
-
-}
-
-/* ===========================
-ABOUT
-=========================== */
-
-.about{
-
-    padding:80px 30px;
-
-    background:white;
-
-    text-align:center;
-
-}
-
-.about h2{
-
-    color:#4f46e5;
-
-    font-size:40px;
-
-    margin-bottom:20px;
-
-}
-
-.about p{
-
-    max-width:900px;
-
-    margin:auto;
-
-    line-height:1.8;
-
-    font-size:20px;
-
-}
-/* ===========================
-STATISTICS
-=========================== */
-
-.stats{
-
-    max-width:1200px;
-
-    margin:60px auto;
-
-    padding:20px;
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-
-    gap:25px;
-
-}
-
-.card{
-
-    background:white;
-
-    padding:35px;
-
-    border-radius:18px;
-
-    text-align:center;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-
-    transition:.3s;
-
-}
-
-.card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 15px 30px rgba(0,0,0,.15);
-
-}
-
-.card h2{
-
-    font-size:45px;
-
-    margin-bottom:15px;
-
-}
-
-.card h3{
-
-    color:#666;
-
-    margin-bottom:10px;
-
-}
-
-.card h1{
-
-    font-size:40px;
-
-    color:#4f46e5;
-
-}
-
-/* ===========================
-LEADERBOARD
-=========================== */
-
-.leaderboard{
-
-    padding:80px 30px;
-
-    background:#ffffff;
-
-    text-align:center;
-
-}
-
-.leaderboard h2{
-
-    font-size:42px;
-
-    color:#4f46e5;
-
-    margin-bottom:10px;
-
-}
-
-.section-subtitle{
-
-    color:#666;
-
-    margin-bottom:35px;
-
-    font-size:18px;
-
-}
-
-.leaderboard table{
-
-    width:100%;
-
-    max-width:1200px;
-
-    margin:auto;
-
-    border-collapse:collapse;
-
-    background:white;
-
-    border-radius:15px;
-
-    overflow:hidden;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-}
-
-.leaderboard th{
-
-    background:#4f46e5;
-
-    color:white;
-
-    padding:18px;
-
-    font-size:18px;
-
-}
-
-.leaderboard td{
-
-    padding:16px;
-
-    border-bottom:1px solid #eee;
-
-}
-
-.leaderboard tr:hover{
-
-    background:#f4f6ff;
-
-}
-
-/* ===========================
-ACHIEVEMENTS
-=========================== */
-
-.achievements{
-
-    padding:80px 30px;
-
-    background:#eef2ff;
-
-    text-align:center;
-
-}
-
-.achievements h2{
-
-    font-size:40px;
-
-    color:#4f46e5;
-
-    margin-bottom:40px;
-
-}
-
-.achievement-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-
-    gap:25px;
-
-    max-width:1200px;
-
-    margin:auto;
-
-}
-
-.achievement-card{
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:18px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-
-    transition:.3s;
-
-}
-
-.achievement-card:hover{
-
-    transform:translateY(-8px);
-
-}
-
-.achievement-card h3{
-
-    color:#4f46e5;
-
-    margin-bottom:15px;
-
-}
-
-/* ===========================
-DASHBOARD
-=========================== */
-
-.dashboard{
-
-    padding:80px 30px;
-
-    background:white;
-
-    text-align:center;
-
-}
-
-.dashboard h2{
-
-    font-size:40px;
-
-    color:#4f46e5;
-
-    margin-bottom:20px;
-
-}
-
-.dashboard p{
-
-    font-size:20px;
-
-    margin-bottom:20px;
-
-}
-
-.dashboard ul{
-
-    max-width:700px;
-
-    margin:auto;
-
-    text-align:left;
-
-    font-size:20px;
-
-    line-height:2;
-
-}
-/* ===========================
-GALLERY
-=========================== */
-
-.gallery{
-
-    padding:80px 30px;
-
-    background:#f8fafc;
-
-    text-align:center;
-
-}
-
-.gallery h2{
-
-    font-size:40px;
-
-    color:#4f46e5;
-
-    margin-bottom:40px;
-
-}
-
-.gallery-grid{
-
-    max-width:1200px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-    gap:25px;
-
-}
-
-.gallery-card{
-
-    background:white;
-
-    padding:35px;
-
-    border-radius:18px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-
-    transition:.3s;
-
-}
-
-.gallery-card:hover{
-
-    transform:translateY(-10px);
-
-}
-
-.gallery-icon{
-
-    font-size:55px;
-
-    margin-bottom:15px;
-
-}
-
-.gallery-card h3{
-
-    margin-bottom:15px;
-
-    color:#4f46e5;
-
-}
-
-/* ===========================
-CONTACT
-=========================== */
-
-.contact{
-
-    padding:80px 30px;
-
-    background:white;
-
-    text-align:center;
-
-}
-
-.contact h2{
-
-    font-size:40px;
-
-    color:#4f46e5;
-
-    margin-bottom:40px;
-
-}
-
-.contact-container{
-
-    max-width:1100px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-
-    gap:25px;
-
-}
-
-.contact-card{
-
-    background:#f5f7fb;
-
-    padding:30px;
-
-    border-radius:18px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-
-}
-
-.contact-card h3{
-
-    color:#4f46e5;
-
-    margin-bottom:15px;
-
-}
-
-/* ===========================
-FOOTER
-=========================== */
-
-footer{
-
-    background:#4f46e5;
-
-    color:white;
-
-    text-align:center;
-
-    padding:35px 20px;
-
-}
-
-footer h3{
-
-    margin-bottom:10px;
-
-}
-
-footer p{
-
-    margin:8px 0;
-
-}
-
-/* ===========================
-BACK TO TOP BUTTON
-=========================== */
-
-#topBtn{
-
-    position:fixed;
-
-    bottom:25px;
-
-    right:25px;
-
-    width:50px;
-
-    height:50px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:#4f46e5;
-
-    color:white;
-
-    font-size:24px;
-
-    cursor:pointer;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
-
-    transition:.3s;
-
-}
-
-#topBtn:hover{
-
-    transform:scale(1.1);
-
-}
-
-/* ===========================
-MOBILE RESPONSIVE
-=========================== */
-
-@media(max-width:768px){
-
-.header{
-
-    flex-direction:column;
-
-    padding:15px;
-
-}
-
-nav{
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    margin-top:15px;
-
-    gap:12px;
-
-}
-
-.hero{
-
-    padding:70px 20px;
-
-}
-
-.hero h1{
-
-    font-size:40px;
-
-}
-
-.hero h2{
-
-    font-size:24px;
-
-}
-
-.hero p{
-
-    font-size:17px;
-
-}
-
-.btn{
-
-    display:block;
-
-    margin:15px auto;
-
-    width:90%;
-
-    max-width:300px;
-
-}
-
-.about h2,
-.leaderboard h2,
-.achievements h2,
-.dashboard h2,
-.gallery h2,
-.contact h2{
-
-    font-size:30px;
-
-}
-
-.leaderboard{
-
-    overflow-x:auto;
-
-}
-
-table{
-
-    min-width:700px;
-
-}
-
-}
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #0f172a, #1e293b);
   color: white;
 }
-body {
-  background: red !important;
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+}
+
+.header nav a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 50px;
+  color: #facc15;
+}
+
+.hero-buttons .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background: #6366f1;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+/* CARDS */
+.card {
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  margin: 15px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+}
+
+/* STATS */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  text-align: center;
+}
+
+/* TABLE */
+table {
+  width: 90%;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid gray;
+}
+
+/* ACHIEVEMENTS */
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* CONTACT */
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: rgba(0,0,0,0.5);
 }
