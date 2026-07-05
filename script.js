@@ -10,4 +10,6 @@ fetch(API_URL)
     document.getElementById("totalMinutes").textContent = data.totalMinutes;
 
   })
-  .catch(err => console.log(err));
+  .catch(error => {
+    console.error(error);
+  });
