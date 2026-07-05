@@ -3,10 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -16,49 +15,89 @@ body {
   line-height: 1.6;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
   background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+.header .logo {
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .header nav a {
   color: white;
   margin: 0 10px;
   text-decoration: none;
+  transition: 0.3s;
 }
 
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.hero h1 {
-  font-size: 48px;
+.header nav a:hover {
   color: #facc15;
 }
 
-.hero-buttons a {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  background: #6366f1;
-  color: white;
-  text-decoration: none;
+/* ================= SECTIONS ================= */
+section {
+  padding: 60px 20px;
+  text-align: center;
 }
 
-/* STATS */
+/* ================= HERO ================= */
+.hero {
+  padding: 90px 20px;
+}
+
+.hero h1 {
+  font-size: 50px;
+  color: #facc15;
+}
+
+.hero h2 {
+  margin-top: 10px;
+  opacity: 0.85;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 15px auto;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.hero-buttons .btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 22px;
+  background: #6366f1;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.hero-buttons .btn:hover {
+  transform: scale(1.05);
+}
+
+.hero-buttons .secondary {
+  background: #22c55e;
+}
+
+/* ================= STATS ================= */
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
   padding: 40px;
 }
@@ -67,48 +106,105 @@ body {
   background: rgba(255,255,255,0.08);
   padding: 20px;
   border-radius: 15px;
-  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
 }
 
-/* LEADERBOARD */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ================= LEADERBOARD ================= */
 .leaderboard {
   padding: 40px;
-  text-align: center;
 }
 
-table {
+.leaderboard table {
   width: 90%;
   margin: auto;
   border-collapse: collapse;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-th, td {
+.leaderboard th,
+.leaderboard td {
   padding: 12px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-/* SECTIONS */
-section {
-  padding: 60px 20px;
-}
-
-/* ACHIEVEMENTS */
+/* ================= ACHIEVEMENTS ================= */
 .achievement-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
+  padding: 20px;
 }
 
-/* CONTACT */
+.achievement-card {
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+/* ================= DASHBOARD ================= */
+.dashboard ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.dashboard li {
+  margin: 10px 0;
+}
+
+/* ================= GALLERY ================= */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.gallery-card {
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+/* ================= CONTACT ================= */
 .contact-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
+  padding: 20px;
 }
 
-/* FOOTER */
+.contact-card {
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+/* ================= FOOTER ================= */
 footer {
   text-align: center;
   padding: 30px;
   background: rgba(0,0,0,0.5);
+  margin-top: 40px;
+}
+
+/* ================= HOVER EFFECTS ================= */
+.card,
+.achievement-card,
+.gallery-card,
+.contact-card {
+  transition: 0.3s;
+}
+
+.card:hover,
+.achievement-card:hover,
+.gallery-card:hover,
+.contact-card:hover {
+  transform: scale(1.03);
 }
