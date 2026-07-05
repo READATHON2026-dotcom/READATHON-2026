@@ -202,3 +202,262 @@ ABOUT
     font-size:20px;
 
 }
+/* ===========================
+STATISTICS
+=========================== */
+
+.stats{
+
+    max-width:1200px;
+
+    margin:60px auto;
+
+    padding:20px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+.card{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.15);
+
+}
+
+.card h2{
+
+    font-size:45px;
+
+    margin-bottom:15px;
+
+}
+
+.card h3{
+
+    color:#666;
+
+    margin-bottom:10px;
+
+}
+
+.card h1{
+
+    font-size:40px;
+
+    color:#4f46e5;
+
+}
+
+/* ===========================
+LEADERBOARD
+=========================== */
+
+.leaderboard{
+
+    padding:80px 30px;
+
+    background:#ffffff;
+
+    text-align:center;
+
+}
+
+.leaderboard h2{
+
+    font-size:42px;
+
+    color:#4f46e5;
+
+    margin-bottom:10px;
+
+}
+
+.section-subtitle{
+
+    color:#666;
+
+    margin-bottom:35px;
+
+    font-size:18px;
+
+}
+
+.leaderboard table{
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.leaderboard th{
+
+    background:#4f46e5;
+
+    color:white;
+
+    padding:18px;
+
+    font-size:18px;
+
+}
+
+.leaderboard td{
+
+    padding:16px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.leaderboard tr:hover{
+
+    background:#f4f6ff;
+
+}
+
+/* ===========================
+ACHIEVEMENTS
+=========================== */
+
+.achievements{
+
+    padding:80px 30px;
+
+    background:#eef2ff;
+
+    text-align:center;
+
+}
+
+.achievements h2{
+
+    font-size:40px;
+
+    color:#4f46e5;
+
+    margin-bottom:40px;
+
+}
+
+.achievement-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+    gap:25px;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+.achievement-card{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.achievement-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.achievement-card h3{
+
+    color:#4f46e5;
+
+    margin-bottom:15px;
+
+}
+
+/* ===========================
+DASHBOARD
+=========================== */
+
+.dashboard{
+
+    padding:80px 30px;
+
+    background:white;
+
+    text-align:center;
+
+}
+
+.dashboard h2{
+
+    font-size:40px;
+
+    color:#4f46e5;
+
+    margin-bottom:20px;
+
+}
+
+.dashboard p{
+
+    font-size:20px;
+
+    margin-bottom:20px;
+
+}
+
+.dashboard ul{
+
+    max-width:700px;
+
+    margin:auto;
+
+    text-align:left;
+
+    font-size:20px;
+
+    line-height:2;
+
+}
