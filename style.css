@@ -316,5 +316,36 @@ line-height:1.8;
 color:#555;
 
 }
+  /* Gallery */
+
+.gallery{
+    padding:80px 40px;
+    background:#f8fafc;
+    text-align:center;
+}
+
+.gallery h2{
+    font-size:40px;
+    color:#4f46e5;
+    margin-bottom:40px;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.gallery-card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.gallery-card:hover{
+    transform:translateY(-8px);
+}
 
 }
