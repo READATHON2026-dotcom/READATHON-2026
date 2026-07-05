@@ -2,16 +2,42 @@ const API_URL = "https://script.google.com/macros/s/AKfycby2yVYxKopIBeqN2BAeaGCw
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  fetch(API_URL)
-    .then(response => response.json())
-    .then(data => {
+    fetch(API_URL)
+        .then(response => response.json())
+        .then(data => {
 
-      document.getElementById("totalReaders").textContent = data.totalReaders;
-      document.getElementById("totalBooks").textContent = data.totalBooks;
-      document.getElementById("totalPages").textContent = data.totalPages;
-      document.getElementById("totalMinutes").textContent = data.totalMinutes;
+            document.getElementById("totalReaders").textContent = data.totalReaders;
+            document.getElementById("totalBooks").textContent = data.totalBooks;
+            document.getElementById("totalPages").textContent = data.totalPages;
+            document.getElementById("totalMinutes").textContent = data.totalMinutes;
 
-    })
-    .catch(error => console.error(error));
+            const tbody = document.getElementById("leaderboardBody");
+            tbody.innerHTML = "";
+
+            data.leaderboard.forEach((reader, index) => {
+
+                let badge = "📚 Reader";
+
+                if (reader.pages >= 500)
+                    badge = "🌟 Galaxy Master";
+                else if (reader.pages >= 250)
+                    badge = "🚀 Mars Explorer";
+                else if (reader.pages >= 100)
+                    badge = "⭐ Star Reader";
+
+                tbody.innerHTML += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${reader.name}</td>
+                        <td>${reader.books}</td>
+                        <td>${reader.pages}</td>
+                        <td>${reader.minutes}</td>
+                        <td>${badge}</td>
+                    </tr>
+                `;
+            });
+
+        })
+        .catch(error => console.error(error));
 
 });
