@@ -281,5 +281,40 @@ font-size:22px;
 line-height:1.8;
 
 color:#555;
+  /* About Section */
+
+.about{
+
+padding:80px 40px;
+
+background:#ffffff;
+
+text-align:center;
+
+}
+
+.about h2{
+
+font-size:40px;
+
+color:#4f46e5;
+
+margin-bottom:20px;
+
+}
+
+.about p{
+
+max-width:900px;
+
+margin:auto;
+
+font-size:22px;
+
+line-height:1.8;
+
+color:#555;
+
+}
 
 }
