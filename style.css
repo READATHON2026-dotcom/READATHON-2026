@@ -189,3 +189,64 @@ tr:hover{
 background:#f3f4f6;
 
 }
+/* Navigation Bar */
+
+.navbar{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 60px;
+
+background:#4f46e5;
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+}
+
+.logo{
+
+color:white;
+
+font-size:28px;
+
+font-weight:bold;
+
+}
+
+.nav-links{
+
+display:flex;
+
+list-style:none;
+
+gap:25px;
+
+}
+
+.nav-links a{
+
+color:white;
+
+text-decoration:none;
+
+font-size:18px;
+
+font-weight:bold;
+
+transition:0.3s;
+
+}
+
+.nav-links a:hover{
+
+color:yellow;
+
+}
