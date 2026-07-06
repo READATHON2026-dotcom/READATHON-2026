@@ -1930,3 +1930,65 @@ body{
   line-height: 1.7;
   opacity: 0.85;
 }
+.cert-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #0f172a, #111827);
+  color: white;
+}
+
+.cert-box {
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.cert-box input,
+.cert-box select {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 200px;
+}
+
+.cert-box button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background: #38bdf8;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.certificate {
+  margin: 30px auto;
+  width: 500px;
+  padding: 30px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+
+  display: none;
+}
+
+.certificate h1 {
+  font-size: 24px;
+  color: #38bdf8;
+}
+
+.certificate h2 {
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+.certificate h3 {
+  color: #a78bfa;
+}
+
+.footer {
+  margin-top: 20px;
+  opacity: 0.7;
+}
