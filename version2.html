@@ -17,40 +17,159 @@
 </head>
 
 <body>
- <a href="certificate.pdf" download class="download-btn">
-  Download Certificate
-</a>
-  <section class="cert-section" id="certification">
+ <!-- ===================== CERTIFICATION SECTION ===================== -->
+<section id="certification" class="certification-section">
 
-  <h2>Certification Zone</h2>
+    <div class="cert-header">
+        <h2>🏆 Certification Zone</h2>
+        <p>Create your Readathon Achievement Certificate</p>
+    </div>
 
-  <div class="cert-box">
+    <div class="generator-card">
 
-    <input type="text" id="studentName" placeholder="Enter Student Name">
+        <div class="input-group">
+            <label>Student Name</label>
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Enter Student Name">
+        </div>
 
-    <select id="level">
-      <option value="Star Reader">Star Reader ⭐</option>
-      <option value="Mars Explorer">Mars Explorer 🚀</option>
-      <option value="Galaxy Master">Galaxy Master 🌌</option>
-      <option value="Universe Reader">Universe Reader 🌠</option>
-    </select>
+        <div class="input-group">
+            <label>Achievement Level</label>
 
-    <button onclick="generateCertificate()">Generate Certificate</button>
+            <select id="achievementLevel">
 
-  </div>
+                <option value="Star Reader">
+                    ⭐ Star Reader
+                </option>
 
-  <div id="certificate" class="certificate">
-    <h1>Certificate of Achievement</h1>
-    <p>This certifies that</p>
-    <h2 id="cName">Student Name</h2>
-    <p>has successfully achieved the level of</p>
-    <h3 id="cLevel">Level</h3>
-    <p class="footer">Readathon Learning Program</p>
-  </div>
+                <option value="Mars Explorer">
+                    🚀 Mars Explorer
+                </option>
 
-  <button onclick="downloadCertificate()">Download Certificate</button>
+                <option value="Galaxy Master">
+                    🌌 Galaxy Master
+                </option>
+
+                <option value="Universe Reader">
+                    🌠 Universe Reader
+                </option>
+
+            </select>
+        </div>
+
+        <button id="generateBtn">
+            Generate Certificate
+        </button>
+
+    </div>
+
+    <!-- Certificate Preview -->
+
+    <div id="certificatePreview" class="certificate">
+
+        <div class="certificate-border">
+
+            <div class="certificate-top">
+
+                <img
+                    src="images/logo.png"
+                    class="cert-logo">
+
+                <h1>
+                    CERTIFICATE
+                </h1>
+
+                <h3>
+                    OF ACHIEVEMENT
+                </h3>
+
+            </div>
+
+            <p class="presented">
+                Proudly Presented To
+            </p>
+
+            <h2 id="previewName">
+                STUDENT NAME
+            </h2>
+
+            <p class="achievementText">
+                for successfully completing the
+                <strong>Readathon Challenge</strong>
+                and earning the title of
+            </p>
+
+            <h2
+                id="previewLevel"
+                class="level">
+                Universe Reader
+            </h2>
+
+            <div class="message">
+
+                Your passion for reading,
+                imagination and consistency
+                have made you shine among
+                thousands of young readers.
+
+            </div>
+
+            <div class="certificate-footer">
+
+                <div>
+
+                    <strong>Date</strong>
+
+                    <p id="certDate"></p>
+
+                </div>
+
+                <div>
+
+                    <img
+                        src="images/seal.png"
+                        class="seal">
+
+                </div>
+
+                <div>
+
+                    <strong>Certificate ID</strong>
+
+                    <p id="certificateID"></p>
+
+                </div>
+
+            </div>
+
+            <div class="signature">
+
+                ______________________
+
+                <br>
+
+                Readathon Team
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="download-area">
+
+        <button id="downloadBtn">
+            ⬇ Download Certificate
+        </button>
+
+    </div>
 
 </section>
+
+<!-- html2canvas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 <!-- ================= LOADING SCREEN ================= -->
 <div id="loader">
