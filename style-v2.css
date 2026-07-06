@@ -1467,3 +1467,217 @@ body{
     background:#E2E8F0;
 
 }
+/*====================================================
+        READATHON 2026
+        MODERN BLUE THEME
+====================================================*/
+
+/* Background */
+body{
+    background:#F8FAFC;
+    color:#1F2937;
+}
+
+/* Header */
+.header{
+    background:#2563EB;
+    box-shadow:0 5px 20px rgba(37,99,235,.25);
+}
+
+.logo{
+    color:#ffffff;
+}
+
+.logo span{
+    color:#FCD34D;
+}
+
+.header nav a{
+    color:#ffffff;
+}
+
+.header nav a:hover{
+    color:#FCD34D;
+}
+
+/* Hero Section */
+.hero{
+    background:linear-gradient(135deg,#2563EB,#1E40AF);
+}
+
+.hero h1,
+.hero h2,
+.hero p{
+    color:#ffffff;
+}
+
+.hero-tag{
+    background:#FCD34D;
+    color:#1E3A8A;
+}
+
+/* Buttons */
+
+.btn{
+    background:#F59E0B;
+    color:#ffffff;
+    border:none;
+}
+
+.btn:hover{
+    background:#D97706;
+}
+
+.btn.secondary{
+    background:#ffffff;
+    color:#2563EB;
+}
+
+.btn.secondary:hover{
+    background:#DBEAFE;
+}
+
+/* Section Titles */
+
+.section-title h2{
+    color:#1E40AF;
+}
+
+.section-title p{
+    color:#64748B;
+}
+
+/* About */
+
+.about{
+    background:#ffffff;
+}
+
+.about-card{
+    background:#ffffff;
+    border:1px solid #E2E8F0;
+}
+
+.about-icon{
+    color:#2563EB;
+}
+
+/* Statistics */
+
+.stats-section{
+    background:#EFF6FF;
+}
+
+.card{
+    background:#ffffff;
+    border:1px solid #E2E8F0;
+}
+
+.card h1{
+    color:#2563EB;
+}
+
+.card h3{
+    color:#1F2937;
+}
+
+/* Achievements */
+
+.achievements{
+    background:#F8FAFC;
+}
+
+.achievement-card{
+    background:#ffffff;
+    border:1px solid #E2E8F0;
+}
+
+.achievement-card h3{
+    color:#1E40AF;
+}
+
+/* Leaderboard */
+
+.leaderboard-section{
+    background:#EFF6FF;
+}
+
+.leaderboard-table{
+    background:#ffffff;
+}
+
+.leaderboard-table th{
+    background:#2563EB;
+    color:#ffffff;
+}
+
+.leaderboard-table tr:nth-child(even){
+    background:#F8FAFC;
+}
+
+.leaderboard-table tr:hover{
+    background:#DBEAFE;
+}
+
+/* Gallery */
+
+.gallery{
+    background:#ffffff;
+}
+
+.gallery-item{
+    background:#ffffff;
+}
+
+.gallery-item h3{
+    color:#1F2937;
+}
+
+/* Contact */
+
+.contact{
+    background:#EFF6FF;
+}
+
+.contact-card{
+    background:#ffffff;
+}
+
+/* Footer */
+
+.footer{
+    background:#1E40AF;
+    color:#ffffff;
+}
+
+/* Progress Bar */
+
+#progressBar{
+    background:#F59E0B;
+}
+
+/* Loader */
+
+#loader{
+    background:#2563EB;
+    color:#ffffff;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#E5E7EB;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#2563EB;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#1E40AF;
+}
