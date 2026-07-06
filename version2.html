@@ -1,1 +1,703 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <title>Readathon 2026</title> <link rel="stylesheet" href="style2.css"> </head> <body> <!-- HERO SECTION --> <section class="hero"> <h1>Readathon 2026</h1> </section> <!-- LEADERBOARD --> <section id="leaderboard"> <!-- your leaderboard code --> </section> <!-- ⭐ GALLERY PASTE HERE --> <section id="gallery"> <div class="gallery"> <div class="card"> <img src="images/students-reading.png" alt=""> <h3>Reading Session</h3> <p>Students enjoying books together.</p> </div> <div class="card"> <img src="images/books.png" alt=""> <h3>Book Collection</h3> <p>Explore amazing stories.</p> </div> <div class="card"> <img src="images/achievement.png" alt=""> <h3>Achievement</h3> <p>Celebrating reading milestones.</p> </div> <div class="card"> <img src="images/library.png" alt=""> <h3>Library</h3> <p>A place full of knowledge.</p> </div> <div class="card"> <img src="images/challenge.png" alt=""> <h3>Reading Challenge</h3> <p>Every page counts.</p> </div> <div class="card"> <img src="images/event.png" alt=""> <h3>Readathon 2026</h3> <p>Read • Learn • Grow</p> </div> </div> </section> <!-- FOOTER --> <footer> <p>© 2026 Readathon</p> </footer> </body> </html> <!-- HERO SECTION --> <section class="hero"> ... </section> <!-- LEADERBOARD --> <section id="leaderboard"> ... </section> <!-- ⭐ PASTE HERE --> <section id="gallery"> <div class="gallery"> <div class="card"> <img src="images/students-reading.png" alt=""> <h3>Reading Session</h3> <p>Students enjoying books together.</p> </div> <div class="card"> <img src="images/books.png" alt=""> <h3>Book Collection</h3> <p>Explore amazing stories.</p> </div> <div class="card"> <img src="images/achievement.png" alt=""> <h3>Achievement</h3> <p>Celebrating reading milestones.</p> </div> <div class="card"> <img src="images/library.png" alt=""> <h3>Library</h3> <p>A place full of knowledge.</p> </div> <div class="card"> <img src="images/challenge.png" alt=""> <h3>Reading Challenge</h3> <p>Every page counts.</p> </div> <div class="card"> <img src="images/event.png" alt=""> <h3>Readathon 2026</h3> <p>Read • Learn • Grow</p> </div> </div> </section> <!-- FOOTER --> <footer> ... </footer> </body> <!-- ================= LOADING SCREEN ================= --> <div id="loader"> <div class="loader-book"> 📚 </div> <h2>Loading Readathon 2026...</h2> </div> <!-- ================= SCROLL PROGRESS ================= --> <div id="progressBar"></div> <!-- ================= HEADER ================= --> <header class="header"> <div class="logo"> 📚 Readathon <span>2026</span> </div> <button class="menu-toggle" aria-label="Toggle navigation"> ☰ </button> <nav> <a href="#home">Home</a> <a href="#about">About</a> <a href="#statistics">Statistics</a> <a href="#leaderboard">Leaderboard</a> <a href="#gallery">Gallery</a> <a href="#contact">Contact</a> </nav> </header> <!-- ================= HERO ================= --> <section id="home" class="hero"> <div class="hero-content"> <span class="hero-tag"> 📖 LIVE READING CHALLENGE </span> <h1> Readathon 2026 </h1> <h2> Read • Learn • Grow </h2> <p> Join students across the country in building a lifelong reading habit. Track your books, pages, and reading minutes with a live leaderboard powered by Google Sheets. </p> <div class="hero-buttons"> <a href="YOUR_GOOGLE_FORM_LINK" class="btn"> 🚀 Join Now </a> <a href="#leaderboard" class="btn secondary"> 🏆 View Leaderboard </a> </div> </div> <div class="hero-image-wrapper"> <img src="banner.jpg" alt="Readathon Banner" class="hero-image"> </div> </section> <!-- ====================================================== ABOUT SECTION ====================================================== --> <section id="about" class="about"> <div class="section-title"> <h2>📖 About Readathon 2026</h2> <p> Inspiring students to read consistently, discover new ideas, and build lifelong learning habits through a fun live challenge. </p> </div> <div class="about-grid"> <div class="about-card"> <div class="about-icon">📚</div> <h3>Read Daily</h3> <p> Develop a regular reading habit by recording your reading progress every day. </p> </div> <div class="about-card"> <div class="about-icon">🏆</div> <h3>Compete Live</h3> <p> Your statistics update automatically from Google Sheets, creating a real-time leaderboard. </p> </div> <div class="about-card"> <div class="about-icon">🚀</div> <h3>Grow Together</h3> <p> Encourage friends, classmates and schools to build a stronger reading culture together. </p> </div> </div> </section> <!-- ====================================================== STATISTICS ====================================================== --> <section id="statistics" class="stats-section"> <div class="section-title"> <h2>📊 Live Statistics</h2> <p> Automatically updated from Google Sheets. </p> </div> <div class="stats"> <div class="card"> <span>👥</span> <h3>Total Readers</h3> <h1 id="totalReaders">0</h1> </div> <div class="card"> <span>📚</span> <h3>Total Books</h3> <h1 id="totalBooks">0</h1> </div> <div class="card"> <span>📄</span> <h3>Total Pages</h3> <h1 id="totalPages">0</h1> </div> <div class="card"> <span>⏱️</span> <h3>Total Minutes</h3> <h1 id="totalMinutes">0</h1> </div> </div> </section> <!-- ====================================================== ACHIEVEMENTS ====================================================== --> <section id="achievements" class="achievements"> <div class="section-title"> <h2>🏅 Reading Milestones</h2> <p> Unlock badges as you read more pages. </p> </div> <div class="achievement-grid"> <div class="achievement-card"> <h3>⭐ Star Reader</h3> <p>100+ Pages</p> </div> <div class="achievement-card"> <h3>🚀 Mars Explorer</h3> <p>250+ Pages</p> </div> <div class="achievement-card"> <h3>🌟 Galaxy Master</h3> <p>500+ Pages</p> </div> <div class="achievement-card"> <h3>🌌 Universe Reader</h3> <p>1000+ Pages</p> </div> </div> </section> <!-- ====================================================== LIVE LEADERBOARD ====================================================== --> <section id="leaderboard" class="leaderboard-section"> <div class="leaderboard-header"> <h2>🏆 Top Reader</h2> <p>Live rankings updated automatically</p> </div> <div class="table-wrapper"> <table class="leaderboard-table"> <thead> <tr> <th>Rank</th> <th>Name</th> <th>Books</th> <th>Pages</th> <th>Minutes</th> <th>Badge</th> </tr> </thead> <tbody id="leaderboardBody"> <!-- JS will inject rows here --> </tbody> </table> </div> </section> <!-- ====================================================== GALLERY ====================================================== --> <section id="gallery" class="gallery"> <div class="section-title"> <h2>📸 Readathon Gallery</h2> <p> Moments captured from our reading journey. </p> </div> <div class="gallery-grid"> <div class="gallery-item"> <img src="images/img1.jpg" alt="Students Reading"> <div class="gallery-overlay"> <h3>Reading Session</h3> <p>Students enjoying books together.</p> </div> </div> <div class="gallery-item"> <img src="images/img2.jpg" alt="Book Collection"> <div class="gallery-overlay"> <h3>Book Collection</h3> <p>Explore amazing stories.</p> </div> </div> <div class="gallery-item"> <img src="images/img3.jpg" alt="Achievement"> <div class="gallery-overlay"> <h3>Achievement</h3> <p>Celebrating reading milestones.</p> </div> </div> <div class="gallery-item"> <img src="images/img4.jpg" alt="Library"> <div class="gallery-overlay"> <h3>Library</h3> <p>A place full of knowledge.</p> </div> </div> <div class="gallery-item"> <img src="images/img5.jpg" alt="Reading Challenge"> <div class="gallery-overlay"> <h3>Reading Challenge</h3> <p>Every page counts.</p> </div> </div> <div class="gallery-item"> <img src="images/img6.jpg" alt="Readathon Event"> <div class="gallery-overlay"> <h3>Readathon 2026</h3> <p>Read • Learn • Grow</p> </div> </div> </div> </section> <!-- ====================================================== CONTACT ====================================================== --> <section id="contact" class="contact"> <div class="section-title"> <h2>📞 Contact Us</h2> <p> We'd love to hear from you. Reach out for questions, suggestions, or collaboration. </p> </div> <div class="contact-grid"> <div class="contact-card"> <div class="contact-icon">📧</div> <h3>Email</h3> <p>readathon2026@gmail.com</p> </div> <div class="contact-card"> <div class="contact-icon">🌐</div> <h3>Platform</h3> <p>Readathon 2026</p> </div> <div class="contact-card"> <div class="contact-icon">📍</div> <h3>Location</h3> <p>India</p> </div> </div> </section> <!-- ====================================================== BACK TO TOP ====================================================== --> <button id="backToTop" class="back-to-top" aria-label="Back to top"> ↑ </button> <!-- ====================================================== FOOTER ====================================================== --> <footer class="footer"> <div class="footer-content"> <h3>📚 Readathon 2026</h3> <p> Read • Learn • Grow </p> <p> Empowering students through reading, learning and healthy competition. </p> </div> <div class="footer-bottom"> <p> © 2026 Readathon. All Rights Reserved. </p> </div> </footer> <!-- ====================================================== JAVASCRIPT ====================================================== --> <script src="script2.js"></script> </body> </html>
+/* ===========================================================
+   READATHON 2026 PREMIUM
+   script2.js
+   PART 1
+=========================================================== */
+
+"use strict";
+
+/* ===========================================================
+   CONFIG
+=========================================================== */
+
+const CONFIG = {
+
+    API_URL:
+        "https://script.google.com/macros/s/AKfycby2yVYxKopIBeqN2BAeaGCw4zlQC6n-wZwnsTyddCKjZyYwKyD-q2UZAh-pFYub_ZdiNQ/exec",
+
+    COUNTER_DURATION: 1800,
+
+    REFRESH_INTERVAL: 60000
+
+};
+
+/* ===========================================================
+   DOM
+=========================================================== */
+
+const DOM = {
+
+    readers:
+        document.getElementById("totalReaders"),
+
+    books:
+        document.getElementById("totalBooks"),
+
+    pages:
+        document.getElementById("totalPages"),
+
+    minutes:
+        document.getElementById("totalMinutes"),
+
+    leaderboard:
+        document.getElementById("leaderboardBody"),
+
+    loader:
+        document.getElementById("loader"),
+
+    progressBar:
+        document.getElementById("progressBar"),
+
+    backToTop:
+        document.getElementById("backToTop")
+
+};
+
+/* ===========================================================
+   HELPERS
+=========================================================== */
+
+function number(value){
+
+    return Number(value)||0;
+
+}
+
+function create(tag){
+
+    return document.createElement(tag);
+
+}
+
+/* ===========================================================
+   COUNTER
+=========================================================== */
+
+function animateCounter(element,target){
+
+    if(!element) return;
+
+    target=number(target);
+
+    const duration=CONFIG.COUNTER_DURATION;
+
+    const startTime=performance.now();
+
+    function update(time){
+
+        const progress=Math.min(
+
+            (time-startTime)/duration,
+
+            1
+
+        );
+
+        element.textContent=
+
+            Math.floor(
+
+                progress*target
+
+            ).toLocaleString();
+
+        if(progress<1){
+
+            requestAnimationFrame(update);
+
+        }else{
+
+            element.textContent=
+
+                target.toLocaleString();
+
+        }
+
+    }
+
+    requestAnimationFrame(update);
+
+}
+
+/* ===========================================================
+   API
+=========================================================== */
+
+async function getReadathonData(){
+
+    try{
+
+        const response=
+
+            await fetch(CONFIG.API_URL);
+
+        if(!response.ok)
+
+            throw new Error(
+
+                "Unable to fetch data"
+
+            );
+
+        return await response.json();
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+        return null;
+
+    }
+
+}
+
+/* ===========================================================
+   UPDATE STATISTICS
+=========================================================== */
+
+function updateStats(data){
+
+    animateCounter(
+
+        DOM.readers,
+
+        data.totalReaders
+
+    );
+
+    animateCounter(
+
+        DOM.books,
+
+        data.totalBooks
+
+    );
+
+    animateCounter(
+
+        DOM.pages,
+
+        data.totalPages
+
+    );
+
+    animateCounter(
+
+        DOM.minutes,
+
+        data.totalMinutes
+
+    );
+
+}
+/* ===========================================================
+   PART 2
+   LEADERBOARD
+=========================================================== */
+
+/* ================= BADGES ================= */
+
+function getBadge(pages){
+
+    pages = number(pages);
+
+    if(pages >= 1000)
+        return "🌌 Universe Reader";
+
+    if(pages >= 500)
+        return "🌟 Galaxy Master";
+
+    if(pages >= 250)
+        return "🚀 Mars Explorer";
+
+    if(pages >= 100)
+        return "⭐ Star Reader";
+
+    return "📚 Reader";
+
+}
+
+/* ================= RANK MEDALS ================= */
+
+function getRank(rank){
+
+    switch(rank){
+
+        case 1:
+            return "🥇";
+
+        case 2:
+            return "🥈";
+
+        case 3:
+            return "🥉";
+
+        default:
+            return rank;
+
+    }
+
+}
+
+/* ================= CREATE ROW ================= */
+
+function createRow(reader,index){
+
+    const row = create("tr");
+
+    const pages = number(reader.pages);
+
+    row.innerHTML = `
+
+        <td>${getRank(index+1)}</td>
+
+        <td>${reader.name}</td>
+
+        <td>${reader.books}</td>
+
+        <td>${pages}</td>
+
+        <td>${reader.minutes}</td>
+
+        <td>${getBadge(pages)}</td>
+
+    `;
+
+    row.classList.add("leader-row");
+
+    if(index===0) row.classList.add("gold");
+
+    if(index===1) row.classList.add("silver");
+
+    if(index===2) row.classList.add("bronze");
+
+    row.style.opacity="0";
+
+    row.style.transform="translateY(25px)";
+
+    setTimeout(()=>{
+
+        row.style.transition=".6s";
+
+        row.style.opacity="1";
+
+        row.style.transform="translateY(0)";
+
+    },index*120);
+
+    return row;
+
+}
+
+/* ================= RENDER ================= */
+
+function renderLeaderboard(list){
+
+    DOM.leaderboard.innerHTML="";
+
+    if(!Array.isArray(list)) return;
+
+    list.forEach((reader,index)=>{
+
+        DOM.leaderboard.appendChild(
+
+            createRow(reader,index)
+
+        );
+
+    });
+
+}
+
+/* ================= LOAD ================= */
+
+async function loadLeaderboard(){
+
+    const data = await getReadathonData();
+
+    if(!data){
+
+        DOM.leaderboard.innerHTML=
+
+        `<tr>
+
+            <td colspan="6">
+
+                Unable to load leaderboard.
+
+            </td>
+
+        </tr>`;
+
+        return;
+
+    }
+
+    updateStats(data);
+
+    renderLeaderboard(data.leaderboard);
+
+}
+/* ===========================================================
+   PART 3
+   UI INTERACTIONS
+=========================================================== */
+
+/* ================= LOADER ================= */
+
+window.addEventListener("load", () => {
+
+    if (DOM.loader) {
+
+        setTimeout(() => {
+
+            DOM.loader.style.opacity = "0";
+            DOM.loader.style.visibility = "hidden";
+
+        }, 800);
+
+    }
+
+});
+
+/* ================= SCROLL PROGRESS ================= */
+
+window.addEventListener("scroll", () => {
+
+    const scrollTop =
+        document.documentElement.scrollTop;
+
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const progress =
+        (scrollTop / scrollHeight) * 100;
+
+    if (DOM.progressBar) {
+
+        DOM.progressBar.style.width =
+            progress + "%";
+
+    }
+
+});
+
+/* ================= BACK TO TOP ================= */
+
+window.addEventListener("scroll", () => {
+
+    if (!DOM.backToTop) return;
+
+    if (window.scrollY > 400) {
+
+        DOM.backToTop.classList.add("show");
+
+    } else {
+
+        DOM.backToTop.classList.remove("show");
+
+    }
+
+});
+
+if (DOM.backToTop) {
+
+    DOM.backToTop.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    });
+
+}
+
+/* ================= SMOOTH NAVIGATION ================= */
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click", e => {
+
+        const target = document.querySelector(
+
+            link.getAttribute("href")
+
+        );
+
+        if (!target) return;
+
+        e.preventDefault();
+
+        target.scrollIntoView({
+
+            behavior: "smooth"
+
+        });
+
+    });
+
+});
+
+/* ================= SCROLL REVEAL ================= */
+
+const revealElements = document.querySelectorAll(
+
+    "section,.card,.about-card,.achievement-card,.gallery-item,.contact-card"
+
+);
+
+const revealObserver = new IntersectionObserver(
+
+(entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("visible");
+
+        }
+
+    });
+
+},
+
+{
+
+    threshold:0.15
+
+}
+
+);
+
+revealElements.forEach(item=>{
+
+    item.classList.add("hidden");
+
+    revealObserver.observe(item);
+
+});
+
+/* ================= MOBILE MENU ================= */
+
+const menuButton =
+    document.querySelector(".menu-toggle");
+
+const navigation =
+    document.querySelector(".header nav");
+
+if(menuButton && navigation){
+
+    menuButton.addEventListener("click",()=>{
+
+        navigation.classList.toggle("open");
+
+    });
+
+}
+/* ===========================================================
+   PART 4
+   PREMIUM INTERACTIONS
+=========================================================== */
+
+/* ================= MAGNETIC BUTTONS ================= */
+
+document.querySelectorAll(".btn").forEach(button => {
+
+    button.addEventListener("mousemove", e => {
+
+        const rect = button.getBoundingClientRect();
+
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        button.style.transform =
+            `translate(${x * 0.12}px, ${y * 0.12}px)`;
+
+    });
+
+    button.addEventListener("mouseleave", () => {
+
+        button.style.transform = "";
+
+    });
+
+});
+
+/* ================= RIPPLE EFFECT ================= */
+
+document.querySelectorAll(".btn").forEach(button => {
+
+    button.addEventListener("click", e => {
+
+        const ripple = document.createElement("span");
+
+        ripple.className = "ripple";
+
+        const rect = button.getBoundingClientRect();
+
+        ripple.style.left = (e.clientX - rect.left) + "px";
+        ripple.style.top = (e.clientY - rect.top) + "px";
+
+        button.appendChild(ripple);
+
+        setTimeout(() => {
+
+            ripple.remove();
+
+        }, 600);
+
+    });
+
+});
+
+/* ================= FLOATING HERO IMAGE ================= */
+
+const heroImage = document.querySelector(".hero-image");
+
+if(heroImage){
+
+    let direction = 1;
+
+    let offset = 0;
+
+    setInterval(()=>{
+
+        offset += direction;
+
+        heroImage.style.transform =
+            `translateY(${offset}px)`;
+
+        if(offset >= 10) direction = -1;
+
+        if(offset <= -10) direction = 1;
+
+    },60);
+
+}
+
+/* ================= GALLERY HOVER ================= */
+
+document.querySelectorAll(".gallery-item").forEach(item=>{
+
+    item.addEventListener("mouseenter",()=>{
+
+        item.style.transform =
+            "translateY(-10px) scale(1.03)";
+
+    });
+
+    item.addEventListener("mouseleave",()=>{
+
+        item.style.transform = "";
+
+    });
+
+});
+
+/* ================= CARD HOVER ================= */
+
+document.querySelectorAll(
+
+".card,.about-card,.achievement-card,.contact-card"
+
+).forEach(card=>{
+
+    card.addEventListener("mouseenter",()=>{
+
+        card.style.transform =
+            "translateY(-8px)";
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.transform = "";
+
+    });
+
+});
+/* ===========================================================
+   PART 5
+   INITIALIZATION & AUTO REFRESH
+=========================================================== */
+
+/* ================= ERROR MESSAGE ================= */
+
+function showError(message){
+
+    if(!DOM.leaderboard) return;
+
+    DOM.leaderboard.innerHTML = `
+        <tr>
+            <td colspan="6" style="padding:25px;text-align:center;">
+                ⚠️ ${message}
+            </td>
+        </tr>
+    `;
+
+}
+
+/* ================= LOAD ALL DATA ================= */
+
+async function refreshData(){
+
+    try{
+
+        await loadLeaderboard();
+
+        console.log(
+            "✅ Readathon data updated:",
+            new Date().toLocaleTimeString()
+        );
+
+    }catch(error){
+
+        console.error(error);
+
+        showError("Unable to load live data.");
+
+    }
+
+}
+
+/* ================= AUTO REFRESH ================= */
+
+function startAutoRefresh(){
+
+    setInterval(
+
+        refreshData,
+
+        CONFIG.REFRESH_INTERVAL
+
+    );
+
+}
+
+/* ================= APP INIT ================= */
+
+function init(){
+
+    refreshData();
+
+    startAutoRefresh();
+
+}
+
+/* ================= START APP ================= */
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    init
+
+);
