@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.json())
         .then(data => {
 
-            document.getElementById("totalReaders").textContent = data.totalReaders;
-            document.getElementById("totalBooks").textContent = data.totalBooks;
-            document.getElementById("totalPages").textContent = data.totalPages;
-            document.getElementById("totalMinutes").textContent = data.totalMinutes;
+            animateCounter("totalReaders", data.totalReaders);
+animateCounter("totalBooks", data.totalBooks);
+animateCounter("totalPages", data.totalPages);
+animateCounter("totalMinutes", data.totalMinutes);
 
             const tbody = document.getElementById("leaderboardBody");
             tbody.innerHTML = "";
