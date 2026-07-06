@@ -208,3 +208,12 @@ footer {
 .contact-card:hover {
   transform: scale(1.03);
 }
+.hero-image {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    display: block;
+    margin: 0 auto 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
