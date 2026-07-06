@@ -1767,3 +1767,9 @@ body{
     background: #1E40AF !important;
     color: #ffffff !important;
 }
+.leaderboard-header h2 {
+  font-size: 32px;
+  margin-bottom: 5px;
+  color: #ffffff; /* or #000000 depending on background */
+  font-weight: 700;
+}
