@@ -745,7 +745,7 @@ data.forEach((user, index) => {
 
 function generateCertificate() {
   let name = document.getElementById("studentName").value;
-  let level = document.getElementById("level").value;
+  let level = document.getElementById("achievementLevel").value;
 
   document.getElementById("cName").innerText = name;
   document.getElementById("cLevel").innerText = level;
