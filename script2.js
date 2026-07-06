@@ -115,3 +115,163 @@ function updateStatistics(data) {
     animateCounter(DOM.minutes, data.totalMinutes);
 
 }
+/* ==========================================================
+   PART 2
+   Leaderboard Rendering
+========================================================== */
+
+/* ================= BADGES ================= */
+
+function getBadge(pages) {
+
+    pages = safeNumber(pages);
+
+    if (pages >= 1000)
+        return "🌌 Universe Reader";
+
+    if (pages >= 500)
+        return "🌟 Galaxy Master";
+
+    if (pages >= 250)
+        return "🚀 Mars Explorer";
+
+    if (pages >= 100)
+        return "⭐ Star Reader";
+
+    return "📚 Reader";
+
+}
+
+/* ================= ROW COLOR ================= */
+
+function decorateRow(row, index) {
+
+    row.style.opacity = "0";
+
+    row.style.transform = "translateY(25px)";
+
+    row.style.transition =
+        "opacity .6s ease, transform .6s ease";
+
+    switch(index){
+
+        case 0:
+            row.style.background =
+                "linear-gradient(90deg,#FFD70033,#FFD70011)";
+            break;
+
+        case 1:
+            row.style.background =
+                "linear-gradient(90deg,#C0C0C033,#C0C0C011)";
+            break;
+
+        case 2:
+            row.style.background =
+                "linear-gradient(90deg,#CD7F3233,#CD7F3211)";
+            break;
+
+    }
+
+    setTimeout(()=>{
+
+        row.style.opacity="1";
+
+        row.style.transform="translateY(0)";
+
+    },index*120);
+
+}
+
+/* ================= CREATE ROW ================= */
+
+function createLeaderboardRow(reader,index){
+
+    const row=document.createElement("tr");
+
+    const pages=safeNumber(reader.pages);
+
+    row.innerHTML=`
+
+        <td>${index+1}</td>
+
+        <td>${reader.name ?? "-"}</td>
+
+        <td>${reader.books ?? 0}</td>
+
+        <td>${pages}</td>
+
+        <td>${reader.minutes ?? 0}</td>
+
+        <td>${getBadge(pages)}</td>
+
+    `;
+
+    decorateRow(row,index);
+
+    return row;
+
+}
+
+/* ================= RENDER TABLE ================= */
+
+function renderLeaderboard(list){
+
+    clearLeaderboard();
+
+    if(!Array.isArray(list)){
+
+        DOM.leaderboard.innerHTML=`
+        <tr>
+        <td colspan="6">
+        No leaderboard data available.
+        </td>
+        </tr>
+        `;
+
+        return;
+
+    }
+
+    list.forEach((reader,index)=>{
+
+        DOM.leaderboard.appendChild(
+
+            createLeaderboardRow(reader,index)
+
+        );
+
+    });
+
+}
+
+/* ================= LOAD DATA ================= */
+
+async function loadLeaderboard(){
+
+    const data=await fetchReadathonData();
+
+    if(!data){
+
+        DOM.leaderboard.innerHTML=`
+
+        <tr>
+
+        <td colspan="6">
+
+        Unable to load leaderboard.
+
+        </td>
+
+        </tr>
+
+        `;
+
+        return;
+
+    }
+
+    updateStatistics(data);
+
+    renderLeaderboard(data.leaderboard);
+
+}
