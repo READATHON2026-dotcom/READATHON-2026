@@ -2,183 +2,314 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Readathon 2026 - Version 2</title>
 
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Readathon 2026 | Read • Learn • Grow</title>
+
+    <meta name="description"
+        content="Readathon 2026 is a live reading challenge platform where students track books, pages and reading minutes in real time.">
+
+    <meta name="theme-color" content="#0b1220">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style2.css">
+
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
-<header class="header">
-  <div class="logo">📚 Readathon 2026</div>
+<!-- ================= LOADING SCREEN ================= -->
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#statistics">Stats</a>
-    <a href="#leaderboard">Leaderboard</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<div id="loader">
+
+    <div class="loader-book">
+
+        📚
+
+    </div>
+
+    <h2>Loading Readathon 2026...</h2>
+
+</div>
+
+<!-- ================= SCROLL PROGRESS ================= -->
+
+<div id="progressBar"></div>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="logo">
+
+        📚 Readathon <span>2026</span>
+
+    </div>
+
+    <button class="menu-toggle" aria-label="Toggle navigation">
+
+        ☰
+
+    </button>
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#statistics">Statistics</a>
+
+        <a href="#leaderboard">Leaderboard</a>
+
+        <a href="#gallery">Gallery</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
 </header>
 
 <!-- ================= HERO ================= -->
+
 <section id="home" class="hero">
 
-  <img src="banner.jpg" class="hero-image" alt="banner">
+    <div class="hero-content">
 
-  <div class="hero-content">
-    <h1>Readathon 2026</h1>
-    <h2>Read • Learn • Grow</h2>
+        <span class="hero-tag">
 
-    <p>
-      A live reading challenge platform where students compete and track progress in real time.
-    </p>
+            📖 LIVE READING CHALLENGE
 
-    <a href="YOUR_GOOGLE_FORM_LINK" class="btn">🚀 Join Now</a>
-    <a href="#leaderboard" class="btn secondary">🏆 View Leaderboard</a>
-  </div>
+        </span>
+
+        <h1>
+
+            Readathon 2026
+
+        </h1>
+
+        <h2>
+
+            Read • Learn • Grow
+
+        </h2>
+
+        <p>
+
+            Join students across the country in building a lifelong reading habit.
+            Track your books, pages, and reading minutes with a live leaderboard
+            powered by Google Sheets.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="YOUR_GOOGLE_FORM_LINK" class="btn">
+
+                🚀 Join Now
+
+            </a>
+
+            <a href="#leaderboard" class="btn secondary">
+
+                🏆 View Leaderboard
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image-wrapper">
+
+        <img src="banner.jpg"
+             alt="Readathon Banner"
+             class="hero-image">
+
+    </div>
+
+</section>
+<!-- ======================================================
+     ABOUT SECTION
+====================================================== -->
+
+<section id="about" class="about">
+
+    <div class="section-title">
+
+        <h2>📖 About Readathon 2026</h2>
+
+        <p>
+            Inspiring students to read consistently, discover new ideas,
+            and build lifelong learning habits through a fun live challenge.
+        </p>
+
+    </div>
+
+    <div class="about-grid">
+
+        <div class="about-card">
+
+            <div class="about-icon">📚</div>
+
+            <h3>Read Daily</h3>
+
+            <p>
+                Develop a regular reading habit by recording your reading
+                progress every day.
+            </p>
+
+        </div>
+
+        <div class="about-card">
+
+            <div class="about-icon">🏆</div>
+
+            <h3>Compete Live</h3>
+
+            <p>
+                Your statistics update automatically from Google Sheets,
+                creating a real-time leaderboard.
+            </p>
+
+        </div>
+
+        <div class="about-card">
+
+            <div class="about-icon">🚀</div>
+
+            <h3>Grow Together</h3>
+
+            <p>
+                Encourage friends, classmates and schools to build
+                a stronger reading culture together.
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- ================= ABOUT ================= -->
-<section id="about">
-  <h2>📖 About Readathon</h2>
-  <p>
-    Readathon 2026 is a live educational platform where reading activity is tracked using Google Sheets.
-    Students submit daily reading and rankings update automatically.
-  </p>
-</section>
+<!-- ======================================================
+     STATISTICS
+====================================================== -->
 
-<!-- ================= STATS ================= -->
-<section id="statistics" class="stats">
+<section id="statistics" class="stats-section">
 
-  <div class="card">
-    <h3>Readers</h3>
-    <h1 id="totalReaders">0</h1>
-  </div>
+    <div class="section-title">
 
-  <div class="card">
-    <h3>Books</h3>
-    <h1 id="totalBooks">0</h1>
-  </div>
+        <h2>📊 Live Statistics</h2>
 
-  <div class="card">
-    <h3>Pages</h3>
-    <h1 id="totalPages">0</h1>
-  </div>
+        <p>
+            Automatically updated from Google Sheets.
+        </p>
 
-  <div class="card">
-    <h3>Minutes</h3>
-    <h1 id="totalMinutes">0</h1>
-  </div>
+    </div>
 
-</section>
+    <div class="stats">
 
-<!-- ================= LEADERBOARD ================= -->
-<section id="leaderboard" class="leaderboard">
+        <div class="card">
 
-  <h2>🏆 Live Leaderboard</h2>
+            <span>👥</span>
 
-  <p class="section-subtitle">
-    Updated automatically from Google Sheets
-  </p>
+            <h3>Total Readers</h3>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Rank</th>
-        <th>Name</th>
-        <th>Books</th>
-        <th>Pages</th>
-        <th>Minutes</th>
-        <th>Badge</th>
-      </tr>
-    </thead>
+            <h1 id="totalReaders">0</h1>
 
-    <tbody id="leaderboardBody">
-      <!-- LIVE DATA -->
-    </tbody>
-  </table>
+        </div>
 
-</section>
+        <div class="card">
 
-<!-- ================= GALLERY ================= -->
-<section id="gallery">
+            <span>📚</span>
 
-  <h2>📸 Gallery</h2>
+            <h3>Total Books</h3>
 
-  <div class="gallery-grid">
-    <img src="images/img1.jpg">
-    <img src="images/img2.jpg">
-    <img src="images/img3.jpg">
-  </div>
+            <h1 id="totalBooks">0</h1>
+
+        </div>
+
+        <div class="card">
+
+            <span>📄</span>
+
+            <h3>Total Pages</h3>
+
+            <h1 id="totalPages">0</h1>
+
+        </div>
+
+        <div class="card">
+
+            <span>⏱️</span>
+
+            <h3>Total Minutes</h3>
+
+            <h1 id="totalMinutes">0</h1>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- ================= CONTACT ================= -->
-<section id="contact">
+<!-- ======================================================
+     ACHIEVEMENTS
+====================================================== -->
 
-  <h2>📞 Contact</h2>
+<section id="achievements" class="achievements">
 
-  <div class="contact-container">
-    <div class="contact-card">📧 readathon2026@gmail.com</div>
-    <div class="contact-card">🌐 Readathon Platform</div>
-    <div class="contact-card">📍 India</div>
-  </div>
+    <div class="section-title">
+
+        <h2>🏅 Reading Milestones</h2>
+
+        <p>
+            Unlock badges as you read more pages.
+        </p>
+
+    </div>
+
+    <div class="achievement-grid">
+
+        <div class="achievement-card">
+
+            <h3>⭐ Star Reader</h3>
+
+            <p>100+ Pages</p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <h3>🚀 Mars Explorer</h3>
+
+            <p>250+ Pages</p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <h3>🌟 Galaxy Master</h3>
+
+            <p>500+ Pages</p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <h3>🌌 Universe Reader</h3>
+
+            <p>1000+ Pages</p>
+
+        </div>
+
+    </div>
 
 </section>
-
-<!-- ================= FOOTER ================= -->
-<footer>
-  <p>© 2026 Readathon | Built for learners 🚀</p>
-</footer>
-
-<!-- ================= SCRIPT ================= -->
-<script src="script.js"></script>
-
-</body>
-</html>
-const SHEET_URL = "YOUR_GOOGLE_SCRIPT_URL_HERE";
-
-async function loadLeaderboard() {
-  try {
-    const res = await fetch(SHEET_URL);
-    const data = await res.json();
-
-    const tbody = document.getElementById("leaderboardBody");
-    tbody.innerHTML = "";
-
-    if (!Array.isArray(data)) return;
-
-    // sort highest pages first
-    data.sort((a, b) => Number(b.pages) - Number(a.pages));
-
-    data.forEach((item, index) => {
-      const row = document.createElement("tr");
-
-      if (index === 0) row.classList.add("top1");
-
-      row.innerHTML = `
-        <td>${index + 1}</td>
-        <td>${item.name || "-"}</td>
-        <td>${item.books || 0}</td>
-        <td>${item.pages || 0}</td>
-        <td>${item.minutes || 0}</td>
-        <td>${item.badge || "-"}</td>
-      `;
-
-      tbody.appendChild(row);
-    });
-
-  } catch (err) {
-    console.log("Leaderboard error:", err);
-  }
-}
-
-loadLeaderboard();
-setInterval(loadLeaderboard, 10000);
