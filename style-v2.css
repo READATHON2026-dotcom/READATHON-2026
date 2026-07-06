@@ -342,3 +342,9 @@ footer {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0b1220;
+  color: #e5e7eb;
+}
