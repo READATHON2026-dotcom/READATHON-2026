@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>READATHON 2026 - V2 Ultra Pro</title>
+<title>READATHON 2026 - V2 Enhanced</title>
 
 <style>
+
 /* ================= BASE ================= */
 *{
     margin:0;
@@ -45,7 +46,6 @@ nav a{
 nav a:hover{
     color:#38bdf8;
     opacity:1;
-    transform:translateY(-2px);
 }
 
 /* ================= HERO ================= */
@@ -63,11 +63,6 @@ nav a:hover{
     animation:shine 4s linear infinite;
 }
 
-.hero p{
-    opacity:0.85;
-    margin-top:10px;
-}
-
 /* ================= SECTIONS ================= */
 section{
     padding:80px 20px;
@@ -76,7 +71,7 @@ section{
 
     opacity:0;
     transform:translateY(60px);
-    transition:all 0.9s ease;
+    transition:0.8s;
 }
 
 section.show{
@@ -84,7 +79,6 @@ section.show{
     transform:translateY(0);
 }
 
-/* ================= TITLES ================= */
 h2{
     text-align:center;
     color:#38bdf8;
@@ -105,21 +99,56 @@ h2{
     border-radius:16px;
     text-align:center;
     transition:0.4s;
-    backdrop-filter:blur(12px);
 }
 
 .card:hover{
-    transform:translateY(-12px) scale(1.04);
+    transform:translateY(-10px);
     border-color:#38bdf8;
-    box-shadow:0 20px 40px rgba(0,0,0,0.5);
 }
 
-/* ================= COUNTERS ================= */
-.counter{
-    font-size:28px;
-    font-weight:bold;
-    color:#38bdf8;
-    margin-top:5px;
+/* ================= FEATURE BOOKS ================= */
+.books{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.book{
+    background:rgba(255,255,255,0.06);
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.4s;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+.book img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.book div{
+    padding:12px;
+    text-align:center;
+}
+
+.book:hover{
+    transform:scale(1.05);
+    border-color:#38bdf8;
+}
+
+/* ================= FEATURED IMAGE BANNER ================= */
+.banner{
+    width:100%;
+    border-radius:15px;
+    margin:20px 0;
+    overflow:hidden;
+}
+
+.banner img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
 }
 
 /* ================= GALLERY ================= */
@@ -135,34 +164,21 @@ h2{
     object-fit:cover;
     border-radius:12px;
     transition:0.4s;
-    filter:brightness(0.95);
 }
 
 .gallery img:hover{
     transform:scale(1.08);
-    filter:brightness(1.15);
-    border:2px solid #38bdf8;
+    filter:brightness(1.1);
 }
 
 /* ================= BADGES ================= */
-.badges{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
-}
-
 .badge{
     padding:10px 15px;
     border-radius:20px;
     background:rgba(56,189,248,0.15);
     border:1px solid #38bdf8;
-    transition:0.3s;
-}
-
-.badge:hover{
-    transform:scale(1.1);
-    box-shadow:0 0 18px rgba(56,189,248,0.5);
+    display:inline-block;
+    margin:5px;
 }
 
 /* ================= TABLE ================= */
@@ -186,6 +202,7 @@ tr:hover{
     0%{background-position:0%;}
     100%{background-position:200%;}
 }
+
 </style>
 </head>
 
@@ -196,10 +213,8 @@ tr:hover{
 <nav>
 <a href="#home">Home</a>
 <a href="#stats">Stats</a>
-<a href="#leaderboard">Leaderboard</a>
+<a href="#books">Books</a>
 <a href="#gallery">Gallery</a>
-<a href="#badges">Badges</a>
-<a href="#challenge">Challenge</a>
 </nav>
 </header>
 
@@ -209,74 +224,70 @@ tr:hover{
 <p>Read. Learn. Compete. Grow.</p>
 </section>
 
+<!-- FEATURE IMAGE -->
+<section>
+<h2>📖 Featured Reading Moment</h2>
+<div class="banner">
+<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
+</div>
+</section>
+
 <!-- STATS -->
 <section id="stats">
 <h2>📊 Stats</h2>
-
 <div class="stats">
 
-<div class="card">
-📚 Books
-<div class="counter" data-target="120">0</div>
-</div>
-
-<div class="card">
-📄 Pages
-<div class="counter" data-target="45000">0</div>
-</div>
-
-<div class="card">
-👥 Readers
-<div class="counter" data-target="300">0</div>
-</div>
-
-<div class="card">
-🔥 Streak
-<div class="counter" data-target="12">0</div>
-</div>
+<div class="card">📚 Books<br><b>120+</b></div>
+<div class="card">📄 Pages<br><b>45,000+</b></div>
+<div class="card">👥 Readers<br><b>300+</b></div>
 
 </div>
 </section>
 
-<!-- LEADERBOARD -->
-<section id="leaderboard">
-<h2>🏆 Leaderboard</h2>
-<table>
-<tr><th>Rank</th><th>Name</th><th>Books</th></tr>
-<tr><td>1</td><td>A</td><td>25</td></tr>
-<tr><td>2</td><td>B</td><td>22</td></tr>
-<tr><td>3</td><td>C</td><td>20</td></tr>
-</table>
+<!-- BOOKS SECTION (NEW FEATURE) -->
+<section id="books">
+<h2>📚 Featured Books</h2>
+
+<div class="books">
+
+<div class="book">
+<img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f">
+<div>Book Reading Challenge</div>
+</div>
+
+<div class="book">
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794">
+<div>Focus & Learning</div>
+</div>
+
+<div class="book">
+<img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc">
+<div>Study Motivation</div>
+</div>
+
+</div>
 </section>
 
 <!-- GALLERY -->
 <section id="gallery">
 <h2>🖼 Gallery</h2>
 <div class="gallery">
-<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
+
 <img src="https://images.unsplash.com/photo-1455885666463-0ffe7d3c7b8d">
-<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794">
 <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66">
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794">
+<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
+
 </div>
 </section>
 
 <!-- BADGES -->
-<section id="badges">
+<section>
 <h2>🏆 Badges</h2>
-<div class="badges">
 <span class="badge">📘 First Book</span>
 <span class="badge">⭐ 5 Books</span>
 <span class="badge">🔥 1000 Pages</span>
-<span class="badge">🧠 Consistent Reader</span>
-</div>
-</section>
-
-<!-- CHALLENGE -->
-<section id="challenge">
-<h2>🎯 Challenge</h2>
-<div class="challenge" style="text-align:center;padding:25px;background:rgba(255,255,255,0.06);border-radius:15px;">
-Read 3 books this month to unlock <b>Speed Reader 🚀</b>
-</div>
+<span class="badge">🧠 Smart Reader</span>
 </section>
 
 <footer style="text-align:center;padding:25px;opacity:0.6;">
@@ -284,12 +295,10 @@ Read 3 books this month to unlock <b>Speed Reader 🚀</b>
 </footer>
 
 <script>
-/* ================= ANIMATION ENGINE ================= */
 
+/* ===== SCROLL ANIMATION ===== */
 const sections = document.querySelectorAll("section");
-const counters = document.querySelectorAll(".counter");
 
-/* ===== SCROLL REVEAL ===== */
 function reveal(){
     sections.forEach(sec=>{
         const top = sec.getBoundingClientRect().top;
@@ -299,31 +308,9 @@ function reveal(){
     });
 }
 
-/* ===== COUNTER ANIMATION ===== */
-function animateCounters(){
-    counters.forEach(counter=>{
-        const target = +counter.getAttribute("data-target");
-        let current = +counter.innerText;
+window.addEventListener("scroll",reveal);
+window.addEventListener("load",reveal);
 
-        const step = target / 60;
-
-        if(current < target){
-            counter.innerText = Math.ceil(current + step);
-        } else {
-            counter.innerText = target;
-        }
-    });
-}
-
-/* ===== EVENTS ===== */
-window.addEventListener("scroll",()=>{
-    reveal();
-});
-
-window.addEventListener("load",()=>{
-    reveal();
-    setInterval(animateCounters,40);
-});
 </script>
 
 </body>
