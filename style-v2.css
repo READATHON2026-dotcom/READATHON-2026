@@ -1238,3 +1238,232 @@ nav a{
     font-size: 16px;
     font-weight: 400;
 }
+/* ===================================================
+   READATHON 2026 MODERN BLUE THEME
+=================================================== */
+
+/* Body */
+body{
+    background:#F8FAFC;
+    color:#1F2937;
+    font-family:'Poppins',sans-serif;
+}
+
+/* Header */
+.header{
+    background:#2563EB;
+    color:white;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+.header .logo{
+    color:white;
+    font-weight:700;
+}
+
+.header nav a{
+    color:white;
+    font-weight:600;
+}
+
+.header nav a:hover{
+    color:#FCD34D;
+}
+
+/* Hero */
+
+.hero{
+    background:linear-gradient(135deg,#2563EB,#1E40AF);
+    color:white;
+}
+
+.hero h1{
+    color:white;
+}
+
+.hero h2{
+    color:#DBEAFE;
+}
+
+.hero p{
+    color:#E0F2FE;
+}
+
+/* Buttons */
+
+.btn{
+    background:#F59E0B;
+    color:white;
+    border:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#D97706;
+    transform:translateY(-4px);
+}
+
+.btn.secondary{
+    background:white;
+    color:#2563EB;
+}
+
+.btn.secondary:hover{
+    background:#DBEAFE;
+}
+
+/* Section Titles */
+
+.section-title h2{
+    color:#1E40AF;
+}
+
+.section-title p{
+    color:#64748B;
+}
+
+/* Cards */
+
+.card,
+.about-card,
+.gallery-item,
+.contact-card,
+.achievement-card{
+
+    background:white;
+    border-radius:18px;
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.card:hover,
+.about-card:hover,
+.gallery-item:hover,
+.contact-card:hover,
+.achievement-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 35px rgba(0,0,0,.12);
+
+}
+
+/* Statistics */
+
+.card h1{
+    color:#2563EB;
+}
+
+.card h3{
+    color:#1F2937;
+}
+
+/* Leaderboard */
+
+.leaderboard-section{
+
+    background:#EFF6FF;
+
+}
+
+.leaderboard-table{
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+}
+
+.leaderboard-table th{
+
+    background:#2563EB;
+
+    color:white;
+
+}
+
+.leaderboard-table tr:nth-child(even){
+
+    background:#F8FAFC;
+
+}
+
+.leaderboard-table tr:hover{
+
+    background:#DBEAFE;
+
+}
+
+/* Gallery */
+
+.gallery{
+
+    background:#F8FAFC;
+
+}
+
+.gallery-item h3{
+
+    color:#1E293B;
+
+}
+
+/* About */
+
+.about{
+
+    background:#FFFFFF;
+
+}
+
+/* Contact */
+
+.contact{
+
+    background:#EFF6FF;
+
+}
+
+/* Footer */
+
+.footer{
+
+    background:#1E40AF;
+
+    color:white;
+
+}
+
+/* Progress Bar */
+
+#progressBar{
+
+    background:#F59E0B;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563EB;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#E2E8F0;
+
+}
