@@ -84,3 +84,18 @@ window.addEventListener("scroll",()=>{
     parallaxHero();
 });
 </script>
+// leaderboard row reveal animation
+const rows = document.querySelectorAll("tbody tr");
+
+window.addEventListener("load",()=>{
+    rows.forEach((row,i)=>{
+        row.style.opacity = 0;
+        row.style.transform = "translateY(10px)";
+
+        setTimeout(()=>{
+            row.style.transition = "0.6s ease";
+            row.style.opacity = 1;
+            row.style.transform = "translateY(0)";
+        }, i * 120);
+    });
+});
