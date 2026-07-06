@@ -418,3 +418,16 @@ section:nth-child(4) { animation-delay: 0.4s; }
   transform: scale(1.05);
   box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
+.leaderboard-item {
+  background: rgba(255,255,255,0.06);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+
+.leaderboard-item:hover {
+  transform: scale(1.03);
+  background: rgba(255,255,255,0.1);
+}
