@@ -317,82 +317,31 @@
      LIVE LEADERBOARD
 ====================================================== -->
 
-<section id="leaderboard" class="leaderboard">
+<section id="leaderboard" class="leaderboard-section">
 
-    <div class="section-title">
+  <div class="leaderboard-header">
+    <h2>🏆 Top Reader</h2>
+    <p>Live rankings updated automatically</p>
+  </div>
 
-        <h2>🏆 Live Leaderboard</h2>
+  <div class="table-wrapper">
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Name</th>
+          <th>Books</th>
+          <th>Pages</th>
+          <th>Minutes</th>
+          <th>Badge</th>
+        </tr>
+      </thead>
 
-        <p>
-            Updated automatically from Google Sheets.
-            Rankings refresh with the latest reading progress.
-        </p>
-
-    </div>
-
-    <div class="leaderboard-container">
-
-        <div class="leaderboard-info">
-
-            <div class="info-card">
-
-                <h3>🥇 Top Reader</h3>
-
-                <p>
-                    Congratulations to the current leader!
-                    Keep reading to climb the rankings.
-                </p>
-
-            </div>
-
-            <div class="info-card">
-
-                <h3>📈 Live Updates</h3>
-
-                <p>
-                    Statistics and rankings are refreshed
-                    automatically using Google Sheets.
-                </p>
-
-            </div>
-
-        </div>
-
-        <div class="leaderboard-table">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>Rank</th>
-
-                        <th>Name</th>
-
-                        <th>Books</th>
-
-                        <th>Pages</th>
-
-                        <th>Minutes</th>
-
-                        <th>Badge</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody id="leaderboardBody">
-
-                    <!-- Live Google Sheets Data -->
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
+      <tbody id="leaderboardBody">
+        <!-- JS will inject rows here -->
+      </tbody>
+    </table>
+  </div>
 
 </section>
 
