@@ -1739,3 +1739,31 @@ body{
 ::-webkit-scrollbar-thumb:hover{
     background:#1E40AF;
 }
+/* ================= FINAL LEADERBOARD OVERRIDE ================= */
+
+#leaderboard.leaderboard-section{
+    background: linear-gradient(135deg,#2563EB,#1E40AF) !important;
+    padding: 80px 20px;
+}
+
+#leaderboard .leaderboard-header h2{
+    color: #ffffff !important;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+#leaderboard .leaderboard-header p{
+    color: #DBEAFE !important;
+}
+
+#leaderboard .leaderboard-table{
+    background: #ffffff !important;
+    border: 3px solid #FFD700 !important;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+#leaderboard .leaderboard-table th{
+    background: #1E40AF !important;
+    color: #ffffff !important;
+}
