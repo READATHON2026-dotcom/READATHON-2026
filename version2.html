@@ -1,64 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Readathon 2026 - Version 2</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Readathon 2026 - Version 2</title>
 
-    <link rel="stylesheet" href="style-v2.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    body {
+      background: #0b1220;
+      color: white;
+    }
+
+    /* NAVBAR */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 20, 40, 0.7);
+      backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffd34d;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #ffd34d;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      height: 100vh;
+      background: url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 0 10%;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,0.75), rgba(0,0,0,0.3));
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 600px;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-right: 10px;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #3b82f6;
+      color: white;
+    }
+
+    .btn-secondary {
+      background: #22c55e;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 80px 10%;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #ffd34d;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    /* STATISTICS */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .stat-box {
+      background: rgba(255,255,255,0.05);
+      padding: 25px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .stat-box h3 {
+      font-size: 2rem;
+      color: #3b82f6;
+    }
+
+    /* LEADERBOARD */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th, table td {
+      padding: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      text-align: left;
+    }
+
+    table th {
+      color: #ffd34d;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #060a14;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
-<header>
-
-    <div class="logo">
-        📚 Readathon 2026
-    </div>
-
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">📚 Readathon 2026</div>
     <nav>
-
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Statistics</a>
-        <a href="#">Reader Board</a>
-        <a href="#">Gallery</a>
-        <a href="#">Contact</a>
-
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#statistics">Statistics</a>
+      <a href="#leaderboard">Leaderboard</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
     </nav>
+  </header>
 
-</header>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>READATHON 2026</h1>
+      <p>Building Tomorrow’s Readers</p>
+      <p>Read • Imagine • Grow</p>
 
-<section class="hero">
-
-    <img src="banner.jpg" class="hero-image" alt="Banner">
-
-    <div class="overlay"></div>
-
-    <div class="hero-text">
-
-       <h1>Building Tomorrow's Readers</h1>
-
-      <h2>Read • Imagine • Grow</h2>
-
-        <p>
-            Developing lifelong readers through books,
-            curiosity and imagination.
-        </p>
-
-        <a href="https://docs.google.com/forms/d/1Tz1rujP7wIoPds6zyGuQXZ-9auEv4vmzYSK-D31HEjs/viewform" class="btn">
-            🚀 Join Readathon
-        </a>
-
-        <a href="https://docs.google.com/forms/d/1Tz1rujP7wIoPds6zyGuQXZ-9auEv4vmzYSK-D31HEjs/viewform" class="btn green">
-            📖 Submit Reading
-        </a>
-
+      <a href="#about" class="btn btn-primary">Join Readathon</a>
+      <a href="#leaderboard" class="btn btn-secondary">Submit Reading</a>
     </div>
+  </section>
 
-</section>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Readathon</h2>
+    <div class="card">
+      Readathon 2026 is a reading initiative to build strong reading habits among students.
+      It focuses on imagination, knowledge building, and personal growth through books.
+    </div>
+  </section>
+
+  <!-- STATISTICS -->
+  <section id="statistics">
+    <h2>Statistics</h2>
+
+    <div class="stats">
+      <div class="stat-box">
+        <h3>1200+</h3>
+        <p>Readers Joined</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>4500+</h3>
+        <p>Books Read</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>300+</h3>
+        <p>Schools</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>85%</h3>
+        <p>Reading Growth</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERBOARD -->
+  <section id="leaderboard">
+    <h2>Reader Board</h2>
+
+    <table>
+      <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Books</th>
+      </tr>
+
+      <tr>
+        <td>1</td>
+        <td>Student A</td>
+        <td>45</td>
+      </tr>
+
+      <tr>
+        <td>2</td>
+        <td>Student B</td>
+        <td>38</td>
+      </tr>
+
+      <tr>
+        <td>3</td>
+        <td>Student C</td>
+        <td>32</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="card">
+      Add your reading event photos here in next version.
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      Email: readathon2026@gmail.com <br/>
+      Instagram: @readathon2026
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Readathon | Made with ❤️ for Readers
+  </footer>
 
 </body>
 </html>
