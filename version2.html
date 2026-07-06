@@ -3,60 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>READATHON 2026 - Version 2 Premium</title>
+<title>READATHON 2026 - V2 Improved</title>
 
 <style>
+/* ===== BASE ===== */
 body{
     margin:0;
     font-family:Arial, sans-serif;
-    background:linear-gradient(135deg,#0f172a,#1e293b);
+    background:linear-gradient(135deg,#0b1224,#111c33,#0b1224);
     color:white;
     scroll-behavior:smooth;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header{
     position:sticky;
     top:0;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(12px);
     display:flex;
     justify-content:space-between;
-    padding:15px;
+    align-items:center;
+    padding:15px 20px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
     z-index:10;
+    animation:slideDown 0.8s ease;
 }
 
 nav a{
     color:white;
     margin:0 10px;
     text-decoration:none;
+    transition:0.3s;
 }
 
-/* HERO */
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* ===== HERO ===== */
 .hero{
     text-align:center;
     padding:100px 20px;
-    animation:fadeDown 1s ease;
+    animation:fadeUp 1s ease;
 }
 
 .hero h1{
-    font-size:42px;
+    font-size:45px;
+    background:linear-gradient(90deg,#38bdf8,#a78bfa);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
-@keyframes fadeDown{
-    from{opacity:0; transform:translateY(-30px);}
-    to{opacity:1; transform:translateY(0);}
+.hero p{
+    opacity:0.8;
 }
 
-/* SECTIONS */
+/* ===== SECTIONS ===== */
 section{
-    padding:60px 20px;
-    max-width:1000px;
+    padding:70px 20px;
+    max-width:1100px;
     margin:auto;
 
     opacity:0;
     transform:translateY(40px);
-    transition:0.7s ease;
+    transition:0.8s ease;
 }
 
 section.show{
@@ -70,7 +80,7 @@ h2{
     margin-bottom:20px;
 }
 
-/* STATS */
+/* ===== STATS ===== */
 .stats{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -78,26 +88,29 @@ h2{
 }
 
 .card{
-    background:rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.08);
     padding:20px;
     border-radius:15px;
     text-align:center;
-    transition:0.3s;
+    transition:0.4s;
+    backdrop-filter:blur(10px);
 }
 
 .card:hover{
-    transform:scale(1.05);
-    background:rgba(56,189,248,0.2);
+    transform:translateY(-10px) scale(1.03);
+    border-color:#38bdf8;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
-/* LEADERBOARD */
+/* ===== LEADERBOARD ===== */
 table{
     width:100%;
     border-collapse:collapse;
 }
 
 th,td{
-    padding:10px;
+    padding:12px;
     text-align:center;
     border-bottom:1px solid rgba(255,255,255,0.1);
 }
@@ -106,7 +119,7 @@ tr:hover{
     background:rgba(255,255,255,0.05);
 }
 
-/* BADGES */
+/* ===== BADGES ===== */
 .badges{
     display:flex;
     flex-wrap:wrap;
@@ -124,43 +137,54 @@ tr:hover{
 
 .badge:hover{
     transform:scale(1.1);
+    box-shadow:0 0 12px rgba(56,189,248,0.4);
 }
 
-/* GALLERY */
+/* ===== GALLERY ===== */
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:10px;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:12px;
 }
 
-.gallery div{
-    height:100px;
-    background:rgba(255,255,255,0.1);
-    border-radius:10px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    transition:0.3s;
+.gallery img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:12px;
+    transition:0.4s;
+    border:1px solid rgba(255,255,255,0.1);
 }
 
-.gallery div:hover{
+.gallery img:hover{
     transform:scale(1.05);
-    background:rgba(56,189,248,0.2);
+    border-color:#38bdf8;
 }
 
-/* CHALLENGE */
+/* ===== CHALLENGE ===== */
 .challenge{
     text-align:center;
     padding:25px;
-    background:rgba(255,255,255,0.08);
+    background:rgba(255,255,255,0.06);
     border-radius:15px;
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer{
     text-align:center;
-    padding:20px;
+    padding:25px;
     opacity:0.6;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes slideDown{
+    from{opacity:0; transform:translateY(-20px);}
+    to{opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
@@ -182,7 +206,7 @@ footer{
 <!-- HERO -->
 <section class="hero" id="home">
 <h1>READATHON 2026 🚀</h1>
-<p>Read. Learn. Grow. Compete.</p>
+<p>Read. Learn. Compete. Grow.</p>
 </section>
 
 <!-- STATS -->
@@ -207,16 +231,14 @@ footer{
 </table>
 </section>
 
-<!-- GALLERY (RESTORED) -->
+<!-- GALLERY -->
 <section id="gallery">
 <h2>🖼 Gallery</h2>
 <div class="gallery">
-<div>Photo 1</div>
-<div>Photo 2</div>
-<div>Photo 3</div>
-<div>Photo 4</div>
-<div>Photo 5</div>
-<div>Photo 6</div>
+<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
+<img src="https://images.unsplash.com/photo-1455885666463-0ffe7d3c7b8d">
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794">
+<img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66">
 </div>
 </section>
 
@@ -224,10 +246,10 @@ footer{
 <section id="badges">
 <h2>🏆 Badges</h2>
 <div class="badges">
-<div class="badge">📘 First Book</div>
-<div class="badge">⭐ 5 Books</div>
-<div class="badge">🔥 1000 Pages</div>
-<div class="badge">🧠 Consistent</div>
+<span class="badge">📘 First Book</span>
+<span class="badge">⭐ 5 Books</span>
+<span class="badge">🔥 1000 Pages</span>
+<span class="badge">🧠 Consistent Reader</span>
 </div>
 </section>
 
@@ -244,7 +266,7 @@ Read 3 books this month to unlock <b>Speed Reader 🚀</b>
 </footer>
 
 <script>
-// animation fix (IMPORTANT)
+// scroll animation
 const sections=document.querySelectorAll("section");
 
 const observer=new IntersectionObserver(entries=>{
@@ -255,7 +277,7 @@ const observer=new IntersectionObserver(entries=>{
     });
 },{threshold:0.15});
 
-sections.forEach(s=>observer.observe(s));
+sections.forEach(sec=>observer.observe(sec));
 </script>
 
 </body>
