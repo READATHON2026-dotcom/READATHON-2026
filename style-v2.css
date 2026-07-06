@@ -1773,3 +1773,14 @@ body{
   color: #ffffff; /* or #000000 depending on background */
   font-weight: 700;
 }
+.certificate-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.certificate-section img {
+  max-width: 90%;
+  height: auto;
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
