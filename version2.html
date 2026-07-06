@@ -2,156 +2,102 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Readathon 2026</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Readathon 2026</title>
 
-    <link rel="stylesheet" href="style.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
 <!-- ================= NAVIGATION ================= -->
-
 <header class="header">
+  <div class="logo">📚 Readathon 2026</div>
 
-    <div class="logo">
-        📚 Readathon 2026
-    </div>
-
-    <nav>
-
-        <a href="#home">🏠 Home</a>
-
-        <a href="#about">📖 About</a>
-
-        <a href="#statistics">📊 Statistics</a>
-
-        <a href="#leaderboard">🏆 Reader Board</a>
-
-        <a href="#gallery">📚 Gallery</a>
-
-        <a href="#contact">📞 Contact</a>
-
-    </nav>
-
+  <nav>
+    <a href="#home">🏠 Home</a>
+    <a href="#about">📖 About</a>
+    <a href="#statistics">📊 Statistics</a>
+    <a href="#leaderboard">🏆 Leaderboard</a>
+    <a href="#gallery">📚 Gallery</a>
+    <a href="#contact">📞 Contact</a>
+  </nav>
 </header>
 
 <!-- ================= HERO ================= -->
-
 <section id="home" class="hero">
+  <img src="banner.jpg" alt="Readathon Banner" class="hero-image">
 
-    <img src="banner.jpg" alt="Readathon Banner" class="hero-image">
+  <div class="hero-content">
+    <h1>📚 READATHON 2026</h1>
+    <h2>Read • Imagine • Grow</h2>
 
-    <div class="hero-content">
+    <p>
+      Welcome to Readathon 2026! Build reading habits, track progress,
+      and compete on the live leaderboard.
+    </p>
 
-        <h1>📚 READATHON 2026</h1>
+    <div class="hero-buttons">
+      <a class="btn" href="https://docs.google.com/forms/d/1Tz1rujP7wIoPds6zyGuQXZ-9auEv4vmzYSK-D31HEjs/viewform">
+        🚀 Join Readathon
+      </a>
 
-        <h2>Read • Imagine • Grow</h2>
-
-        <p>
-            Welcome to Readathon 2026! Read every day, improve your
-            knowledge, build strong reading habits and become a Galaxy Master.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="https://docs.google.com/forms/d/1Tz1rujP7wIoPds6zyGuQXZ-9auEv4vmzYSK-D31HEjs/viewform" class="btn">
-                🚀 Join Readathon
-            </a>
-
-            <a href="https://docs.google.com/forms/d/1Tz1rujP7wIoPds6zyGuQXZ-9auEv4vmzYSK-D31HEjs/viewform" class="btn secondary">
-                📖 Submit Today's Reading
-            </a>
-
-        </div>
-
+      <a class="btn secondary" href="#leaderboard">
+        📊 View Leaderboard
+      </a>
     </div>
-
+  </div>
 </section>
 
 <!-- ================= ABOUT ================= -->
-
 <section id="about" class="about">
-
-<h2>📖 About Readathon 2026</h2>
-
-<p>
-
-Readathon 2026 is an initiative to inspire students to develop a lifelong reading habit.
-
-Students submit their daily reading using a Google Form.
-
-The website automatically displays live statistics, reader rankings and achievements.
-
-This project also supports educational research on how regular reading improves learning,
-vocabulary, confidence and critical thinking.
-
-</p>
-
+  <h2>📖 About Readathon</h2>
+  <p>
+    Readathon 2026 promotes reading habits among students.
+    Data is collected via Google Forms and displayed live on this website.
+  </p>
 </section>
 
 <!-- ================= STATISTICS ================= -->
-
 <section id="statistics" class="stats">
 
-<div class="card">
+  <div class="card">
+    <h3>👦 Total Readers</h3>
+    <h1 id="totalReaders">0</h1>
+  </div>
 
-<h2>👦</h2>
+  <div class="card">
+    <h3>📚 Books</h3>
+    <h1 id="totalBooks">0</h1>
+  </div>
 
-<h3>Total Readers</h3>
+  <div class="card">
+    <h3>📄 Pages</h3>
+    <h1 id="totalPages">0</h1>
+  </div>
 
-<h1 id="totalReaders">0</h1>
-
-</div>
-
-<div class="card">
-
-<h2>📚</h2>
-
-<h3>Books Read</h3>
-
-<h1 id="totalBooks">0</h1>
-
-</div>
-
-<div class="card">
-
-<h2>📄</h2>
-
-<h3>Pages Read</h3>
-
-<h1 id="totalPages">0</h1>
-
-</div>
-
-<div class="card">
-
-<h2>⏱</h2>
-
-<h3>Reading Minutes</h3>
-
-<h1 id="totalMinutes">0</h1>
-
-</div>
+  <div class="card">
+    <h3>⏱ Minutes</h3>
+    <h1 id="totalMinutes">0</h1>
+  </div>
 
 </section>
-<!-- ================= LIVE READER BOARD ================= -->
 
+<!-- ================= LEADERBOARD ================= -->
 <section id="leaderboard" class="leaderboard">
 
-  <h2>🏆 Live Reader Board</h2>
+  <h2>🏆 Live Leaderboard</h2>
 
   <p class="section-subtitle">
-    The rankings update automatically whenever a reader submits the Google Form.
+    Auto-updated from Google Sheets in real time.
   </p>
 
   <table>
-
     <thead>
       <tr>
         <th>Rank</th>
@@ -164,14 +110,67 @@ vocabulary, confidence and critical thinking.
     </thead>
 
     <tbody id="leaderboardBody">
-      <!-- LIVE DATA WILL LOAD HERE -->
+      <!-- LIVE DATA -->
     </tbody>
-
   </table>
 
 </section>
 
-<!-- ================= LIVE SYSTEM SCRIPT ================= -->
+<!-- ================= ACHIEVEMENTS ================= -->
+<section class="achievements">
+  <h2>🌟 Achievements</h2>
+
+  <div class="achievement-grid">
+    <div class="achievement-card">⭐ Star Reader</div>
+    <div class="achievement-card">🚀 Mars Explorer</div>
+    <div class="achievement-card">🌟 Galaxy Master</div>
+    <div class="achievement-card">🌌 Universe Reader</div>
+  </div>
+</section>
+
+<!-- ================= DASHBOARD ================= -->
+<section class="dashboard">
+  <h2>📈 Research Dashboard</h2>
+  <p>Live analytics coming soon.</p>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery">
+  <h2>📸 Gallery</h2>
+
+  <div class="gallery-grid">
+    <img src="images/img1.jpg">
+    <img src="images/img2.jpg">
+    <img src="images/img3.jpg">
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="this.style.display='none'">
+  <img id="lightbox-img">
+</div>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact">
+
+  <h2>📞 Contact</h2>
+
+  <div class="contact-container">
+    <div class="contact-card">📧 readathon2026@gmail.com</div>
+    <div class="contact-card">🌐 Readathon 2026</div>
+    <div class="contact-card">📍 India</div>
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <h3>📚 Readathon 2026</h3>
+  <p>Read • Imagine • Grow</p>
+  <p>© 2026 Readathon</p>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
 
 <script>
 const SHEET_URL = "PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE";
@@ -181,7 +180,6 @@ async function loadLeaderboard() {
     const res = await fetch(SHEET_URL);
     let data = await res.json();
 
-    // 🧠 AUTO SORT (highest pages first)
     data.sort((a, b) => Number(b.pages) - Number(a.pages));
 
     const tbody = document.getElementById("leaderboardBody");
@@ -191,223 +189,28 @@ async function loadLeaderboard() {
 
       const row = document.createElement("tr");
 
-      row.className = "leader-row";
-
-      // 🥇 highlight top 1
-      if (index === 0) {
-        row.classList.add("top1");
-      }
+      if (index === 0) row.classList.add("top1");
 
       row.innerHTML = `
         <td>${index + 1}</td>
         <td>${item.name}</td>
         <td>${item.books}</td>
-        <td class="pages">${item.pages}</td>
+        <td>${item.pages}</td>
         <td>${item.minutes}</td>
-        <td class="badge">${item.badge}</td>
+        <td>${item.badge}</td>
       `;
 
       tbody.appendChild(row);
     });
 
-    // 🎉 Confetti for #1
-    if (data.length > 0) triggerConfetti();
-
-  } catch (error) {
-    console.error("Leaderboard load error:", error);
+  } catch (err) {
+    console.log(err);
   }
 }
 
-// Initial load
 loadLeaderboard();
-
-// 🔄 LIVE REFRESH every 10 seconds
 setInterval(loadLeaderboard, 10000);
 </script>
-
-<!-- ================= ANIMATION SCRIPT ================= -->
-<script>
-function animateNumber(el, end, duration) {
-  let start = 0;
-  let startTime = null;
-
-  function step(timestamp) {
-    if (!startTime) startTime = timestamp;
-
-    let progress = Math.min((timestamp - startTime) / duration, 1);
-    el.innerText = Math.floor(progress * end);
-
-    if (progress < 1) {
-      requestAnimationFrame(step);
-    }
-  }
-
-  requestAnimationFrame(step);
-}
-
-window.onload = function () {
-  document.querySelectorAll(".pages").forEach(cell => {
-    let value = cell.getAttribute("data-value");
-    animateNumber(cell, parseInt(value), 1500);
-  });
-};
-</script>
-
-<!-- ================= READING ACHIEVEMENTS ================= -->
-
-<section class="achievements">
-
-    <h2>🌟 Reading Achievements</h2>
-
-    <div class="achievement-grid">
-
-        <div class="achievement-card">
-
-            <h3>⭐ Star Reader</h3>
-
-            <p>Read 100+ Pages</p>
-
-        </div>
-
-        <div class="achievement-card">
-
-            <h3>🚀 Mars Explorer</h3>
-
-            <p>Read 250+ Pages</p>
-
-        </div>
-
-        <div class="achievement-card">
-
-            <h3>🌟 Galaxy Master</h3>
-
-            <p>Read 500+ Pages</p>
-
-        </div>
-
-        <div class="achievement-card">
-
-            <h3>🌌 Universe Reader</h3>
-
-            <p>Read 1000+ Pages</p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ================= RESEARCH DASHBOARD ================= -->
-
-<section class="dashboard">
-
-    <h2>📈 Research Dashboard</h2>
-
-    <p>
-
-        This section will soon include live charts showing:
-
-    </p>
-
-    <ul>
-
-        <li>📚 Books Read Over Time</li>
-
-        <li>📄 Pages Read Per Week</li>
-
-        <li>⏱ Reading Minutes</li>
-
-        <li>👦 Reader Participation</li>
-
-        <li>🏫 School-wise Statistics</li>
-
-    </ul>
-
-</section>
-
-<section id="gallery">
-  <h2>Gallery</h2>
-
-  <div class="gallery-grid">
-    <img src="images/img1.jpg" alt="img1">
-    <img src="images/img2.jpg" alt="img2">
-    <img src="images/img3.jpg" alt="img3">
-  </div>
-</section>
-
-<!-- Lightbox -->
-<div id="lightbox" onclick="this.style.display='none'">
-  <img id="lightbox-img">
-</div>
-<!-- ================= CONTACT ================= -->
-
-<section id="contact" class="contact">
-
-    <h2>📞 Contact Us</h2>
-
-    <div class="contact-container">
-
-        <div class="contact-card">
-
-            <h3>📧 Email</h3>
-
-            <p>readathon2026@gmail.com</p>
-
-        </div>
-
-        <div class="contact-card">
-
-            <h3>🌐 Website</h3>
-
-            <p>Readathon 2026</p>
-
-        </div>
-
-        <div class="contact-card">
-
-            <h3>📍 Location</h3>
-
-            <p>India</p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <h3>📚 Readathon 2026</h3>
-
-    <p>
-        Read • Imagine • Grow
-    </p>
-
-    <p>
-
-        Built with ❤️ for young readers.
-
-    </p>
-
-    <p>
-
-        © 2026 Readathon. All Rights Reserved.
-
-    </p>
-
-</footer>
-
-<!-- ================= BACK TO TOP ================= -->
-
-<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-
-⬆
-
-</button>
-
-<script src="script.js"></script>
 
 </body>
 </html>
