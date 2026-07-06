@@ -1,211 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Readathon 2026 - Version 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readathon 2026</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0b1220;
-    color: white;
-}
+    <link rel="stylesheet" href="style.css">
 
-/* HEADER */
-header {
-    background: #111a2e;
-    padding: 20px;
-    text-align: center;
-}
-
-/* SECTIONS */
-section {
-    padding: 40px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-/* BADGES */
-.badge {
-    display: inline-block;
-    padding: 10px 15px;
-    margin: 10px;
-    border-radius: 10px;
-    background: #1f2a44;
-}
-
-/* TABLE */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th, td {
-    padding: 12px;
-    border: 1px solid rgba(255,255,255,0.2);
-    text-align: center;
-}
-
-th {
-    background: #1f2a44;
-}
-
-/* GALLERY */
-.gallery-box {
-    display: inline-block;
-    width: 22%;
-    margin: 10px;
-    padding: 20px;
-    background: #1a2438;
-    border-radius: 10px;
-}
-
-/* CONTACT */
-.contact {
-    line-height: 2;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #111a2e;
-}
-</style>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header>
-    <h1>📚 Readathon 2026 - Version 2</h1>
-    <p>Read • Imagine • Grow</p>
+<!-- ================= NAVIGATION ================= -->
+
+<header class="header">
+
+    <div class="logo">
+        📚 Readathon 2026
+    </div>
+
+    <nav>
+
+        <a href="#home">🏠 Home</a>
+
+        <a href="#about">📖 About</a>
+
+        <a href="#statistics">📊 Statistics</a>
+
+        <a href="#leaderboard">🏆 Reader Board</a>
+
+        <a href="#gallery">📚 Gallery</a>
+
+        <a href="#contact">📞 Contact</a>
+
+    </nav>
+
 </header>
 
-<!-- BADGES -->
-<section id="badges">
-<h2>🏅 Achievement Badges</h2>
+<!-- ================= HERO ================= -->
 
-<div class="badge">⭐ Star Reader (100+ Pages)</div>
-<div class="badge">🚀 Mars Explorer (250+ Pages)</div>
-<div class="badge">🌟 Galaxy Master (500+ Pages)</div>
-<div class="badge">🌌 Universe Reader (1000+ Pages)</div>
+<section id="home" class="hero">
 
-</section>
+    <img src="banner.jpg" alt="Readathon Banner" class="hero-image">
 
-<!-- LEADERBOARD -->
-<section id="leaderboard">
-<h2>🏆 Reader Board</h2>
+    <div class="hero-content">
 
-<table id="leaderTable">
-<tr>
-    <th>Rank</th>
-    <th>Name</th>
-    <th>Pages</th>
-    <th>Minutes</th>
-    <th>Books</th>
-    <th>Score</th>
-    <th>Badge</th>
-</tr>
+        <h1>📚 READATHON 2026</h1>
 
-<tr>
-    <td>1</td>
-    <td>Aanya</td>
-    <td>1200</td>
-    <td>600</td>
-    <td>5</td>
-    <td></td>
-    <td></td>
-</tr>
+        <h2>Read • Imagine • Grow</h2>
 
-<tr>
-    <td>2</td>
-    <td>Rohan</td>
-    <td>980</td>
-    <td>500</td>
-    <td>4</td>
-    <td></td>
-    <td></td>
-</tr>
+        <p>
+            Welcome to Readathon 2026! Read every day, improve your
+            knowledge, build strong reading habits and become a Galaxy Master.
+        </p>
 
-<tr>
-    <td>3</td>
-    <td>Meera</td>
-    <td>650</td>
-    <td>300</td>
-    <td>3</td>
-    <td></td>
-    <td></td>
-</tr>
+        <div class="hero-buttons">
 
-</table>
-</section>
+            <a href="https://docs.google.com/forms/d/1Tz1rujP7wIoPds6zyGuQXZ-9auEv4vmzYSK-D31HEjs/viewform" class="btn">
+                🚀 Join Readathon
+            </a>
 
-<!-- DASHBOARD -->
-<section id="dashboard">
-<h2>📈 Research Dashboard</h2>
-<p>📚 Books Read Over Time</p>
-<p>📄 Pages Per Week</p>
-<p>⏱ Reading Minutes</p>
-<p>👦 Reader Participation</p>
-<p>🏫 School-wise Statistics</p>
-</section>
+            <a href="https://docs.google.com/forms/d/1Tz1rujP7wIoPds6zyGuQXZ-9auEv4vmzYSK-D31HEjs/viewform" class="btn secondary">
+                📖 Submit Today's Reading
+            </a>
 
-<!-- GALLERY -->
-<section id="gallery">
-<h2>📚 Gallery</h2>
+        </div>
 
-<div class="gallery-box">📖 Reading Together</div>
-<div class="gallery-box">🏆 Top Readers</div>
-<div class="gallery-box">📚 Book Collection</div>
-<div class="gallery-box">🌍 Reading Community</div>
+    </div>
 
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-<h2>📞 Contact Us</h2>
+<!-- ================= ABOUT ================= -->
 
-<div class="contact">
-📧 readathon2026@gmail.com <br>
-🌐 Readathon 2026 <br>
-📍 India
+<section id="about" class="about">
+
+<h2>📖 About Readathon 2026</h2>
+
+<p>
+
+Readathon 2026 is an initiative to inspire students to develop a lifelong reading habit.
+
+Students submit their daily reading using a Google Form.
+
+The website automatically displays live statistics, reader rankings and achievements.
+
+This project also supports educational research on how regular reading improves learning,
+vocabulary, confidence and critical thinking.
+
+</p>
+
+</section>
+
+<!-- ================= STATISTICS ================= -->
+
+<section id="statistics" class="stats">
+
+<div class="card">
+
+<h2>👦</h2>
+
+<h3>Total Readers</h3>
+
+<h1 id="totalReaders">0</h1>
+
 </div>
+
+<div class="card">
+
+<h2>📚</h2>
+
+<h3>Books Read</h3>
+
+<h1 id="totalBooks">0</h1>
+
+</div>
+
+<div class="card">
+
+<h2>📄</h2>
+
+<h3>Pages Read</h3>
+
+<h1 id="totalPages">0</h1>
+
+</div>
+
+<div class="card">
+
+<h2>⏱</h2>
+
+<h3>Reading Minutes</h3>
+
+<h1 id="totalMinutes">0</h1>
+
+</div>
+
 </section>
+<!-- ================= LIVE READER BOARD ================= -->
+
+<section id="leaderboard" class="leaderboard">
+
+    <h2>🏆 Live Reader Board</h2>
+
+    <p class="section-subtitle">
+        The rankings update automatically whenever a reader submits the Google Form.
+    </p>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Rank</th>
+
+                <th>Reader</th>
+
+                <th>Books</th>
+
+                <th>Pages</th>
+
+                <th>Minutes</th>
+
+                <th>Badge</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="leaderboardBody">
+
+        </tbody>
+
+    </table>
+
+</section>
+
+<!-- ================= READING ACHIEVEMENTS ================= -->
+
+<section class="achievements">
+
+    <h2>🌟 Reading Achievements</h2>
+
+    <div class="achievement-grid">
+
+        <div class="achievement-card">
+
+            <h3>⭐ Star Reader</h3>
+
+            <p>Read 100+ Pages</p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <h3>🚀 Mars Explorer</h3>
+
+            <p>Read 250+ Pages</p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <h3>🌟 Galaxy Master</h3>
+
+            <p>Read 500+ Pages</p>
+
+        </div>
+
+        <div class="achievement-card">
+
+            <h3>🌌 Universe Reader</h3>
+
+            <p>Read 1000+ Pages</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= RESEARCH DASHBOARD ================= -->
+
+<section class="dashboard">
+
+    <h2>📈 Research Dashboard</h2>
+
+    <p>
+
+        This section will soon include live charts showing:
+
+    </p>
+
+    <ul>
+
+        <li>📚 Books Read Over Time</li>
+
+        <li>📄 Pages Read Per Week</li>
+
+        <li>⏱ Reading Minutes</li>
+
+        <li>👦 Reader Participation</li>
+
+        <li>🏫 School-wise Statistics</li>
+
+    </ul>
+
+</section>
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery" class="gallery">
+
+    <h2>📚 Gallery</h2>
+
+    <div class="gallery-grid">
+
+        <div class="gallery-card">
+
+            <div class="gallery-icon">📖</div>
+
+            <h3>Reading Together</h3>
+
+            <p>Students enjoying reading sessions.</p>
+
+        </div>
+
+        <div class="gallery-card">
+
+            <div class="gallery-icon">🏆</div>
+
+            <h3>Top Readers</h3>
+
+            <p>Celebrating outstanding readers.</p>
+
+        </div>
+
+        <div class="gallery-card">
+
+            <div class="gallery-icon">📚</div>
+
+            <h3>Book Collection</h3>
+
+            <p>Discover amazing books and authors.</p>
+
+        </div>
+
+        <div class="gallery-card">
+
+            <div class="gallery-icon">🌍</div>
+
+            <h3>Reading Community</h3>
+
+            <p>Building a nationwide reading movement.</p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="contact">
+
+    <h2>📞 Contact Us</h2>
+
+    <div class="contact-container">
+
+        <div class="contact-card">
+
+            <h3>📧 Email</h3>
+
+            <p>readathon2026@gmail.com</p>
+
+        </div>
+
+        <div class="contact-card">
+
+            <h3>🌐 Website</h3>
+
+            <p>Readathon 2026</p>
+
+        </div>
+
+        <div class="contact-card">
+
+            <h3>📍 Location</h3>
+
+            <p>India</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
-📚 Readathon 2026 | Built with ❤️ for young readers
+
+    <h3>📚 Readathon 2026</h3>
+
+    <p>
+        Read • Imagine • Grow
+    </p>
+
+    <p>
+
+        Built with ❤️ for young readers.
+
+    </p>
+
+    <p>
+
+        © 2026 Readathon. All Rights Reserved.
+
+    </p>
+
 </footer>
 
-<script>
-// SCORE + BADGE SYSTEM
-function getBadge(pages) {
-    if (pages >= 1000) return "🌌 Universe Reader";
-    if (pages >= 500) return "🌟 Galaxy Master";
-    if (pages >= 250) return "🚀 Mars Explorer";
-    if (pages >= 100) return "⭐ Star Reader";
-    return "📖 Beginner";
-}
+<!-- ================= BACK TO TOP ================= -->
 
-function calculateScore(pages, minutes, books) {
-    return pages + (minutes * 0.5) + (books * 50);
-}
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
 
-let table = document.getElementById("leaderTable");
+⬆
 
-for (let i = 1; i < table.rows.length; i++) {
-    let row = table.rows[i];
+</button>
 
-    let pages = Number(row.cells[2].innerText);
-    let minutes = Number(row.cells[3].innerText);
-    let books = Number(row.cells[4].innerText);
-
-    let score = calculateScore(pages, minutes, books);
-    let badge = getBadge(pages);
-
-    row.cells[5].innerText = score;
-    row.cells[6].innerText = badge;
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
