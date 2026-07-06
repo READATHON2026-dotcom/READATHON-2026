@@ -164,39 +164,66 @@ vocabulary, confidence and critical thinking.
     </thead>
 
     <tbody id="leaderboardBody">
-
-      <tr class="leader-row">
-        <td>1</td>
-        <td>Alex</td>
-        <td>12</td>
-        <td class="pages" data-value="1200">0</td>
-        <td>300</td>
-        <td>🔥 Gold</td>
-      </tr>
-
-      <tr class="leader-row">
-        <td>2</td>
-        <td>Sam</td>
-        <td>10</td>
-        <td class="pages" data-value="1100">0</td>
-        <td>250</td>
-        <td>🥈 Silver</td>
-      </tr>
-
-      <tr class="leader-row">
-        <td>3</td>
-        <td>John</td>
-        <td>8</td>
-        <td class="pages" data-value="1000">0</td>
-        <td>200</td>
-        <td>🥉 Bronze</td>
-      </tr>
-
+      <!-- LIVE DATA WILL LOAD HERE -->
     </tbody>
 
   </table>
 
 </section>
+
+<!-- ================= LIVE SYSTEM SCRIPT ================= -->
+
+<script>
+const SHEET_URL = "PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE";
+
+async function loadLeaderboard() {
+  try {
+    const res = await fetch(SHEET_URL);
+    let data = await res.json();
+
+    // 🧠 AUTO SORT (highest pages first)
+    data.sort((a, b) => Number(b.pages) - Number(a.pages));
+
+    const tbody = document.getElementById("leaderboardBody");
+    tbody.innerHTML = "";
+
+    data.forEach((item, index) => {
+
+      const row = document.createElement("tr");
+
+      row.className = "leader-row";
+
+      // 🥇 highlight top 1
+      if (index === 0) {
+        row.classList.add("top1");
+      }
+
+      row.innerHTML = `
+        <td>${index + 1}</td>
+        <td>${item.name}</td>
+        <td>${item.books}</td>
+        <td class="pages">${item.pages}</td>
+        <td>${item.minutes}</td>
+        <td class="badge">${item.badge}</td>
+      `;
+
+      tbody.appendChild(row);
+    });
+
+    // 🎉 Confetti for #1
+    if (data.length > 0) triggerConfetti();
+
+  } catch (error) {
+    console.error("Leaderboard load error:", error);
+  }
+}
+
+// Initial load
+loadLeaderboard();
+
+// 🔄 LIVE REFRESH every 10 seconds
+setInterval(loadLeaderboard, 10000);
+</script>
 
 <!-- ================= ANIMATION SCRIPT ================= -->
 <script>
