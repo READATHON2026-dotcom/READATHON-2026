@@ -348,3 +348,40 @@ body {
   background: #0b1220;
   color: #e5e7eb;
 }
+/* Smooth page animation */
+body {
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* Section reveal animation */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.8s ease forwards;
+}
+
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.3s; }
+section:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover animation for cards */
+.card, .leaderboard-item {
+  transition: all 0.3s ease;
+}
+
+.card:hover, .leaderboard-item:hover {
+  transform: translateY(-8px) scale(1.02);
+}
