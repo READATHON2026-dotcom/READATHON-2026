@@ -3,36 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>READATHON 2026 - Version 2 Premium</title>
+<title>READATHON 2026 - V2 Premium</title>
 
 <style>
-/* ===== GLOBAL ===== */
 body{
     margin:0;
     font-family:Arial, sans-serif;
     background:linear-gradient(135deg,#0f172a,#1e293b);
     color:white;
     scroll-behavior:smooth;
-    animation:fadeIn 1s ease-in;
 }
 
-/* ===== PAGE LOAD ANIMATION ===== */
-@keyframes fadeIn{
-    from{opacity:0}
-    to{opacity:1}
-}
-
-/* ===== HEADER ===== */
+/* HEADER */
 header{
     position:sticky;
     top:0;
     background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(12px);
-    padding:15px 20px;
+    backdrop-filter:blur(10px);
+    padding:15px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    border-bottom:1px solid rgba(255,255,255,0.1);
     z-index:10;
 }
 
@@ -40,28 +31,34 @@ nav a{
     color:white;
     margin:0 10px;
     text-decoration:none;
-    font-weight:bold;
-    transition:0.3s;
 }
 
-nav a:hover{
-    color:#38bdf8;
-    transform:scale(1.1);
+/* HERO */
+.hero{
+    text-align:center;
+    padding:90px 20px;
+    animation:fadeDown 1s ease;
 }
 
-/* ===== SECTIONS ===== */
+.hero h1{
+    font-size:40px;
+}
+
+@keyframes fadeDown{
+    from{opacity:0; transform:translateY(-30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* SECTIONS */
 section{
     padding:60px 20px;
     max-width:1000px;
     margin:auto;
-
-    /* scroll animation base */
     opacity:0;
     transform:translateY(40px);
-    transition:all 0.8s ease;
+    transition:0.6s ease;
 }
 
-/* when visible */
 section.show{
     opacity:1;
     transform:translateY(0);
@@ -69,31 +66,11 @@ section.show{
 
 h2{
     text-align:center;
-    margin-bottom:20px;
     color:#38bdf8;
+    margin-bottom:20px;
 }
 
-/* ===== HERO ===== */
-.hero{
-    text-align:center;
-    padding:100px 20px;
-    animation:float 4s ease-in-out infinite;
-}
-
-.hero h1{
-    font-size:40px;
-}
-
-.hero p{
-    opacity:0.8;
-}
-
-@keyframes float{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-10px)}
-}
-
-/* ===== STATS ===== */
+/* STATS */
 .stats{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -105,35 +82,15 @@ h2{
     padding:20px;
     border-radius:15px;
     text-align:center;
-    backdrop-filter:blur(10px);
-    transition:0.4s;
+    transition:0.3s;
 }
 
 .card:hover{
-    transform:translateY(-10px) scale(1.03);
-    background:rgba(56,189,248,0.15);
-    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+    transform:scale(1.05);
+    background:rgba(56,189,248,0.2);
 }
 
-/* ===== LEADERBOARD ===== */
-table{
-    width:100%;
-    border-collapse:collapse;
-    overflow:hidden;
-    border-radius:10px;
-}
-
-th,td{
-    padding:12px;
-    border-bottom:1px solid rgba(255,255,255,0.1);
-    text-align:center;
-}
-
-tr:hover{
-    background:rgba(255,255,255,0.05);
-}
-
-/* ===== BADGES ===== */
+/* BADGES */
 .badges{
     display:flex;
     flex-wrap:wrap;
@@ -143,31 +100,37 @@ tr:hover{
 
 .badge{
     padding:10px 15px;
-    background:rgba(56,189,248,0.2);
-    border:1px solid #38bdf8;
     border-radius:20px;
+    border:1px solid #38bdf8;
+    background:rgba(56,189,248,0.15);
     transition:0.3s;
 }
 
 .badge:hover{
     transform:scale(1.1);
-    box-shadow:0 0 15px rgba(56,189,248,0.5);
 }
 
-/* ===== CHALLENGE ===== */
+/* CHALLENGE */
 .challenge{
     text-align:center;
-    padding:30px;
+    padding:25px;
     background:rgba(255,255,255,0.08);
     border-radius:15px;
-    transition:0.3s;
 }
 
-.challenge:hover{
-    transform:scale(1.02);
+/* TABLE */
+table{
+    width:100%;
+    border-collapse:collapse;
 }
 
-/* ===== FOOTER ===== */
+th,td{
+    padding:10px;
+    text-align:center;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+/* FOOTER */
 footer{
     text-align:center;
     padding:20px;
@@ -179,76 +142,67 @@ footer{
 <body>
 
 <header>
-    <h3>📚 READATHON 2026</h3>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#stats">Stats</a>
-        <a href="#leaderboard">Leaderboard</a>
-        <a href="#badges">Badges</a>
-        <a href="#challenge">Challenge</a>
-        <a href="#quote">Quote</a>
-    </nav>
+<h3>📚 READATHON 2026</h3>
+<nav>
+<a href="#home">Home</a>
+<a href="#stats">Stats</a>
+<a href="#leaderboard">Leaderboard</a>
+<a href="#badges">Badges</a>
+<a href="#challenge">Challenge</a>
+</nav>
 </header>
 
 <section class="hero" id="home">
-    <h1>Welcome to READATHON 2026 🚀</h1>
-    <p>Track reading, compete, and grow your knowledge every day</p>
+<h1>READATHON 2026 🚀</h1>
+<p>Read. Learn. Grow.</p>
 </section>
 
 <section id="stats">
-    <h2>📊 Reading Stats</h2>
-    <div class="stats">
-        <div class="card">📚 Books Read<br><b>120+</b></div>
-        <div class="card">📄 Pages Read<br><b>45,000+</b></div>
-        <div class="card">👥 Readers<br><b>300+</b></div>
-        <div class="card">🔥 Streak<br><b>12 Days</b></div>
-    </div>
+<h2>📊 Stats</h2>
+<div class="stats">
+<div class="card">📚 Books<br><b>120+</b></div>
+<div class="card">📄 Pages<br><b>45,000+</b></div>
+<div class="card">👥 Readers<br><b>300+</b></div>
+<div class="card">🔥 Streak<br><b>12 Days</b></div>
+</div>
 </section>
 
 <section id="leaderboard">
-    <h2>🏆 Live Leaderboard</h2>
-    <table>
-        <tr><th>Rank</th><th>Name</th><th>Books</th><th>Status</th></tr>
-        <tr><td>1</td><td>Reader A</td><td>25</td><td>🔥</td></tr>
-        <tr><td>2</td><td>Reader B</td><td>22</td><td>⚡</td></tr>
-        <tr><td>3</td><td>Reader C</td><td>20</td><td>📈</td></tr>
-    </table>
+<h2>🏆 Leaderboard</h2>
+<table>
+<tr><th>Rank</th><th>Name</th><th>Books</th></tr>
+<tr><td>1</td><td>A</td><td>25</td></tr>
+<tr><td>2</td><td>B</td><td>22</td></tr>
+<tr><td>3</td><td>C</td><td>20</td></tr>
+</table>
 </section>
 
 <section id="badges">
-    <h2>🏆 Achievements</h2>
-    <div class="badges">
-        <div class="badge">📘 First Book</div>
-        <div class="badge">⭐ 5 Books Club</div>
-        <div class="badge">🔥 1000 Pages</div>
-        <div class="badge">🧠 Consistent Reader</div>
-        <div class="badge">🚀 Speed Reader</div>
-    </div>
+<h2>🏆 Badges</h2>
+<div class="badges">
+<div class="badge">📘 First Book</div>
+<div class="badge">⭐ 5 Books</div>
+<div class="badge">🔥 1000 Pages</div>
+<div class="badge">🧠 Consistent</div>
+</div>
 </section>
 
 <section id="challenge">
-    <h2>🎯 Monthly Challenge</h2>
-    <div class="challenge">
-        Read 3 books this month to unlock <b>Speed Reader Badge 🚀</b>
-    </div>
-</section>
-
-<section id="quote">
-    <h2>💡 Quote of the Day</h2>
-    <blockquote>
-        “A reader lives a thousand lives before he dies.”
-    </blockquote>
+<h2>🎯 Challenge</h2>
+<div class="challenge">
+Read 3 books this month to unlock <b>Speed Reader 🚀</b>
+</div>
 </section>
 
 <footer>
-    © 2026 READATHON | Built for Readers 📚
+© 2026 READATHON
 </footer>
 
-<!-- ===== SCROLL ANIMATION SCRIPT ===== -->
 <script>
-const sections = document.querySelectorAll("section");
+// scroll animation
+const sections=document.querySelectorAll("section");
 
-const observer = new IntersectionObserver(entries=>{
+const observer=new IntersectionObserver(entries=>{
     entries.forEach(entry=>{
         if(entry.isIntersecting){
             entry.target.classList.add("show");
@@ -256,9 +210,7 @@ const observer = new IntersectionObserver(entries=>{
     });
 },{threshold:0.15});
 
-sections.forEach(sec=>{
-    observer.observe(sec);
-});
+sections.forEach(s=>observer.observe(s));
 </script>
 
 </body>
