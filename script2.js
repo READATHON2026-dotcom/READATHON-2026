@@ -701,3 +701,44 @@ document.addEventListener(
     init
 
 );
+const data = [
+  { name: "C", books: 1, pages: 505, minutes: 60 },
+  { name: "PALAKSH YADU", books: 1, pages: 50, minutes: 20 },
+  { name: "A", books: 1, pages: 50, minutes: 40 },
+  { name: "B", books: 1, pages: 50, minutes: 60 },
+  { name: "Abhishek", books: 1, pages: 50, minutes: 60 },
+  { name: "PREETI", books: 1, pages: 30, minutes: 40 },
+  { name: "Pallav", books: 1, pages: 30, minutes: 60 }
+];
+
+// sort by pages (you can change logic)
+data.sort((a, b) => b.pages - a.pages);
+
+const tbody = document.getElementById("leaderboardBody");
+
+data.forEach((user, index) => {
+
+  let rankEmoji = "🏅";
+  let rankClass = "";
+
+  if (index === 0) rankClass = "gold";
+  else if (index === 1) rankClass = "silver";
+  else if (index === 2) rankClass = "bronze";
+
+  if (index === 0) rankEmoji = "🥇";
+  else if (index === 1) rankEmoji = "🥈";
+  else if (index === 2) rankEmoji = "🥉";
+
+  const row = `
+    <tr>
+      <td class="rank ${rankClass}">${rankEmoji} ${index + 1}</td>
+      <td>${user.name}</td>
+      <td>${user.books}</td>
+      <td>${user.pages}</td>
+      <td>${user.minutes}</td>
+      <td><span class="badge">Reader</span></td>
+    </tr>
+  `;
+
+  tbody.innerHTML += row;
+});
