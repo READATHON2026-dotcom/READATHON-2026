@@ -280,3 +280,70 @@ tr:hover{
     70%{box-shadow:0 0 0 10px rgba(56,189,248,0);}
     100%{box-shadow:0 0 0 0 rgba(56,189,248,0);}
 }
+/* ================= PREMIUM UPGRADE LAYER ================= */
+
+/* smooth background upgrade */
+body{
+    scroll-behavior:smooth;
+}
+
+/* section reveal base */
+section{
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s ease;
+}
+
+/* visible state */
+section.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* premium hover cards (works on ALL your existing cards) */
+.card, .achievement-card, .gallery-card, .contact-card{
+    transition:0.4s ease;
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+}
+
+.card:hover,
+.achievement-card:hover,
+.gallery-card:hover,
+.contact-card:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    border-color:#38bdf8;
+}
+
+/* glowing title effect */
+h2{
+    position:relative;
+}
+
+h2::after{
+    content:'';
+    width:60px;
+    height:3px;
+    background:#38bdf8;
+    display:block;
+    margin:10px auto;
+    border-radius:5px;
+}
+
+/* gallery images enhancement */
+.gallery img{
+    transition:0.4s ease;
+}
+
+.gallery img:hover{
+    transform:scale(1.08);
+    filter:brightness(1.2);
+}
+
+/* leaderboard hover glow */
+table tr:hover{
+    background:rgba(56,189,248,0.08);
+    transform:scale(1.01);
+    transition:0.3s;
+}
