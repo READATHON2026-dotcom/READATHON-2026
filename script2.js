@@ -747,14 +747,14 @@ function generateCertificate() {
   let name = document.getElementById("studentName").value;
   let level = document.getElementById("achievementLevel").value;
 
-  document.getElementById("cName").innerText = name;
-  document.getElementById("cLevel").innerText = level;
+  document.getElementById("previewName").innerText = name;
+  document.getElementById("previewLevel").innerText = level;
 
-  document.getElementById("certificate").style.display = "block";
+  document.getElementById("certificatePreview").style.display = "block";
 }
 
 function downloadCertificate() {
-  const cert = document.getElementById("certificate");
+  const cert = document.getElementById("certificatePreview");
 
   html2canvas(cert).then(canvas => {
     let link = document.createElement("a");
