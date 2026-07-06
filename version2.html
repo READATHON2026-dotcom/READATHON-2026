@@ -2,399 +2,209 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Readathon 2026 - SaaS Plus</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Readathon 2026 - Version 2</title>
 
 <style>
-
-/* ================= GLOBAL ================= */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b1220;
+    color: white;
 }
 
-body{
-    background: radial-gradient(circle at top,#0f172a,#0b1224,#050816);
-    color:white;
-    display:flex;
-    overflow-x:hidden;
+/* HEADER */
+header {
+    background: #111a2e;
+    padding: 20px;
+    text-align: center;
 }
 
-/* ================= SIDEBAR ================= */
-.sidebar{
-    width:250px;
-    height:100vh;
-    position:fixed;
-    left:0;
-    top:0;
-    padding:20px;
-    background:rgba(255,255,255,0.06);
-    backdrop-filter:blur(20px);
-    border-right:1px solid rgba(255,255,255,0.1);
+/* SECTIONS */
+section {
+    padding: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.sidebar h2{
-    color:#38bdf8;
-    margin-bottom:20px;
+/* BADGES */
+.badge {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 10px;
+    border-radius: 10px;
+    background: #1f2a44;
 }
 
-.sidebar a{
-    display:block;
-    color:white;
-    text-decoration:none;
-    margin:15px 0;
-    opacity:0.7;
-    transition:0.3s;
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-.sidebar a:hover{
-    color:#38bdf8;
-    opacity:1;
-    transform:translateX(6px);
+th, td {
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
 }
 
-/* ================= MAIN ================= */
-.main{
-    margin-left:250px;
-    padding:25px;
-    width:100%;
+th {
+    background: #1f2a44;
 }
 
-/* ================= HEADER ================= */
-.top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:20px;
+/* GALLERY */
+.gallery-box {
+    display: inline-block;
+    width: 22%;
+    margin: 10px;
+    padding: 20px;
+    background: #1a2438;
+    border-radius: 10px;
 }
 
-.top h1{
-    font-size:26px;
-    background:linear-gradient(90deg,#38bdf8,#a78bfa,#22c55e);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+/* CONTACT */
+.contact {
+    line-height: 2;
 }
 
-/* ================= HERO BANNER ================= */
-.hero{
-    background:url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') center/cover;
-    height:220px;
-    border-radius:18px;
-    display:flex;
-    align-items:center;
-    padding:20px;
-    margin-bottom:20px;
-    position:relative;
-    overflow:hidden;
-    animation:float 6s ease-in-out infinite;
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111a2e;
 }
-
-.hero::after{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.55);
-}
-
-.hero h2{
-    position:relative;
-    z-index:2;
-    font-size:28px;
-}
-
-/* ================= GRID ================= */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:15px;
-}
-
-.card{
-    background:rgba(255,255,255,0.06);
-    border:1px solid rgba(255,255,255,0.08);
-    padding:20px;
-    border-radius:15px;
-    transition:0.4s;
-    backdrop-filter:blur(10px);
-    position:relative;
-    overflow:hidden;
-}
-
-.card:hover{
-    transform:translateY(-10px) scale(1.03);
-    border-color:#38bdf8;
-    box-shadow:0 15px 40px rgba(56,189,248,0.2);
-}
-
-/* glow effect */
-.card::before{
-    content:'';
-    position:absolute;
-    width:120px;
-    height:120px;
-    background:#38bdf8;
-    filter:blur(80px);
-    opacity:0.15;
-    top:-40px;
-    right:-40px;
-}
-
-/* ================= NUMBERS ================= */
-.num{
-    font-size:28px;
-    color:#38bdf8;
-    font-weight:600;
-}
-
-/* ================= IMAGE SECTION ================= */
-.image-row{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
-    margin-top:20px;
-}
-
-.img-card{
-    border-radius:15px;
-    overflow:hidden;
-    position:relative;
-    transition:0.4s;
-}
-
-.img-card img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-    transition:0.4s;
-}
-
-.img-card:hover img{
-    transform:scale(1.1);
-    filter:brightness(1.2);
-}
-
-.img-card::after{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:linear-gradient(to top,rgba(0,0,0,0.6),transparent);
-}
-
-/* ================= TABLE ================= */
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:rgba(255,255,255,0.04);
-    border-radius:10px;
-    overflow:hidden;
-}
-
-th,td{
-    padding:12px;
-    text-align:center;
-    border-bottom:1px solid rgba(255,255,255,0.08);
-}
-
-tr:hover{
-    background:rgba(255,255,255,0.05);
-}
-
-/* ================= FLOAT ANIMATION ================= */
-@keyframes float{
-    0%{transform:translateY(0px);}
-    50%{transform:translateY(-10px);}
-    100%{transform:translateY(0px);}
-}
-
-/* ================= FADE ================= */
-.fade{
-    opacity:0;
-    transform:translateY(30px);
-    transition:0.8s ease;
-}
-
-.fade.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- ================= SIDEBAR ================= -->
-<div class="sidebar">
-<h2>📚 Readathon</h2>
-<a href="#dash">📊 Dashboard</a>
-<a href="#stats">📈 Stats</a>
-<a href="#gallery">🖼 Gallery</a>
-<a href="#leader">🏆 Leaderboard</a>
-</div>
+<header>
+    <h1>📚 Readathon 2026 - Version 2</h1>
+    <p>Read • Imagine • Grow</p>
+</header>
 
-<!-- ================= MAIN ================= -->
-<div class="main">
+<!-- BADGES -->
+<section id="badges">
+<h2>🏅 Achievement Badges</h2>
 
-<div class="top fade">
-<h1>Readathon SaaS Dashboard</h1>
-<div>👤 Student Panel</div>
-</div>
+<div class="badge">⭐ Star Reader (100+ Pages)</div>
+<div class="badge">🚀 Mars Explorer (250+ Pages)</div>
+<div class="badge">🌟 Galaxy Master (500+ Pages)</div>
+<div class="badge">🌌 Universe Reader (1000+ Pages)</div>
 
-<!-- HERO IMAGE -->
-<div class="hero fade">
-<h2>📚 Read • Learn • Grow 🚀</h2>
-</div>
-
-<!-- DASHBOARD -->
-<div class="grid fade" id="dash">
-
-<div class="card">
-📚 Books
-<div class="num" data-target="120">0</div>
-</div>
-
-<div class="card">
-👦 Readers
-<div class="num" data-target="300">0</div>
-</div>
-
-<div class="card">
-📄 Pages
-<div class="num" data-target="45000">0</div>
-</div>
-
-<div class="card">
-⏱ Minutes
-<div class="num" data-target="12000">0</div>
-</div>
-
-</div>
-
-<!-- IMAGE GALLERY -->
-<div class="image-row fade" id="gallery">
-
-<div class="img-card">
-<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794">
-</div>
-
-<div class="img-card">
-<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
-</div>
-
-<div class="img-card">
-<img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66">
-</div>
-
-<div class="img-card">
-<img src="https://images.unsplash.com/photo-1455885666463-0ffe7d3c7b8d">
-</div>
-
-</div>
+</section>
 
 <!-- LEADERBOARD -->
-<div class="fade" id="leader">
-<h2 style="margin:20px 0;color:#38bdf8;">🏆 Leaderboard</h2>
+<section id="leaderboard">
+<h2>🏆 Reader Board</h2>
 
-<section id="leaderboard" class="leaderboard fade">
-<h2>🏆 Live Leaderboard</h2>
-
-<div class="table-wrap">
-
-<table>
-<thead>
+<table id="leaderTable">
 <tr>
-<th>Rank</th>
-<th>Reader</th>
-<th>Books</th>
-<th>Pages</th>
-<th>Status</th>
-</tr>
-</thead>
-
-<tbody>
-<tr class="gold">
-<td>🥇 1</td>
-<td>Aarav</td>
-<td>25</td>
-<td>5200</td>
-<td><span class="badge">🔥 Champion</span></td>
-</tr>
-
-<tr class="silver">
-<td>🥈 2</td>
-<td>Riya</td>
-<td>22</td>
-<td>4800</td>
-<td><span class="badge">⚡ Rising</span></td>
-</tr>
-
-<tr class="bronze">
-<td>🥉 3</td>
-<td>Dev</td>
-<td>20</td>
-<td>4300</td>
-<td><span class="badge">📚 Strong</span></td>
+    <th>Rank</th>
+    <th>Name</th>
+    <th>Pages</th>
+    <th>Minutes</th>
+    <th>Books</th>
+    <th>Score</th>
+    <th>Badge</th>
 </tr>
 
 <tr>
-<td>4</td>
-<td>Meera</td>
-<td>18</td>
-<td>3900</td>
-<td><span class="badge">📖 Reader</span></td>
+    <td>1</td>
+    <td>Aanya</td>
+    <td>1200</td>
+    <td>600</td>
+    <td>5</td>
+    <td></td>
+    <td></td>
 </tr>
 
-</tbody>
+<tr>
+    <td>2</td>
+    <td>Rohan</td>
+    <td>980</td>
+    <td>500</td>
+    <td>4</td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <td>3</td>
+    <td>Meera</td>
+    <td>650</td>
+    <td>300</td>
+    <td>3</td>
+    <td></td>
+    <td></td>
+</tr>
+
 </table>
+</section>
 
+<!-- DASHBOARD -->
+<section id="dashboard">
+<h2>📈 Research Dashboard</h2>
+<p>📚 Books Read Over Time</p>
+<p>📄 Pages Per Week</p>
+<p>⏱ Reading Minutes</p>
+<p>👦 Reader Participation</p>
+<p>🏫 School-wise Statistics</p>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+<h2>📚 Gallery</h2>
+
+<div class="gallery-box">📖 Reading Together</div>
+<div class="gallery-box">🏆 Top Readers</div>
+<div class="gallery-box">📚 Book Collection</div>
+<div class="gallery-box">🌍 Reading Community</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>📞 Contact Us</h2>
+
+<div class="contact">
+📧 readathon2026@gmail.com <br>
+🌐 Readathon 2026 <br>
+📍 India
 </div>
 </section>
 
-</div>
-
-</div>
+<footer>
+📚 Readathon 2026 | Built with ❤️ for young readers
+</footer>
 
 <script>
-
-/* ================= COUNTERS ================= */
-const nums = document.querySelectorAll(".num");
-
-function count(){
-    nums.forEach(n=>{
-        const target = +n.getAttribute("data-target");
-        let val = +n.innerText;
-
-        const step = target / 70;
-
-        if(val < target){
-            n.innerText = Math.ceil(val + step);
-        } else {
-            n.innerText = target;
-        }
-    });
+// SCORE + BADGE SYSTEM
+function getBadge(pages) {
+    if (pages >= 1000) return "🌌 Universe Reader";
+    if (pages >= 500) return "🌟 Galaxy Master";
+    if (pages >= 250) return "🚀 Mars Explorer";
+    if (pages >= 100) return "⭐ Star Reader";
+    return "📖 Beginner";
 }
 
-/* ================= SCROLL ================= */
-const fade = document.querySelectorAll(".fade");
-
-function reveal(){
-    fade.forEach(el=>{
-        const top = el.getBoundingClientRect().top;
-        if(top < window.innerHeight - 80){
-            el.classList.add("show");
-        }
-    });
+function calculateScore(pages, minutes, books) {
+    return pages + (minutes * 0.5) + (books * 50);
 }
 
-window.addEventListener("scroll",reveal);
-window.addEventListener("load",reveal);
+let table = document.getElementById("leaderTable");
 
-setInterval(count,40);
+for (let i = 1; i < table.rows.length; i++) {
+    let row = table.rows[i];
 
+    let pages = Number(row.cells[2].innerText);
+    let minutes = Number(row.cells[3].innerText);
+    let books = Number(row.cells[4].innerText);
+
+    let score = calculateScore(pages, minutes, books);
+    let badge = getBadge(pages);
+
+    row.cells[5].innerText = score;
+    row.cells[6].innerText = badge;
+}
 </script>
 
 </body>
