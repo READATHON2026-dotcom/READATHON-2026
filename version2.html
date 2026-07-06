@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Readathon 2026 - SaaS Dashboard</title>
+<title>Readathon 2026 - SaaS Plus</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ================= BASE ================= */
+/* ================= GLOBAL ================= */
 *{
     margin:0;
     padding:0;
@@ -18,23 +18,23 @@
 }
 
 body{
-    background:#0b1224;
+    background: radial-gradient(circle at top,#0f172a,#0b1224,#050816);
     color:white;
-    overflow-x:hidden;
     display:flex;
+    overflow-x:hidden;
 }
 
 /* ================= SIDEBAR ================= */
 .sidebar{
-    width:240px;
+    width:250px;
     height:100vh;
     position:fixed;
     left:0;
     top:0;
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(18px);
-    border-right:1px solid rgba(255,255,255,0.08);
     padding:20px;
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(20px);
+    border-right:1px solid rgba(255,255,255,0.1);
 }
 
 .sidebar h2{
@@ -52,37 +52,61 @@ body{
 }
 
 .sidebar a:hover{
-    opacity:1;
     color:#38bdf8;
-    transform:translateX(5px);
+    opacity:1;
+    transform:translateX(6px);
 }
 
 /* ================= MAIN ================= */
 .main{
-    margin-left:240px;
+    margin-left:250px;
     padding:25px;
     width:100%;
 }
 
-/* ================= TOP BAR ================= */
-.topbar{
+/* ================= HEADER ================= */
+.top{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:25px;
+    margin-bottom:20px;
 }
 
-.topbar h1{
-    font-size:24px;
+.top h1{
+    font-size:26px;
+    background:linear-gradient(90deg,#38bdf8,#a78bfa,#22c55e);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
-.user{
-    background:rgba(255,255,255,0.08);
-    padding:8px 12px;
-    border-radius:10px;
+/* ================= HERO BANNER ================= */
+.hero{
+    background:url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f') center/cover;
+    height:220px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    padding:20px;
+    margin-bottom:20px;
+    position:relative;
+    overflow:hidden;
+    animation:float 6s ease-in-out infinite;
 }
 
-/* ================= CARDS ================= */
+.hero::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.55);
+}
+
+.hero h2{
+    position:relative;
+    z-index:2;
+    font-size:28px;
+}
+
+/* ================= GRID ================= */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -91,32 +115,73 @@ body{
 
 .card{
     background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.08);
     padding:20px;
     border-radius:15px;
-    border:1px solid rgba(255,255,255,0.08);
-    transition:0.3s;
+    transition:0.4s;
+    backdrop-filter:blur(10px);
+    position:relative;
+    overflow:hidden;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px) scale(1.03);
     border-color:#38bdf8;
+    box-shadow:0 15px 40px rgba(56,189,248,0.2);
+}
+
+/* glow effect */
+.card::before{
+    content:'';
+    position:absolute;
+    width:120px;
+    height:120px;
+    background:#38bdf8;
+    filter:blur(80px);
+    opacity:0.15;
+    top:-40px;
+    right:-40px;
 }
 
 /* ================= NUMBERS ================= */
-.number{
+.num{
     font-size:28px;
     color:#38bdf8;
     font-weight:600;
 }
 
-/* ================= SECTIONS ================= */
-.section{
-    margin-top:25px;
+/* ================= IMAGE SECTION ================= */
+.image-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    margin-top:20px;
 }
 
-.section h2{
-    margin-bottom:15px;
-    color:#38bdf8;
+.img-card{
+    border-radius:15px;
+    overflow:hidden;
+    position:relative;
+    transition:0.4s;
+}
+
+.img-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    transition:0.4s;
+}
+
+.img-card:hover img{
+    transform:scale(1.1);
+    filter:brightness(1.2);
+}
+
+.img-card::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,0.6),transparent);
 }
 
 /* ================= TABLE ================= */
@@ -124,7 +189,7 @@ table{
     width:100%;
     border-collapse:collapse;
     background:rgba(255,255,255,0.04);
-    border-radius:12px;
+    border-radius:10px;
     overflow:hidden;
 }
 
@@ -138,10 +203,17 @@ tr:hover{
     background:rgba(255,255,255,0.05);
 }
 
-/* ================= ANIMATION ================= */
+/* ================= FLOAT ANIMATION ================= */
+@keyframes float{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0px);}
+}
+
+/* ================= FADE ================= */
 .fade{
     opacity:0;
-    transform:translateY(20px);
+    transform:translateY(30px);
     transition:0.8s ease;
 }
 
@@ -158,51 +230,74 @@ tr:hover{
 <!-- ================= SIDEBAR ================= -->
 <div class="sidebar">
 <h2>📚 Readathon</h2>
-
-<a href="#dashboard">📊 Dashboard</a>
+<a href="#dash">📊 Dashboard</a>
 <a href="#stats">📈 Stats</a>
-<a href="#leaderboard">🏆 Leaderboard</a>
-<a href="#activity">⚡ Activity</a>
-<a href="#settings">⚙ Settings</a>
+<a href="#gallery">🖼 Gallery</a>
+<a href="#leader">🏆 Leaderboard</a>
 </div>
 
 <!-- ================= MAIN ================= -->
 <div class="main">
 
-<!-- TOP BAR -->
-<div class="topbar fade">
-<h1>📊 SaaS Dashboard</h1>
-<div class="user">👤 Student Panel</div>
+<div class="top fade">
+<h1>Readathon SaaS Dashboard</h1>
+<div>👤 Student Panel</div>
 </div>
 
-<!-- ================= DASHBOARD CARDS ================= -->
-<div class="grid fade" id="dashboard">
+<!-- HERO IMAGE -->
+<div class="hero fade">
+<h2>📚 Read • Learn • Grow 🚀</h2>
+</div>
+
+<!-- DASHBOARD -->
+<div class="grid fade" id="dash">
 
 <div class="card">
-📚 Books Read
-<div class="number" data-target="120">0</div>
+📚 Books
+<div class="num" data-target="120">0</div>
 </div>
 
 <div class="card">
 👦 Readers
-<div class="number" data-target="300">0</div>
+<div class="num" data-target="300">0</div>
 </div>
 
 <div class="card">
 📄 Pages
-<div class="number" data-target="45000">0</div>
+<div class="num" data-target="45000">0</div>
 </div>
 
 <div class="card">
 ⏱ Minutes
-<div class="number" data-target="12000">0</div>
+<div class="num" data-target="12000">0</div>
 </div>
 
 </div>
 
-<!-- ================= LEADERBOARD ================= -->
-<div class="section fade" id="leaderboard">
-<h2>🏆 Leaderboard</h2>
+<!-- IMAGE GALLERY -->
+<div class="image-row fade" id="gallery">
+
+<div class="img-card">
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794">
+</div>
+
+<div class="img-card">
+<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
+</div>
+
+<div class="img-card">
+<img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66">
+</div>
+
+<div class="img-card">
+<img src="https://images.unsplash.com/photo-1455885666463-0ffe7d3c7b8d">
+</div>
+
+</div>
+
+<!-- LEADERBOARD -->
+<div class="fade" id="leader">
+<h2 style="margin:20px 0;color:#38bdf8;">🏆 Leaderboard</h2>
 
 <table>
 <tr><th>Rank</th><th>Name</th><th>Books</th></tr>
@@ -210,23 +305,7 @@ tr:hover{
 <tr><td>2</td><td>B</td><td>22</td></tr>
 <tr><td>3</td><td>C</td><td>20</td></tr>
 </table>
-</div>
 
-<!-- ================= ACTIVITY ================= -->
-<div class="section fade" id="activity">
-<h2>⚡ Recent Activity</h2>
-
-<div class="card">📖 User A read 20 pages</div>
-<div class="card">📚 User B completed 1 book</div>
-<div class="card">🔥 User C started reading challenge</div>
-
-</div>
-
-<!-- SETTINGS -->
-<div class="section fade" id="settings">
-<h2>⚙ Settings</h2>
-<div class="card">Google Form Connected ✔</div>
-<div class="card">Live Sync Status: Active 🔄</div>
 </div>
 
 </div>
@@ -234,30 +313,30 @@ tr:hover{
 <script>
 
 /* ================= COUNTERS ================= */
-const counters = document.querySelectorAll(".number");
+const nums = document.querySelectorAll(".num");
 
-function runCounters(){
-    counters.forEach(counter=>{
-        const target = +counter.getAttribute("data-target");
-        let current = +counter.innerText;
+function count(){
+    nums.forEach(n=>{
+        const target = +n.getAttribute("data-target");
+        let val = +n.innerText;
 
-        const step = target / 60;
+        const step = target / 70;
 
-        if(current < target){
-            counter.innerText = Math.ceil(current + step);
+        if(val < target){
+            n.innerText = Math.ceil(val + step);
         } else {
-            counter.innerText = target;
+            n.innerText = target;
         }
     });
 }
 
-/* ================= SCROLL ANIMATION ================= */
-const fades = document.querySelectorAll(".fade");
+/* ================= SCROLL ================= */
+const fade = document.querySelectorAll(".fade");
 
 function reveal(){
-    fades.forEach(el=>{
+    fade.forEach(el=>{
         const top = el.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
+        if(top < window.innerHeight - 80){
             el.classList.add("show");
         }
     });
@@ -265,7 +344,8 @@ function reveal(){
 
 window.addEventListener("scroll",reveal);
 window.addEventListener("load",reveal);
-setInterval(runCounters,40);
+
+setInterval(count,40);
 
 </script>
 
