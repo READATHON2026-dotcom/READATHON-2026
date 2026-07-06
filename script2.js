@@ -742,9 +742,7 @@ data.forEach((user, index) => {
 
   tbody.innerHTML += row;
 });
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
-<script>
 function generateCertificate() {
   let name = document.getElementById("studentName").value;
   let level = document.getElementById("level").value;
