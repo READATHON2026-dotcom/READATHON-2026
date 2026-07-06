@@ -20,6 +20,37 @@
  <a href="certificate.pdf" download class="download-btn">
   Download Certificate
 </a>
+  <section class="cert-section" id="certification">
+
+  <h2>Certification Zone</h2>
+
+  <div class="cert-box">
+
+    <input type="text" id="studentName" placeholder="Enter Student Name">
+
+    <select id="level">
+      <option value="Star Reader">Star Reader ⭐</option>
+      <option value="Mars Explorer">Mars Explorer 🚀</option>
+      <option value="Galaxy Master">Galaxy Master 🌌</option>
+      <option value="Universe Reader">Universe Reader 🌠</option>
+    </select>
+
+    <button onclick="generateCertificate()">Generate Certificate</button>
+
+  </div>
+
+  <div id="certificate" class="certificate">
+    <h1>Certificate of Achievement</h1>
+    <p>This certifies that</p>
+    <h2 id="cName">Student Name</h2>
+    <p>has successfully achieved the level of</p>
+    <h3 id="cLevel">Level</h3>
+    <p class="footer">Readathon Learning Program</p>
+  </div>
+
+  <button onclick="downloadCertificate()">Download Certificate</button>
+
+</section>
 
 <!-- ================= LOADING SCREEN ================= -->
 <div id="loader">
