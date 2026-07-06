@@ -291,6 +291,31 @@ function reveal(){
 window.addEventListener("scroll",reveal);
 window.addEventListener("load",reveal);
 </script>
+<script>
+const sections = document.querySelectorAll("section");
 
+/* Scroll reveal animation */
+function revealSections(){
+    sections.forEach(sec=>{
+        const top = sec.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            sec.classList.add("show");
+        }
+    });
+}
+
+/* Run on scroll + load */
+window.addEventListener("scroll", revealSections);
+window.addEventListener("load", revealSections);
+
+/* Smooth nav scroll (extra polish) */
+document.querySelectorAll("nav a").forEach(link=>{
+    link.addEventListener("click",e=>{
+        e.preventDefault();
+        const id = link.getAttribute("href");
+        document.querySelector(id).scrollIntoView({behavior:"smooth"});
+    });
+});
+</script>
 </body>
 </html>
