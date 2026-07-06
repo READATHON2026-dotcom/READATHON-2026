@@ -1,70 +1,117 @@
-const API_URL = "https://script.google.com/macros/s/AKfycby2yVYxKopIBeqN2BAeaGCw4zlQC6n-wZwnsTyddCKjZyYwKyD-q2UZAh-pFYub_ZdiNQ/exec";
+/* ==========================================================
+   READATHON 2026 - VERSION 2
+   Part 1
+   Configuration + Utilities + API + Counter Animation
+========================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+"use strict";
 
-    fetch(API_URL)
-        .then(response => response.json())
-        .then(data => {
+/* ================= CONFIG ================= */
 
-            animateCounter("totalReaders", data.totalReaders);
-animateCounter("totalBooks", data.totalBooks);
-animateCounter("totalPages", data.totalPages);
-animateCounter("totalMinutes", data.totalMinutes);
-            function animateCounter(id, end) {
+const CONFIG = {
+    API_URL: "https://script.google.com/macros/s/AKfycby2yVYxKopIBeqN2BAeaGCw4zlQC6n-wZwnsTyddCKjZyYwKyD-q2UZAh-pFYub_ZdiNQ/exec",
+    REFRESH_INTERVAL: 60000,
+    COUNTER_DURATION: 1500
+};
+
+/* ================= DOM ================= */
+
+const DOM = {
+    readers: document.getElementById("totalReaders"),
+    books: document.getElementById("totalBooks"),
+    pages: document.getElementById("totalPages"),
+    minutes: document.getElementById("totalMinutes"),
+    leaderboard: document.getElementById("leaderboardBody")
+};
+
+/* ================= HELPERS ================= */
+
+function safeNumber(value) {
+    const number = Number(value);
+    return Number.isFinite(number) ? number : 0;
+}
+
+function clearLeaderboard() {
+    if (DOM.leaderboard) {
+        DOM.leaderboard.innerHTML = "";
+    }
+}
+
+/* ================= COUNTER ================= */
+
+function animateCounter(element, endValue) {
+
+    if (!element) return;
+
+    const target = safeNumber(endValue);
 
     let start = 0;
 
-    const duration = 1500;
+    const duration = CONFIG.COUNTER_DURATION;
 
-    const step = Math.ceil(end / (duration / 16));
+    const startTime = performance.now();
 
-    const counter = document.getElementById(id);
+    function update(currentTime) {
 
-    const timer = setInterval(() => {
+        const progress = Math.min(
+            (currentTime - startTime) / duration,
+            1
+        );
 
-        start += step;
+        const value = Math.floor(progress * target);
 
-        if (start >= end) {
+        element.textContent = value.toLocaleString();
 
-            start = end;
+        if (progress < 1) {
 
-            clearInterval(timer);
+            requestAnimationFrame(update);
+
+        } else {
+
+            element.textContent = target.toLocaleString();
 
         }
 
-        counter.textContent = start;
+    }
 
-    },16);
+    requestAnimationFrame(update);
 
 }
 
-            const tbody = document.getElementById("leaderboardBody");
-            tbody.innerHTML = "";
+/* ================= FETCH API ================= */
 
-            data.leaderboard.forEach((reader, index) => {
+async function fetchReadathonData() {
 
-                let badge = "📚 Reader";
+    try {
 
-                if (reader.pages >= 500)
-                    badge = "🌟 Galaxy Master";
-                else if (reader.pages >= 250)
-                    badge = "🚀 Mars Explorer";
-                else if (reader.pages >= 100)
-                    badge = "⭐ Star Reader";
+        const response = await fetch(CONFIG.API_URL);
 
-                tbody.innerHTML += `
-                    <tr>
-                        <td>${index + 1}</td>
-                        <td>${reader.name}</td>
-                        <td>${reader.books}</td>
-                        <td>${reader.pages}</td>
-                        <td>${reader.minutes}</td>
-                        <td>${badge}</td>
-                    </tr>
-                `;
-            });
+        if (!response.ok) {
+            throw new Error("Unable to load data.");
+        }
 
-        })
-        .catch(error => console.error(error));
+        return await response.json();
 
-});
+    } catch (error) {
+
+        console.error(error);
+
+        return null;
+
+    }
+
+}
+
+/* ================= UPDATE STATS ================= */
+
+function updateStatistics(data) {
+
+    animateCounter(DOM.readers, data.totalReaders);
+
+    animateCounter(DOM.books, data.totalBooks);
+
+    animateCounter(DOM.pages, data.totalPages);
+
+    animateCounter(DOM.minutes, data.totalMinutes);
+
+}
