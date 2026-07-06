@@ -99,3 +99,39 @@ window.addEventListener("load",()=>{
         }, i * 120);
     });
 });
+// ================= PREMIUM SCROLL ANIMATION =================
+
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+},{threshold:0.15});
+
+sections.forEach(sec=>{
+    observer.observe(sec);
+});
+
+
+// ================= SMOOTH COUNTER FIX (IF YOU USE COUNTERS) =================
+const counters = document.querySelectorAll("[data-target]");
+
+function runCounters(){
+    counters.forEach(counter=>{
+        const target = +counter.getAttribute("data-target");
+        let current = +counter.innerText;
+
+        const step = target / 80;
+
+        if(current < target){
+            counter.innerText = Math.ceil(current + step);
+        } else {
+            counter.innerText = target;
+        }
+    });
+}
+
+setInterval(runCounters,40);
