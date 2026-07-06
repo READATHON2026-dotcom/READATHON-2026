@@ -2675,3 +2675,27 @@ body{
   font-size: 32px;
   margin-bottom: 10px;
 }
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.about-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.about-text {
+  max-width: 500px;
+}
