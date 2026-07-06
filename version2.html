@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>READATHON 2026 - V2 Premium</title>
+<title>READATHON 2026 - V2 Ultra Pro</title>
 
 <style>
-/* ================= GLOBAL ================= */
+/* ================= BASE ================= */
 *{
     margin:0;
     padding:0;
@@ -15,11 +15,10 @@
 }
 
 body{
+    color:white;
     background:
     radial-gradient(circle at top,#1e293b,#0b1224 60%,#050816);
-    color:white;
     overflow-x:hidden;
-    scroll-behavior:smooth;
 }
 
 /* ================= HEADER ================= */
@@ -31,20 +30,22 @@ header{
     align-items:center;
     padding:15px 20px;
     background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(16px);
     z-index:100;
-    animation:slideDown 0.8s ease;
 }
 
 nav a{
     color:white;
     margin:0 10px;
     text-decoration:none;
+    opacity:0.8;
     transition:0.3s;
 }
 
 nav a:hover{
     color:#38bdf8;
+    opacity:1;
+    transform:translateY(-2px);
 }
 
 /* ================= HERO ================= */
@@ -55,14 +56,15 @@ nav a:hover{
 
 .hero h1{
     font-size:48px;
-    background:linear-gradient(90deg,#38bdf8,#a78bfa);
+    background:linear-gradient(90deg,#38bdf8,#a78bfa,#38bdf8);
+    background-size:200%;
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
-    animation:float 3s ease-in-out infinite;
+    animation:shine 4s linear infinite;
 }
 
 .hero p{
-    opacity:0.8;
+    opacity:0.85;
     margin-top:10px;
 }
 
@@ -73,13 +75,13 @@ section{
     margin:auto;
 
     opacity:0;
-    transform:translateY(60px) scale(0.98);
-    transition:all 0.8s ease;
+    transform:translateY(60px);
+    transition:all 0.9s ease;
 }
 
 section.show{
     opacity:1;
-    transform:translateY(0) scale(1);
+    transform:translateY(0);
 }
 
 /* ================= TITLES ================= */
@@ -107,9 +109,17 @@ h2{
 }
 
 .card:hover{
-    transform:translateY(-12px) scale(1.03);
+    transform:translateY(-12px) scale(1.04);
     border-color:#38bdf8;
-    box-shadow:0 15px 30px rgba(0,0,0,0.4);
+    box-shadow:0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* ================= COUNTERS ================= */
+.counter{
+    font-size:28px;
+    font-weight:bold;
+    color:#38bdf8;
+    margin-top:5px;
 }
 
 /* ================= GALLERY ================= */
@@ -124,13 +134,14 @@ h2{
     height:180px;
     object-fit:cover;
     border-radius:12px;
-    border:1px solid rgba(255,255,255,0.1);
     transition:0.4s;
+    filter:brightness(0.95);
 }
 
 .gallery img:hover{
-    transform:scale(1.07);
-    border-color:#38bdf8;
+    transform:scale(1.08);
+    filter:brightness(1.15);
+    border:2px solid #38bdf8;
 }
 
 /* ================= BADGES ================= */
@@ -151,7 +162,7 @@ h2{
 
 .badge:hover{
     transform:scale(1.1);
-    box-shadow:0 0 15px rgba(56,189,248,0.4);
+    box-shadow:0 0 18px rgba(56,189,248,0.5);
 }
 
 /* ================= TABLE ================= */
@@ -170,31 +181,10 @@ tr:hover{
     background:rgba(255,255,255,0.05);
 }
 
-/* ================= CHALLENGE ================= */
-.challenge{
-    text-align:center;
-    padding:25px;
-    background:rgba(255,255,255,0.06);
-    border-radius:16px;
-    border:1px solid rgba(255,255,255,0.1);
-}
-
-/* ================= FOOTER ================= */
-footer{
-    text-align:center;
-    padding:30px;
-    opacity:0.6;
-}
-
-/* ================= ANIMATIONS ================= */
-@keyframes float{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-8px);}
-}
-
-@keyframes slideDown{
-    from{opacity:0; transform:translateY(-20px);}
-    to{opacity:1; transform:translateY(0);}
+/* ================= ANIMATION ================= */
+@keyframes shine{
+    0%{background-position:0%;}
+    100%{background-position:200%;}
 }
 </style>
 </head>
@@ -222,11 +212,29 @@ footer{
 <!-- STATS -->
 <section id="stats">
 <h2>📊 Stats</h2>
+
 <div class="stats">
-<div class="card">📚 Books<br><b>120+</b></div>
-<div class="card">📄 Pages<br><b>45,000+</b></div>
-<div class="card">👥 Readers<br><b>300+</b></div>
-<div class="card">🔥 Streak<br><b>12 Days</b></div>
+
+<div class="card">
+📚 Books
+<div class="counter" data-target="120">0</div>
+</div>
+
+<div class="card">
+📄 Pages
+<div class="counter" data-target="45000">0</div>
+</div>
+
+<div class="card">
+👥 Readers
+<div class="counter" data-target="300">0</div>
+</div>
+
+<div class="card">
+🔥 Streak
+<div class="counter" data-target="12">0</div>
+</div>
+
 </div>
 </section>
 
@@ -266,36 +274,23 @@ footer{
 <!-- CHALLENGE -->
 <section id="challenge">
 <h2>🎯 Challenge</h2>
-<div class="challenge">
+<div class="challenge" style="text-align:center;padding:25px;background:rgba(255,255,255,0.06);border-radius:15px;">
 Read 3 books this month to unlock <b>Speed Reader 🚀</b>
 </div>
 </section>
 
-<footer>
+<footer style="text-align:center;padding:25px;opacity:0.6;">
 © 2026 READATHON
 </footer>
 
 <script>
-// scroll animation (IMPORTANT)
-const sections=document.querySelectorAll("section");
+/* ================= ANIMATION ENGINE ================= */
 
-function reveal(){
-    sections.forEach(sec=>{
-        const rect=sec.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 100){
-            sec.classList.add("show");
-        }
-    });
-}
-
-window.addEventListener("scroll",reveal);
-window.addEventListener("load",reveal);
-</script>
-<script>
 const sections = document.querySelectorAll("section");
+const counters = document.querySelectorAll(".counter");
 
-/* Scroll reveal animation */
-function revealSections(){
+/* ===== SCROLL REVEAL ===== */
+function reveal(){
     sections.forEach(sec=>{
         const top = sec.getBoundingClientRect().top;
         if(top < window.innerHeight - 100){
@@ -304,18 +299,32 @@ function revealSections(){
     });
 }
 
-/* Run on scroll + load */
-window.addEventListener("scroll", revealSections);
-window.addEventListener("load", revealSections);
+/* ===== COUNTER ANIMATION ===== */
+function animateCounters(){
+    counters.forEach(counter=>{
+        const target = +counter.getAttribute("data-target");
+        let current = +counter.innerText;
 
-/* Smooth nav scroll (extra polish) */
-document.querySelectorAll("nav a").forEach(link=>{
-    link.addEventListener("click",e=>{
-        e.preventDefault();
-        const id = link.getAttribute("href");
-        document.querySelector(id).scrollIntoView({behavior:"smooth"});
+        const step = target / 60;
+
+        if(current < target){
+            counter.innerText = Math.ceil(current + step);
+        } else {
+            counter.innerText = target;
+        }
     });
+}
+
+/* ===== EVENTS ===== */
+window.addEventListener("scroll",()=>{
+    reveal();
+});
+
+window.addEventListener("load",()=>{
+    reveal();
+    setInterval(animateCounters,40);
 });
 </script>
+
 </body>
 </html>
