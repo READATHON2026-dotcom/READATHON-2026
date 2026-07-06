@@ -10,6 +10,33 @@ document.addEventListener("DOMContentLoaded", () => {
 animateCounter("totalBooks", data.totalBooks);
 animateCounter("totalPages", data.totalPages);
 animateCounter("totalMinutes", data.totalMinutes);
+            function animateCounter(id, end) {
+
+    let start = 0;
+
+    const duration = 1500;
+
+    const step = Math.ceil(end / (duration / 16));
+
+    const counter = document.getElementById(id);
+
+    const timer = setInterval(() => {
+
+        start += step;
+
+        if (start >= end) {
+
+            start = end;
+
+            clearInterval(timer);
+
+        }
+
+        counter.textContent = start;
+
+    },16);
+
+}
 
             const tbody = document.getElementById("leaderboardBody");
             tbody.innerHTML = "";
