@@ -143,3 +143,42 @@
 
 </body>
 </html>
+const SHEET_URL = "YOUR_GOOGLE_SCRIPT_URL_HERE";
+
+async function loadLeaderboard() {
+  try {
+    const res = await fetch(SHEET_URL);
+    const data = await res.json();
+
+    const tbody = document.getElementById("leaderboardBody");
+    tbody.innerHTML = "";
+
+    if (!Array.isArray(data)) return;
+
+    // sort highest pages first
+    data.sort((a, b) => Number(b.pages) - Number(a.pages));
+
+    data.forEach((item, index) => {
+      const row = document.createElement("tr");
+
+      if (index === 0) row.classList.add("top1");
+
+      row.innerHTML = `
+        <td>${index + 1}</td>
+        <td>${item.name || "-"}</td>
+        <td>${item.books || 0}</td>
+        <td>${item.pages || 0}</td>
+        <td>${item.minutes || 0}</td>
+        <td>${item.badge || "-"}</td>
+      `;
+
+      tbody.appendChild(row);
+    });
+
+  } catch (err) {
+    console.log("Leaderboard error:", err);
+  }
+}
+
+loadLeaderboard();
+setInterval(loadLeaderboard, 10000);
