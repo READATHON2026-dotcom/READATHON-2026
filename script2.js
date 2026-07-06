@@ -742,3 +742,27 @@ data.forEach((user, index) => {
 
   tbody.innerHTML += row;
 });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<script>
+function generateCertificate() {
+  let name = document.getElementById("studentName").value;
+  let level = document.getElementById("level").value;
+
+  document.getElementById("cName").innerText = name;
+  document.getElementById("cLevel").innerText = level;
+
+  document.getElementById("certificate").style.display = "block";
+}
+
+function downloadCertificate() {
+  const cert = document.getElementById("certificate");
+
+  html2canvas(cert).then(canvas => {
+    let link = document.createElement("a");
+    link.download = "certificate.png";
+    link.href = canvas.toDataURL();
+    link.click();
+  });
+}
+</script>
