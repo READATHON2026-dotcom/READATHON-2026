@@ -1,19 +1,10 @@
-/* =========================
-   READATHON V2 - FINAL CSS
-   Clean + Animated + Premium
-========================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-
+/* ===== BASE ===== */
 body{
-    background:linear-gradient(135deg,#0b1224,#111c33,#0b1224);
+    margin:0;
+    font-family:Arial, sans-serif;
     color:white;
-    scroll-behavior:smooth;
+    background:
+    radial-gradient(circle at top,#1e293b,#0b1224 60%,#050816);
     overflow-x:hidden;
 }
 
@@ -26,7 +17,7 @@ header{
     align-items:center;
     padding:15px 20px;
     background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(14px);
     z-index:100;
     animation:slideDown 0.8s ease;
 }
@@ -36,23 +27,21 @@ nav a{
     margin:0 10px;
     text-decoration:none;
     transition:0.3s;
-    font-weight:500;
 }
 
 nav a:hover{
     color:#38bdf8;
-    transform:scale(1.05);
+    transform:translateY(-2px);
 }
 
 /* ===== HERO ===== */
 .hero{
     text-align:center;
-    padding:100px 20px;
-    animation:fadeUp 1s ease;
+    padding:110px 20px;
 }
 
 .hero h1{
-    font-size:45px;
+    font-size:48px;
     background:linear-gradient(90deg,#38bdf8,#a78bfa);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
@@ -60,18 +49,18 @@ nav a:hover{
 }
 
 .hero p{
-    opacity:0.8;
+    opacity:0.85;
     margin-top:10px;
 }
 
-/* ===== SECTIONS ===== */
+/* ===== SECTIONS (ANIMATION BASE) ===== */
 section{
-    padding:70px 20px;
+    padding:80px 20px;
     max-width:1100px;
     margin:auto;
 
     opacity:0;
-    transform:translateY(40px);
+    transform:translateY(50px);
     transition:all 0.8s ease;
 }
 
@@ -85,38 +74,60 @@ h2{
     text-align:center;
     color:#38bdf8;
     margin-bottom:25px;
-    font-size:28px;
 }
 
-/* ===== STATS ===== */
-.stats{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:15px;
-}
-
+/* ===== CARDS ===== */
 .card{
     background:rgba(255,255,255,0.06);
     border:1px solid rgba(255,255,255,0.1);
     padding:20px;
-    border-radius:15px;
+    border-radius:16px;
     text-align:center;
     transition:0.4s;
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
 }
 
 .card:hover{
-    transform:translateY(-10px) scale(1.03);
+    transform:translateY(-12px) scale(1.03);
     border-color:#38bdf8;
-    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+    box-shadow:0 15px 30px rgba(0,0,0,0.4);
 }
 
-/* ===== LEADERBOARD ===== */
+/* ===== GALLERY (IMPROVED VISUALS) ===== */
+.gallery img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.1);
+    transition:0.4s;
+    filter:brightness(0.95);
+}
+
+.gallery img:hover{
+    transform:scale(1.06);
+    filter:brightness(1.1);
+    border-color:#38bdf8;
+}
+
+/* ===== BADGES ===== */
+.badge{
+    padding:10px 15px;
+    border-radius:20px;
+    background:rgba(56,189,248,0.15);
+    border:1px solid #38bdf8;
+    transition:0.3s;
+}
+
+.badge:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 15px rgba(56,189,248,0.4);
+}
+
+/* ===== TABLE ===== */
 table{
     width:100%;
     border-collapse:collapse;
-    border-radius:10px;
-    overflow:hidden;
 }
 
 th,td{
@@ -129,78 +140,22 @@ tr:hover{
     background:rgba(255,255,255,0.05);
 }
 
-/* ===== GALLERY ===== */
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:12px;
-}
-
-.gallery img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-    border-radius:12px;
-    border:1px solid rgba(255,255,255,0.1);
-    transition:0.4s;
-    box-shadow:0 5px 15px rgba(0,0,0,0.3);
-}
-
-.gallery img:hover{
-    transform:scale(1.07);
-    border-color:#38bdf8;
-}
-
-/* ===== BADGES ===== */
-.badges{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
-}
-
-.badge{
-    padding:10px 15px;
-    border-radius:20px;
-    background:rgba(56,189,248,0.15);
-    border:1px solid #38bdf8;
-    transition:0.3s;
-    font-size:14px;
-}
-
-.badge:hover{
-    transform:scale(1.1);
-    box-shadow:0 0 15px rgba(56,189,248,0.4);
-}
-
 /* ===== CHALLENGE ===== */
 .challenge{
     text-align:center;
     padding:25px;
     background:rgba(255,255,255,0.06);
-    border-radius:15px;
+    border-radius:16px;
     border:1px solid rgba(255,255,255,0.1);
 }
 
-/* ===== FOOTER ===== */
-footer{
-    text-align:center;
-    padding:30px;
-    opacity:0.6;
-}
-
 /* ===== ANIMATIONS ===== */
-@keyframes fadeUp{
-    from{opacity:0; transform:translateY(20px);}
-    to{opacity:1; transform:translateY(0);}
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
 }
 
 @keyframes slideDown{
     from{opacity:0; transform:translateY(-20px);}
     to{opacity:1; transform:translateY(0);}
-}
-
-@keyframes float{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-8px);}
 }
