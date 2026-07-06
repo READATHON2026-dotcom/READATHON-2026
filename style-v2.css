@@ -1992,3 +1992,658 @@ body{
   margin-top: 20px;
   opacity: 0.7;
 }
+/* =====================================================
+   READATHON 2026
+   CERTIFICATION SECTION - PART 2A
+=====================================================*/
+
+#certification{
+    position:relative;
+    padding:90px 20px;
+    overflow:hidden;
+
+    background:
+    linear-gradient(rgba(5,10,25,.82),rgba(5,10,25,.90)),
+    url("images/certificate-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+/* Animated glow */
+
+#certification::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:#38bdf8;
+    filter:blur(170px);
+    opacity:.12;
+    top:-180px;
+    left:-180px;
+    animation:floatGlow 12s ease-in-out infinite;
+}
+
+#certification::after{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    background:#7c3aed;
+    filter:blur(160px);
+    opacity:.15;
+    bottom:-150px;
+    right:-150px;
+    animation:floatGlow2 14s ease-in-out infinite;
+}
+
+@keyframes floatGlow{
+
+    0%{
+        transform:translate(0,0);
+    }
+
+    50%{
+        transform:translate(80px,50px);
+    }
+
+    100%{
+        transform:translate(0,0);
+    }
+
+}
+
+@keyframes floatGlow2{
+
+    0%{
+        transform:translate(0,0);
+    }
+
+    50%{
+        transform:translate(-60px,-40px);
+    }
+
+    100%{
+        transform:translate(0,0);
+    }
+
+}
+
+/* ------------------------- */
+
+.cert-header{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.cert-header h2{
+
+    font-size:42px;
+    font-weight:800;
+    color:#ffffff;
+    letter-spacing:1px;
+
+}
+
+.cert-header p{
+
+    margin-top:12px;
+    color:#b7c3d5;
+    font-size:18px;
+
+}
+
+/* =============================
+      GLASS CARD
+=============================*/
+
+.generator-card{
+
+    position:relative;
+    z-index:2;
+
+    max-width:700px;
+
+    margin:auto;
+
+    padding:40px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.45);
+
+    transition:.4s;
+
+}
+
+.generator-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 25px 80px rgba(0,0,0,.55);
+
+}
+
+/* =============================
+      INPUTS
+=============================*/
+
+.input-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:25px;
+
+}
+
+.input-group label{
+
+    color:#ffffff;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+    font-size:15px;
+
+    letter-spacing:.5px;
+
+}
+
+.input-group input,
+
+.input-group select{
+
+    padding:16px 18px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    background:rgba(255,255,255,.08);
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.35s;
+
+}
+
+.input-group input::placeholder{
+
+    color:#bfc6d3;
+
+}
+
+.input-group select{
+
+    cursor:pointer;
+
+}
+
+.input-group select option{
+
+    background:#0f172a;
+
+    color:white;
+
+}
+
+.input-group input:focus,
+
+.input-group select:focus{
+
+    border-color:#38bdf8;
+
+    box-shadow:
+    0 0 25px rgba(56,189,248,.35);
+
+}
+
+/* =============================
+        BUTTON
+=============================*/
+
+#generateBtn{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    #38bdf8,
+    #7c3aed);
+
+    transition:.35s;
+
+    box-shadow:
+    0 12px 35px rgba(56,189,248,.35);
+
+}
+
+#generateBtn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 18px 45px rgba(56,189,248,.50);
+
+}
+
+/* =============================
+    DOWNLOAD BUTTON
+=============================*/
+
+.download-area{
+
+    text-align:center;
+
+    margin-top:40px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+#downloadBtn{
+
+    padding:16px 34px;
+
+    border:none;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+    135deg,
+    #f59e0b,
+    #ef4444);
+
+    transition:.35s;
+
+    box-shadow:
+    0 10px 35px rgba(245,158,11,.35);
+
+}
+
+#downloadBtn:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 18px 45px rgba(245,158,11,.50);
+
+}
+
+/* =============================
+    RESPONSIVE
+=============================*/
+
+@media(max-width:768px){
+
+.generator-card{
+
+    padding:25px;
+
+}
+
+.cert-header h2{
+
+    font-size:32px;
+
+}
+
+.cert-header p{
+
+    font-size:15px;
+
+}
+
+.input-group input,
+
+.input-group select{
+
+    font-size:15px;
+
+}
+
+}
+/*==================================================
+      CERTIFICATE DESIGN (PART 2B)
+==================================================*/
+
+.certificate{
+
+    display:none;
+
+    max-width:1000px;
+    width:100%;
+
+    margin:70px auto 30px;
+
+    padding:25px;
+
+    position:relative;
+    z-index:2;
+}
+
+.certificate-border{
+
+    position:relative;
+
+    padding:70px 60px;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(145deg,#fffdf7,#fff8e7);
+
+    border:12px solid #d4af37;
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.45),
+    inset 0 0 0 3px #f8e9a1,
+    inset 0 0 30px rgba(212,175,55,.25);
+
+    overflow:hidden;
+}
+
+/* Decorative Corners */
+
+.certificate-border::before,
+.certificate-border::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border:4px solid rgba(212,175,55,.45);
+
+    border-radius:30px;
+
+}
+
+.certificate-border::before{
+
+    top:18px;
+    left:18px;
+
+    border-right:none;
+    border-bottom:none;
+
+}
+
+.certificate-border::after{
+
+    right:18px;
+    bottom:18px;
+
+    border-left:none;
+    border-top:none;
+
+}
+
+/*========================*/
+
+.certificate-top{
+
+    text-align:center;
+}
+
+.cert-logo{
+
+    width:95px;
+
+    margin-bottom:18px;
+}
+
+.certificate-top h1{
+
+    font-size:52px;
+
+    color:#c69b18;
+
+    letter-spacing:5px;
+
+    margin-bottom:8px;
+}
+
+.certificate-top h3{
+
+    font-size:22px;
+
+    letter-spacing:8px;
+
+    color:#444;
+
+    margin-bottom:40px;
+}
+
+.presented{
+
+    text-align:center;
+
+    color:#666;
+
+    font-size:22px;
+}
+
+#previewName{
+
+    text-align:center;
+
+    margin:25px 0;
+
+    font-size:48px;
+
+    color:#0f172a;
+
+    border-bottom:3px solid #d4af37;
+
+    display:inline-block;
+
+    left:50%;
+
+    position:relative;
+
+    transform:translateX(-50%);
+
+    padding-bottom:12px;
+}
+
+.achievementText{
+
+    text-align:center;
+
+    color:#555;
+
+    margin-top:20px;
+
+    font-size:22px;
+
+    line-height:1.8;
+}
+
+.level{
+
+    text-align:center;
+
+    font-size:42px;
+
+    margin-top:30px;
+
+    color:#7c3aed;
+
+    font-weight:800;
+
+    text-shadow:0 3px 12px rgba(124,58,237,.25);
+}
+
+.message{
+
+    margin:45px auto;
+
+    max-width:700px;
+
+    text-align:center;
+
+    font-size:20px;
+
+    color:#555;
+
+    line-height:1.8;
+
+    font-style:italic;
+}
+
+/*========================*/
+
+.certificate-footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:60px;
+
+    text-align:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+}
+
+.certificate-footer strong{
+
+    color:#222;
+
+    font-size:18px;
+}
+
+.certificate-footer p{
+
+    color:#666;
+
+    margin-top:8px;
+}
+
+.seal{
+
+    width:130px;
+
+    filter:drop-shadow(0 8px 18px rgba(0,0,0,.25));
+}
+
+.signature{
+
+    text-align:right;
+
+    margin-top:45px;
+
+    font-size:20px;
+
+    color:#333;
+
+    line-height:2;
+}
+
+/*========================*/
+
+@media(max-width:900px){
+
+.certificate-border{
+
+    padding:35px 25px;
+
+}
+
+.certificate-top h1{
+
+    font-size:34px;
+
+    letter-spacing:2px;
+}
+
+.certificate-top h3{
+
+    font-size:18px;
+
+    letter-spacing:3px;
+}
+
+#previewName{
+
+    font-size:30px;
+}
+
+.level{
+
+    font-size:28px;
+}
+
+.achievementText,
+.message{
+
+    font-size:17px;
+}
+
+.certificate-footer{
+
+    flex-direction:column;
+}
+
+.signature{
+
+    text-align:center;
+}
+
+}
