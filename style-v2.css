@@ -905,3 +905,71 @@ display:flex;
 }
 
 }
+.leaderboard-section {
+  padding: 60px 20px;
+  color: #fff;
+}
+
+.leaderboard-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.leaderboard-header h2 {
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.leaderboard-header p {
+  opacity: 0.7;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 14px 18px;
+  text-align: center;
+}
+
+.leaderboard-table th {
+  background: rgba(255,255,255,0.08);
+  font-weight: 600;
+}
+
+.leaderboard-table tr {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.leaderboard-table tr:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+/* Rank styles */
+.rank {
+  font-weight: bold;
+}
+
+.gold { color: gold; }
+.silver { color: silver; }
+.bronze { color: #cd7f32; }
+
+/* Badge styles */
+.badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  background: rgba(255,255,255,0.1);
+}
