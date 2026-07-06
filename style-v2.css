@@ -1087,3 +1087,41 @@ font-size:34px;
 }
 
 }
+/* ================= ABOUT ================= */
+
+.about{
+    padding:90px 8%;
+    background:#f8fafc;
+}
+
+.about-content{
+    max-width:900px;
+    margin:40px auto;
+    background:#ffffff;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    line-height:1.8;
+}
+
+.about-content h3{
+    color:#1e3a8a;
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.about-content p{
+    font-size:18px;
+    color:#444;
+    margin-bottom:25px;
+}
+
+.mission-quote{
+    background:#2563eb;
+    color:#fff;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    font-size:22px;
+    font-weight:700;
+}
