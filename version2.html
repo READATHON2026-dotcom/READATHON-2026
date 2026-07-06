@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>READATHON 2026 - V2 Enhanced</title>
+<title>Readathon 2026 - Ultra Pro</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -12,18 +14,18 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:'Poppins', sans-serif;
 }
 
 body{
-    color:white;
     background:
     radial-gradient(circle at top,#1e293b,#0b1224 60%,#050816);
+    color:white;
     overflow-x:hidden;
 }
 
 /* ================= HEADER ================= */
-header{
+.header{
     position:sticky;
     top:0;
     display:flex;
@@ -31,11 +33,11 @@ header{
     align-items:center;
     padding:15px 20px;
     background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(16px);
+    backdrop-filter:blur(18px);
     z-index:100;
 }
 
-nav a{
+.header nav a{
     color:white;
     margin:0 10px;
     text-decoration:none;
@@ -43,7 +45,7 @@ nav a{
     transition:0.3s;
 }
 
-nav a:hover{
+.header nav a:hover{
     color:#38bdf8;
     opacity:1;
 }
@@ -51,16 +53,29 @@ nav a:hover{
 /* ================= HERO ================= */
 .hero{
     text-align:center;
-    padding:110px 20px;
+    padding:120px 20px;
 }
 
 .hero h1{
-    font-size:48px;
+    font-size:50px;
     background:linear-gradient(90deg,#38bdf8,#a78bfa,#38bdf8);
     background-size:200%;
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     animation:shine 4s linear infinite;
+}
+
+.hero p{
+    margin-top:10px;
+    opacity:0.85;
+}
+
+.hero-image{
+    width:100%;
+    max-height:400px;
+    object-fit:cover;
+    border-radius:15px;
+    margin-bottom:20px;
 }
 
 /* ================= SECTIONS ================= */
@@ -71,7 +86,7 @@ section{
 
     opacity:0;
     transform:translateY(60px);
-    transition:0.8s;
+    transition:0.9s ease;
 }
 
 section.show{
@@ -81,8 +96,8 @@ section.show{
 
 h2{
     text-align:center;
+    margin-bottom:20px;
     color:#38bdf8;
-    margin-bottom:25px;
 }
 
 /* ================= STATS ================= */
@@ -96,89 +111,25 @@ h2{
     background:rgba(255,255,255,0.06);
     border:1px solid rgba(255,255,255,0.1);
     padding:20px;
-    border-radius:16px;
+    border-radius:15px;
     text-align:center;
     transition:0.4s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
+    transform:translateY(-10px) scale(1.03);
     border-color:#38bdf8;
 }
 
-/* ================= FEATURE BOOKS ================= */
-.books{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
+.card h1{
+    color:#38bdf8;
 }
 
-.book{
-    background:rgba(255,255,255,0.06);
-    border-radius:15px;
-    overflow:hidden;
-    transition:0.4s;
-    border:1px solid rgba(255,255,255,0.1);
-}
-
-.book img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-}
-
-.book div{
-    padding:12px;
-    text-align:center;
-}
-
-.book:hover{
-    transform:scale(1.05);
-    border-color:#38bdf8;
-}
-
-/* ================= FEATURED IMAGE BANNER ================= */
-.banner{
-    width:100%;
-    border-radius:15px;
-    margin:20px 0;
-    overflow:hidden;
-}
-
-.banner img{
-    width:100%;
-    height:300px;
-    object-fit:cover;
-}
-
-/* ================= GALLERY ================= */
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:12px;
-}
-
-.gallery img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-    border-radius:12px;
-    transition:0.4s;
-}
-
-.gallery img:hover{
-    transform:scale(1.08);
-    filter:brightness(1.1);
-}
-
-/* ================= BADGES ================= */
-.badge{
-    padding:10px 15px;
-    border-radius:20px;
-    background:rgba(56,189,248,0.15);
-    border:1px solid #38bdf8;
-    display:inline-block;
-    margin:5px;
+/* ================= COUNTER ================= */
+.counter{
+    font-size:28px;
+    font-weight:bold;
+    color:#38bdf8;
 }
 
 /* ================= TABLE ================= */
@@ -197,6 +148,75 @@ tr:hover{
     background:rgba(255,255,255,0.05);
 }
 
+/* ================= GALLERY ================= */
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.gallery-card{
+    background:rgba(255,255,255,0.06);
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    transition:0.4s;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+.gallery-card:hover{
+    transform:scale(1.05);
+    border-color:#38bdf8;
+}
+
+/* ================= ACHIEVEMENTS ================= */
+.achievement-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.achievement-card{
+    background:rgba(255,255,255,0.06);
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    transition:0.4s;
+}
+
+.achievement-card:hover{
+    transform:translateY(-10px);
+    border-color:#38bdf8;
+}
+
+/* ================= CONTACT ================= */
+.contact-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.contact-card{
+    background:rgba(255,255,255,0.06);
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+}
+
+/* ================= BUTTON ================= */
+#topBtn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    padding:12px 15px;
+    border:none;
+    border-radius:50%;
+    background:#38bdf8;
+    color:white;
+    cursor:pointer;
+    display:none;
+}
+
 /* ================= ANIMATION ================= */
 @keyframes shine{
     0%{background-position:0%;}
@@ -208,97 +228,113 @@ tr:hover{
 
 <body>
 
-<header>
-<h3>📚 READATHON 2026</h3>
+<header class="header">
+<div>📚 Readathon 2026</div>
 <nav>
 <a href="#home">Home</a>
-<a href="#stats">Stats</a>
-<a href="#books">Books</a>
+<a href="#statistics">Stats</a>
+<a href="#leaderboard">Leaderboard</a>
 <a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
 </nav>
 </header>
 
 <!-- HERO -->
-<section class="hero" id="home">
+<section id="home" class="hero show">
+<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" class="hero-image">
 <h1>READATHON 2026 🚀</h1>
-<p>Read. Learn. Compete. Grow.</p>
-</section>
-
-<!-- FEATURE IMAGE -->
-<section>
-<h2>📖 Featured Reading Moment</h2>
-<div class="banner">
-<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
-</div>
+<p>Read • Imagine • Grow</p>
 </section>
 
 <!-- STATS -->
-<section id="stats">
-<h2>📊 Stats</h2>
+<section id="statistics">
+<h2>📊 Statistics</h2>
+
 <div class="stats">
 
-<div class="card">📚 Books<br><b>120+</b></div>
-<div class="card">📄 Pages<br><b>45,000+</b></div>
-<div class="card">👥 Readers<br><b>300+</b></div>
+<div class="card">
+👦 Readers
+<div class="counter" data-target="300">0</div>
+</div>
+
+<div class="card">
+📚 Books
+<div class="counter" data-target="120">0</div>
+</div>
+
+<div class="card">
+📄 Pages
+<div class="counter" data-target="45000">0</div>
+</div>
+
+<div class="card">
+⏱ Minutes
+<div class="counter" data-target="12000">0</div>
+</div>
 
 </div>
 </section>
 
-<!-- BOOKS SECTION (NEW FEATURE) -->
-<section id="books">
-<h2>📚 Featured Books</h2>
+<!-- LEADERBOARD -->
+<section id="leaderboard">
+<h2>🏆 Reader Board</h2>
+<table>
+<tr><th>Rank</th><th>Name</th><th>Books</th></tr>
+<tr><td>1</td><td>A</td><td>25</td></tr>
+<tr><td>2</td><td>B</td><td>22</td></tr>
+<tr><td>3</td><td>C</td><td>20</td></tr>
+</table>
+</section>
 
-<div class="books">
+<!-- ACHIEVEMENTS -->
+<section>
+<h2>🌟 Achievements</h2>
+<div class="achievement-grid">
 
-<div class="book">
-<img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f">
-<div>Book Reading Challenge</div>
-</div>
-
-<div class="book">
-<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794">
-<div>Focus & Learning</div>
-</div>
-
-<div class="book">
-<img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc">
-<div>Study Motivation</div>
-</div>
+<div class="achievement-card">⭐ Star Reader</div>
+<div class="achievement-card">🚀 Mars Explorer</div>
+<div class="achievement-card">🌌 Galaxy Master</div>
+<div class="achievement-card">📚 Book Hero</div>
 
 </div>
 </section>
 
 <!-- GALLERY -->
 <section id="gallery">
-<h2>🖼 Gallery</h2>
-<div class="gallery">
+<h2>📚 Gallery</h2>
+<div class="gallery-grid">
 
-<img src="https://images.unsplash.com/photo-1455885666463-0ffe7d3c7b8d">
-<img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66">
-<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794">
-<img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
+<div class="gallery-card">📖 Reading Together</div>
+<div class="gallery-card">🏆 Top Readers</div>
+<div class="gallery-card">📚 Books</div>
+<div class="gallery-card">🌍 Community</div>
 
 </div>
 </section>
 
-<!-- BADGES -->
-<section>
-<h2>🏆 Badges</h2>
-<span class="badge">📘 First Book</span>
-<span class="badge">⭐ 5 Books</span>
-<span class="badge">🔥 1000 Pages</span>
-<span class="badge">🧠 Smart Reader</span>
+<!-- CONTACT -->
+<section id="contact">
+<h2>📞 Contact</h2>
+<div class="contact-container">
+
+<div class="contact-card">📧 readathon2026@gmail.com</div>
+<div class="contact-card">🌐 India</div>
+<div class="contact-card">📚 Readathon Team</div>
+
+</div>
 </section>
 
-<footer style="text-align:center;padding:25px;opacity:0.6;">
-© 2026 READATHON
-</footer>
+<!-- BACK TO TOP -->
+<button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆</button>
 
 <script>
 
-/* ===== SCROLL ANIMATION ===== */
-const sections = document.querySelectorAll("section");
+/* ================= ANIMATION SYSTEM ================= */
 
+const sections = document.querySelectorAll("section");
+const counters = document.querySelectorAll(".counter");
+
+/* SCROLL REVEAL */
 function reveal(){
     sections.forEach(sec=>{
         const top = sec.getBoundingClientRect().top;
@@ -308,8 +344,34 @@ function reveal(){
     });
 }
 
-window.addEventListener("scroll",reveal);
+/* COUNTER ANIMATION */
+function countersRun(){
+    counters.forEach(counter=>{
+        const target = +counter.getAttribute("data-target");
+        let current = +counter.innerText;
+
+        const speed = target / 80;
+
+        if(current < target){
+            counter.innerText = Math.ceil(current + speed);
+        } else {
+            counter.innerText = target;
+        }
+    });
+}
+
+/* BACK BUTTON */
+window.addEventListener("scroll",()=>{
+    reveal();
+    countersRun();
+
+    const btn = document.getElementById("topBtn");
+    btn.style.display = window.scrollY > 300 ? "block" : "none";
+});
+
 window.addEventListener("load",reveal);
+
+setInterval(countersRun,40);
 
 </script>
 
