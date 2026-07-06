@@ -1,35 +1,31 @@
-/* =========================
-   READATHON V3 - STYLE.CSS
-   Startup Premium Design
-========================= */
-
+/* RESET */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:system-ui, Arial, sans-serif;
+    font-family:system-ui, Arial;
 }
 
 body{
-    background:#070b1a;
+    background: radial-gradient(circle at top,#0b1224,#070b1a 60%,#050816);
     color:white;
     overflow-x:hidden;
 }
 
-/* ===== BACKGROUND GLOW ===== */
+/* BACKGROUND GLOW */
 .bg-glow{
     position:fixed;
     width:600px;
     height:600px;
-    background:radial-gradient(circle,#38bdf8,transparent 60%);
+    background:radial-gradient(circle,#38bdf8,#8b5cf6,transparent 70%);
     top:-200px;
     left:-200px;
-    filter:blur(80px);
-    opacity:0.4;
+    filter:blur(90px);
+    opacity:0.35;
     z-index:-1;
 }
 
-/* ===== NAVBAR ===== */
+/* NAV */
 nav{
     position:fixed;
     top:0;
@@ -60,7 +56,7 @@ nav a:hover{
     color:#38bdf8;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero{
     height:100vh;
     display:flex;
@@ -68,7 +64,6 @@ nav a:hover{
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:0 20px;
 }
 
 .hero h1{
@@ -76,13 +71,11 @@ nav a:hover{
     background:linear-gradient(90deg,#38bdf8,#a78bfa);
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
-    animation:fadeUp 1s ease;
 }
 
 .hero p{
     opacity:0.7;
     margin-top:10px;
-    animation:fadeUp 1.5s ease;
 }
 
 .hero button{
@@ -91,7 +84,7 @@ nav a:hover{
     border:none;
     border-radius:30px;
     background:#38bdf8;
-    color:#000;
+    color:black;
     font-weight:bold;
     cursor:pointer;
     transition:0.3s;
@@ -101,7 +94,7 @@ nav a:hover{
     transform:scale(1.05);
 }
 
-/* ===== SECTIONS ===== */
+/* SECTIONS */
 section{
     padding:100px 10%;
 }
@@ -112,20 +105,20 @@ section{
     color:#38bdf8;
 }
 
-/* ===== GRID CARDS ===== */
+/* GRID */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
 }
 
+/* CARDS */
 .card{
     background:rgba(255,255,255,0.06);
     padding:20px;
     border-radius:15px;
     border:1px solid rgba(255,255,255,0.1);
     transition:0.4s;
-    backdrop-filter:blur(10px);
 }
 
 .card:hover{
@@ -133,7 +126,22 @@ section{
     border-color:#38bdf8;
 }
 
-/* ===== TABLE ===== */
+/* IMAGES */
+.imgcard{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:0.4s;
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+.imgcard:hover{
+    transform:scale(1.05);
+    border-color:#38bdf8;
+}
+
+/* TABLE */
 table{
     width:100%;
     border-collapse:collapse;
@@ -151,36 +159,9 @@ tr:hover{
     background:rgba(255,255,255,0.05);
 }
 
-/* ===== BADGES ===== */
-.badge{
-    display:inline-block;
-    padding:10px 14px;
-    margin:6px;
-    border-radius:20px;
-    background:rgba(56,189,248,0.15);
-    border:1px solid #38bdf8;
-    transition:0.3s;
-}
-
-.badge:hover{
-    transform:scale(1.1);
-}
-
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
     text-align:center;
     padding:40px;
     opacity:0.6;
-}
-
-/* ===== ANIMATIONS ===== */
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
 }
