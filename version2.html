@@ -144,41 +144,87 @@ vocabulary, confidence and critical thinking.
 
 <section id="leaderboard" class="leaderboard">
 
-    <h2>🏆 Live Reader Board</h2>
+  <h2>🏆 Live Reader Board</h2>
 
-    <p class="section-subtitle">
-        The rankings update automatically whenever a reader submits the Google Form.
-    </p>
+  <p class="section-subtitle">
+    The rankings update automatically whenever a reader submits the Google Form.
+  </p>
 
-    <table>
+  <table>
 
-        <thead>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Reader</th>
+        <th>Books</th>
+        <th>Pages</th>
+        <th>Minutes</th>
+        <th>Badge</th>
+      </tr>
+    </thead>
 
-            <tr>
+    <tbody id="leaderboardBody">
 
-                <th>Rank</th>
+      <tr class="leader-row">
+        <td>1</td>
+        <td>Alex</td>
+        <td>12</td>
+        <td class="pages" data-value="1200">0</td>
+        <td>300</td>
+        <td>🔥 Gold</td>
+      </tr>
 
-                <th>Reader</th>
+      <tr class="leader-row">
+        <td>2</td>
+        <td>Sam</td>
+        <td>10</td>
+        <td class="pages" data-value="1100">0</td>
+        <td>250</td>
+        <td>🥈 Silver</td>
+      </tr>
 
-                <th>Books</th>
+      <tr class="leader-row">
+        <td>3</td>
+        <td>John</td>
+        <td>8</td>
+        <td class="pages" data-value="1000">0</td>
+        <td>200</td>
+        <td>🥉 Bronze</td>
+      </tr>
 
-                <th>Pages</th>
+    </tbody>
 
-                <th>Minutes</th>
-
-                <th>Badge</th>
-
-            </tr>
-
-        </thead>
-
-        <tbody id="leaderboardBody">
-
-        </tbody>
-
-    </table>
+  </table>
 
 </section>
+
+<!-- ================= ANIMATION SCRIPT ================= -->
+<script>
+function animateNumber(el, end, duration) {
+  let start = 0;
+  let startTime = null;
+
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+
+    let progress = Math.min((timestamp - startTime) / duration, 1);
+    el.innerText = Math.floor(progress * end);
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    }
+  }
+
+  requestAnimationFrame(step);
+}
+
+window.onload = function () {
+  document.querySelectorAll(".pages").forEach(cell => {
+    let value = cell.getAttribute("data-value");
+    animateNumber(cell, parseInt(value), 1500);
+  });
+};
+</script>
 
 <!-- ================= READING ACHIEVEMENTS ================= -->
 
