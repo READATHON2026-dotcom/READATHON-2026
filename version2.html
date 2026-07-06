@@ -266,19 +266,20 @@ Read 3 books this month to unlock <b>Speed Reader 🚀</b>
 </footer>
 
 <script>
-// scroll animation
-const sections=document.querySelectorAll("section");
+const sections = document.querySelectorAll("section");
 
-const observer=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
         if(entry.isIntersecting){
             entry.target.classList.add("show");
         }
     });
 },{threshold:0.15});
 
-sections.forEach(sec=>observer.observe(sec));
+// ensure sections are observed AFTER page load
+window.addEventListener("load", () => {
+    sections.forEach(sec => observer.observe(sec));
+});
 </script>
-
 </body>
 </html>
