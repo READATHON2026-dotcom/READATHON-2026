@@ -1,74 +1,115 @@
-/* ==========================================================
-   READATHON 2026 - VERSION 2
-   Part 1
-   Configuration + Utilities + API + Counter Animation
-========================================================== */
+/* ===========================================================
+   READATHON 2026 PREMIUM
+   script2.js
+   PART 1
+=========================================================== */
 
 "use strict";
 
-/* ================= CONFIG ================= */
+/* ===========================================================
+   CONFIG
+=========================================================== */
 
 const CONFIG = {
-    API_URL: "https://script.google.com/macros/s/AKfycby2yVYxKopIBeqN2BAeaGCw4zlQC6n-wZwnsTyddCKjZyYwKyD-q2UZAh-pFYub_ZdiNQ/exec",
-    REFRESH_INTERVAL: 60000,
-    COUNTER_DURATION: 1500
+
+    API_URL:
+        "https://script.google.com/macros/s/AKfycby2yVYxKopIBeqN2BAeaGCw4zlQC6n-wZwnsTyddCKjZyYwKyD-q2UZAh-pFYub_ZdiNQ/exec",
+
+    COUNTER_DURATION: 1800,
+
+    REFRESH_INTERVAL: 60000
+
 };
 
-/* ================= DOM ================= */
+/* ===========================================================
+   DOM
+=========================================================== */
 
 const DOM = {
-    readers: document.getElementById("totalReaders"),
-    books: document.getElementById("totalBooks"),
-    pages: document.getElementById("totalPages"),
-    minutes: document.getElementById("totalMinutes"),
-    leaderboard: document.getElementById("leaderboardBody")
+
+    readers:
+        document.getElementById("totalReaders"),
+
+    books:
+        document.getElementById("totalBooks"),
+
+    pages:
+        document.getElementById("totalPages"),
+
+    minutes:
+        document.getElementById("totalMinutes"),
+
+    leaderboard:
+        document.getElementById("leaderboardBody"),
+
+    loader:
+        document.getElementById("loader"),
+
+    progressBar:
+        document.getElementById("progressBar"),
+
+    backToTop:
+        document.getElementById("backToTop")
+
 };
 
-/* ================= HELPERS ================= */
+/* ===========================================================
+   HELPERS
+=========================================================== */
 
-function safeNumber(value) {
-    const number = Number(value);
-    return Number.isFinite(number) ? number : 0;
+function number(value){
+
+    return Number(value)||0;
+
 }
 
-function clearLeaderboard() {
-    if (DOM.leaderboard) {
-        DOM.leaderboard.innerHTML = "";
-    }
+function create(tag){
+
+    return document.createElement(tag);
+
 }
 
-/* ================= COUNTER ================= */
+/* ===========================================================
+   COUNTER
+=========================================================== */
 
-function animateCounter(element, endValue) {
+function animateCounter(element,target){
 
-    if (!element) return;
+    if(!element) return;
 
-    const target = safeNumber(endValue);
+    target=number(target);
 
-    let start = 0;
+    const duration=CONFIG.COUNTER_DURATION;
 
-    const duration = CONFIG.COUNTER_DURATION;
+    const startTime=performance.now();
 
-    const startTime = performance.now();
+    function update(time){
 
-    function update(currentTime) {
+        const progress=Math.min(
 
-        const progress = Math.min(
-            (currentTime - startTime) / duration,
+            (time-startTime)/duration,
+
             1
+
         );
 
-        const value = Math.floor(progress * target);
+        element.textContent=
 
-        element.textContent = value.toLocaleString();
+            Math.floor(
 
-        if (progress < 1) {
+                progress*target
+
+            ).toLocaleString();
+
+        if(progress<1){
 
             requestAnimationFrame(update);
 
-        } else {
+        }else{
 
-            element.textContent = target.toLocaleString();
+            element.textContent=
+
+                target.toLocaleString();
 
         }
 
@@ -78,21 +119,31 @@ function animateCounter(element, endValue) {
 
 }
 
-/* ================= FETCH API ================= */
+/* ===========================================================
+   API
+=========================================================== */
 
-async function fetchReadathonData() {
+async function getReadathonData(){
 
-    try {
+    try{
 
-        const response = await fetch(CONFIG.API_URL);
+        const response=
 
-        if (!response.ok) {
-            throw new Error("Unable to load data.");
-        }
+            await fetch(CONFIG.API_URL);
+
+        if(!response.ok)
+
+            throw new Error(
+
+                "Unable to fetch data"
+
+            );
 
         return await response.json();
 
-    } catch (error) {
+    }
+
+    catch(error){
 
         console.error(error);
 
@@ -102,77 +153,133 @@ async function fetchReadathonData() {
 
 }
 
-/* ================= UPDATE STATS ================= */
+/* ===========================================================
+   UPDATE STATISTICS
+=========================================================== */
 
-function updateStatistics(data) {
+function updateStats(data){
 
-    animateCounter(DOM.readers, data.totalReaders);
+    animateCounter(
 
-    animateCounter(DOM.books, data.totalBooks);
+        DOM.readers,
 
-    animateCounter(DOM.pages, data.totalPages);
+        data.totalReaders
 
-    animateCounter(DOM.minutes, data.totalMinutes);
+    );
+
+    animateCounter(
+
+        DOM.books,
+
+        data.totalBooks
+
+    );
+
+    animateCounter(
+
+        DOM.pages,
+
+        data.totalPages
+
+    );
+
+    animateCounter(
+
+        DOM.minutes,
+
+        data.totalMinutes
+
+    );
 
 }
-/* ==========================================================
+/* ===========================================================
    PART 2
-   Leaderboard Rendering
-========================================================== */
+   LEADERBOARD
+=========================================================== */
 
 /* ================= BADGES ================= */
 
-function getBadge(pages) {
+function getBadge(pages){
 
-    pages = safeNumber(pages);
+    pages = number(pages);
 
-    if (pages >= 1000)
+    if(pages >= 1000)
         return "🌌 Universe Reader";
 
-    if (pages >= 500)
+    if(pages >= 500)
         return "🌟 Galaxy Master";
 
-    if (pages >= 250)
+    if(pages >= 250)
         return "🚀 Mars Explorer";
 
-    if (pages >= 100)
+    if(pages >= 100)
         return "⭐ Star Reader";
 
     return "📚 Reader";
 
 }
 
-/* ================= ROW COLOR ================= */
+/* ================= RANK MEDALS ================= */
 
-function decorateRow(row, index) {
+function getRank(rank){
 
-    row.style.opacity = "0";
-
-    row.style.transform = "translateY(25px)";
-
-    row.style.transition =
-        "opacity .6s ease, transform .6s ease";
-
-    switch(index){
-
-        case 0:
-            row.style.background =
-                "linear-gradient(90deg,#FFD70033,#FFD70011)";
-            break;
+    switch(rank){
 
         case 1:
-            row.style.background =
-                "linear-gradient(90deg,#C0C0C033,#C0C0C011)";
-            break;
+            return "🥇";
 
         case 2:
-            row.style.background =
-                "linear-gradient(90deg,#CD7F3233,#CD7F3211)";
-            break;
+            return "🥈";
+
+        case 3:
+            return "🥉";
+
+        default:
+            return rank;
 
     }
 
+}
+
+/* ================= CREATE ROW ================= */
+
+function createRow(reader,index){
+
+    const row = create("tr");
+
+    const pages = number(reader.pages);
+
+    row.innerHTML = `
+
+        <td>${getRank(index+1)}</td>
+
+        <td>${reader.name}</td>
+
+        <td>${reader.books}</td>
+
+        <td>${pages}</td>
+
+        <td>${reader.minutes}</td>
+
+        <td>${getBadge(pages)}</td>
+
+    `;
+
+    row.classList.add("leader-row");
+
+    if(index===0) row.classList.add("gold");
+
+    if(index===1) row.classList.add("silver");
+
+    if(index===2) row.classList.add("bronze");
+
+    row.style.opacity="0";
+
+    row.style.transform="translateY(25px)";
+
     setTimeout(()=>{
+
+        row.style.transition=".6s";
 
         row.style.opacity="1";
 
@@ -180,63 +287,23 @@ function decorateRow(row, index) {
 
     },index*120);
 
-}
-
-/* ================= CREATE ROW ================= */
-
-function createLeaderboardRow(reader,index){
-
-    const row=document.createElement("tr");
-
-    const pages=safeNumber(reader.pages);
-
-    row.innerHTML=`
-
-        <td>${index+1}</td>
-
-        <td>${reader.name ?? "-"}</td>
-
-        <td>${reader.books ?? 0}</td>
-
-        <td>${pages}</td>
-
-        <td>${reader.minutes ?? 0}</td>
-
-        <td>${getBadge(pages)}</td>
-
-    `;
-
-    decorateRow(row,index);
-
     return row;
 
 }
 
-/* ================= RENDER TABLE ================= */
+/* ================= RENDER ================= */
 
 function renderLeaderboard(list){
 
-    clearLeaderboard();
+    DOM.leaderboard.innerHTML="";
 
-    if(!Array.isArray(list)){
-
-        DOM.leaderboard.innerHTML=`
-        <tr>
-        <td colspan="6">
-        No leaderboard data available.
-        </td>
-        </tr>
-        `;
-
-        return;
-
-    }
+    if(!Array.isArray(list)) return;
 
     list.forEach((reader,index)=>{
 
         DOM.leaderboard.appendChild(
 
-            createLeaderboardRow(reader,index)
+            createRow(reader,index)
 
         );
 
@@ -244,34 +311,194 @@ function renderLeaderboard(list){
 
 }
 
-/* ================= LOAD DATA ================= */
+/* ================= LOAD ================= */
 
 async function loadLeaderboard(){
 
-    const data=await fetchReadathonData();
+    const data = await getReadathonData();
 
     if(!data){
 
-        DOM.leaderboard.innerHTML=`
+        DOM.leaderboard.innerHTML=
 
-        <tr>
+        `<tr>
 
-        <td colspan="6">
+            <td colspan="6">
 
-        Unable to load leaderboard.
+                Unable to load leaderboard.
 
-        </td>
+            </td>
 
-        </tr>
-
-        `;
+        </tr>`;
 
         return;
 
     }
 
-    updateStatistics(data);
+    updateStats(data);
 
     renderLeaderboard(data.leaderboard);
+
+}
+/* ===========================================================
+   PART 3
+   UI INTERACTIONS
+=========================================================== */
+
+/* ================= LOADER ================= */
+
+window.addEventListener("load", () => {
+
+    if (DOM.loader) {
+
+        setTimeout(() => {
+
+            DOM.loader.style.opacity = "0";
+            DOM.loader.style.visibility = "hidden";
+
+        }, 800);
+
+    }
+
+});
+
+/* ================= SCROLL PROGRESS ================= */
+
+window.addEventListener("scroll", () => {
+
+    const scrollTop =
+        document.documentElement.scrollTop;
+
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const progress =
+        (scrollTop / scrollHeight) * 100;
+
+    if (DOM.progressBar) {
+
+        DOM.progressBar.style.width =
+            progress + "%";
+
+    }
+
+});
+
+/* ================= BACK TO TOP ================= */
+
+window.addEventListener("scroll", () => {
+
+    if (!DOM.backToTop) return;
+
+    if (window.scrollY > 400) {
+
+        DOM.backToTop.classList.add("show");
+
+    } else {
+
+        DOM.backToTop.classList.remove("show");
+
+    }
+
+});
+
+if (DOM.backToTop) {
+
+    DOM.backToTop.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    });
+
+}
+
+/* ================= SMOOTH NAVIGATION ================= */
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click", e => {
+
+        const target = document.querySelector(
+
+            link.getAttribute("href")
+
+        );
+
+        if (!target) return;
+
+        e.preventDefault();
+
+        target.scrollIntoView({
+
+            behavior: "smooth"
+
+        });
+
+    });
+
+});
+
+/* ================= SCROLL REVEAL ================= */
+
+const revealElements = document.querySelectorAll(
+
+    "section,.card,.about-card,.achievement-card,.gallery-item,.contact-card"
+
+);
+
+const revealObserver = new IntersectionObserver(
+
+(entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("visible");
+
+        }
+
+    });
+
+},
+
+{
+
+    threshold:0.15
+
+}
+
+);
+
+revealElements.forEach(item=>{
+
+    item.classList.add("hidden");
+
+    revealObserver.observe(item);
+
+});
+
+/* ================= MOBILE MENU ================= */
+
+const menuButton =
+    document.querySelector(".menu-toggle");
+
+const navigation =
+    document.querySelector(".header nav");
+
+if(menuButton && navigation){
+
+    menuButton.addEventListener("click",()=>{
+
+        navigation.classList.toggle("open");
+
+    });
 
 }
