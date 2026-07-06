@@ -502,3 +502,202 @@ if(menuButton && navigation){
     });
 
 }
+/* ===========================================================
+   PART 4
+   PREMIUM INTERACTIONS
+=========================================================== */
+
+/* ================= MAGNETIC BUTTONS ================= */
+
+document.querySelectorAll(".btn").forEach(button => {
+
+    button.addEventListener("mousemove", e => {
+
+        const rect = button.getBoundingClientRect();
+
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        button.style.transform =
+            `translate(${x * 0.12}px, ${y * 0.12}px)`;
+
+    });
+
+    button.addEventListener("mouseleave", () => {
+
+        button.style.transform = "";
+
+    });
+
+});
+
+/* ================= RIPPLE EFFECT ================= */
+
+document.querySelectorAll(".btn").forEach(button => {
+
+    button.addEventListener("click", e => {
+
+        const ripple = document.createElement("span");
+
+        ripple.className = "ripple";
+
+        const rect = button.getBoundingClientRect();
+
+        ripple.style.left = (e.clientX - rect.left) + "px";
+        ripple.style.top = (e.clientY - rect.top) + "px";
+
+        button.appendChild(ripple);
+
+        setTimeout(() => {
+
+            ripple.remove();
+
+        }, 600);
+
+    });
+
+});
+
+/* ================= FLOATING HERO IMAGE ================= */
+
+const heroImage = document.querySelector(".hero-image");
+
+if(heroImage){
+
+    let direction = 1;
+
+    let offset = 0;
+
+    setInterval(()=>{
+
+        offset += direction;
+
+        heroImage.style.transform =
+            `translateY(${offset}px)`;
+
+        if(offset >= 10) direction = -1;
+
+        if(offset <= -10) direction = 1;
+
+    },60);
+
+}
+
+/* ================= GALLERY HOVER ================= */
+
+document.querySelectorAll(".gallery-item").forEach(item=>{
+
+    item.addEventListener("mouseenter",()=>{
+
+        item.style.transform =
+            "translateY(-10px) scale(1.03)";
+
+    });
+
+    item.addEventListener("mouseleave",()=>{
+
+        item.style.transform = "";
+
+    });
+
+});
+
+/* ================= CARD HOVER ================= */
+
+document.querySelectorAll(
+
+".card,.about-card,.achievement-card,.contact-card"
+
+).forEach(card=>{
+
+    card.addEventListener("mouseenter",()=>{
+
+        card.style.transform =
+            "translateY(-8px)";
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.transform = "";
+
+    });
+
+});
+/* ===========================================================
+   PART 5
+   INITIALIZATION & AUTO REFRESH
+=========================================================== */
+
+/* ================= ERROR MESSAGE ================= */
+
+function showError(message){
+
+    if(!DOM.leaderboard) return;
+
+    DOM.leaderboard.innerHTML = `
+        <tr>
+            <td colspan="6" style="padding:25px;text-align:center;">
+                ⚠️ ${message}
+            </td>
+        </tr>
+    `;
+
+}
+
+/* ================= LOAD ALL DATA ================= */
+
+async function refreshData(){
+
+    try{
+
+        await loadLeaderboard();
+
+        console.log(
+            "✅ Readathon data updated:",
+            new Date().toLocaleTimeString()
+        );
+
+    }catch(error){
+
+        console.error(error);
+
+        showError("Unable to load live data.");
+
+    }
+
+}
+
+/* ================= AUTO REFRESH ================= */
+
+function startAutoRefresh(){
+
+    setInterval(
+
+        refreshData,
+
+        CONFIG.REFRESH_INTERVAL
+
+    );
+
+}
+
+/* ================= APP INIT ================= */
+
+function init(){
+
+    refreshData();
+
+    startAutoRefresh();
+
+}
+
+/* ================= START APP ================= */
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    init
+
+);
