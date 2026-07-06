@@ -1,137 +1,43 @@
-<script>
-/* =========================================
-   READATHON V2 - COMPLETE ULTRA ANIMATIONS
-   Scroll Reveal + Counters + Parallax
-========================================= */
+const API_URL = "https://script.google.com/macros/s/AKfycby2yVYxKopIBeqN2BAeaGCw4zlQC6n-wZwnsTyddCKjZyYwKyD-q2UZAh-pFYub_ZdiNQ/exec";
 
-/* ===== ELEMENTS ===== */
-const sections = document.querySelectorAll("section");
-const counters = document.querySelectorAll(".counter");
+document.addEventListener("DOMContentLoaded", () => {
 
-/* ===== 1. SCROLL REVEAL SYSTEM ===== */
-function revealSections(){
-    const triggerPoint = window.innerHeight * 0.85;
+    fetch(API_URL)
+        .then(response => response.json())
+        .then(data => {
 
-    sections.forEach(sec=>{
-        const top = sec.getBoundingClientRect().top;
+            document.getElementById("totalReaders").textContent = data.totalReaders;
+            document.getElementById("totalBooks").textContent = data.totalBooks;
+            document.getElementById("totalPages").textContent = data.totalPages;
+            document.getElementById("totalMinutes").textContent = data.totalMinutes;
 
-        if(top < triggerPoint){
-            sec.classList.add("show");
-        }
-    });
-}
+            const tbody = document.getElementById("leaderboardBody");
+            tbody.innerHTML = "";
 
-/* ===== 2. COUNTER ANIMATION ===== */
-function animateCounters(){
-    counters.forEach(counter=>{
-        const target = +counter.getAttribute("data-target");
-        let started = counter.getAttribute("data-started");
+            data.leaderboard.forEach((reader, index) => {
 
-        if(started) return;
+                let badge = "📚 Reader";
 
-        const top = counter.getBoundingClientRect().top;
-        if(top < window.innerHeight){
-            counter.setAttribute("data-started","true");
+                if (reader.pages >= 500)
+                    badge = "🌟 Galaxy Master";
+                else if (reader.pages >= 250)
+                    badge = "🚀 Mars Explorer";
+                else if (reader.pages >= 100)
+                    badge = "⭐ Star Reader";
 
-            let current = 0;
-            const step = Math.ceil(target / 60);
+                tbody.innerHTML += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${reader.name}</td>
+                        <td>${reader.books}</td>
+                        <td>${reader.pages}</td>
+                        <td>${reader.minutes}</td>
+                        <td>${badge}</td>
+                    </tr>
+                `;
+            });
 
-            const interval = setInterval(()=>{
-                current += step;
+        })
+        .catch(error => console.error(error));
 
-                if(current >= target){
-                    counter.innerText = target;
-                    clearInterval(interval);
-                } else {
-                    counter.innerText = current;
-                }
-            }, 25);
-        }
-    });
-}
-
-/* ===== 3. PARALLAX HERO EFFECT ===== */
-function parallaxHero(){
-    const hero = document.querySelector(".hero");
-    if(!hero) return;
-
-    let scrollY = window.scrollY;
-    hero.style.transform = `translateY(${scrollY * 0.15}px)`;
-}
-
-/* ===== 4. SMOOTH NAVIGATION ===== */
-document.querySelectorAll("nav a").forEach(link=>{
-    link.addEventListener("click",e=>{
-        e.preventDefault();
-        const id = link.getAttribute("href");
-        const target = document.querySelector(id);
-        if(target){
-            target.scrollIntoView({behavior:"smooth"});
-        }
-    });
 });
-
-/* ===== 5. INIT ON LOAD ===== */
-window.addEventListener("load",()=>{
-    revealSections();
-    animateCounters();
-});
-
-/* ===== 6. ON SCROLL ===== */
-window.addEventListener("scroll",()=>{
-    revealSections();
-    animateCounters();
-    parallaxHero();
-});
-</script>
-// leaderboard row reveal animation
-const rows = document.querySelectorAll("tbody tr");
-
-window.addEventListener("load",()=>{
-    rows.forEach((row,i)=>{
-        row.style.opacity = 0;
-        row.style.transform = "translateY(10px)";
-
-        setTimeout(()=>{
-            row.style.transition = "0.6s ease";
-            row.style.opacity = 1;
-            row.style.transform = "translateY(0)";
-        }, i * 120);
-    });
-});
-// ================= PREMIUM SCROLL ANIMATION =================
-
-const sections = document.querySelectorAll("section");
-
-const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        }
-    });
-},{threshold:0.15});
-
-sections.forEach(sec=>{
-    observer.observe(sec);
-});
-
-
-// ================= SMOOTH COUNTER FIX (IF YOU USE COUNTERS) =================
-const counters = document.querySelectorAll("[data-target]");
-
-function runCounters(){
-    counters.forEach(counter=>{
-        const target = +counter.getAttribute("data-target");
-        let current = +counter.innerText;
-
-        const step = target / 80;
-
-        if(current < target){
-            counter.innerText = Math.ceil(current + step);
-        } else {
-            counter.innerText = target;
-        }
-    });
-}
-
-setInterval(runCounters,40);
