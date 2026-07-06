@@ -1,195 +1,510 @@
-/* ================= BASE ================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* =====================================================
+   READATHON 2026 PREMIUM V2
+   PART 1
+   Base • Variables • Loader • Header • Hero
+===================================================== */
+
+/* Google Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ================= ROOT ================= */
+
+:root{
+
+--primary:#4facfe;
+--secondary:#00f2fe;
+
+--bg:#081120;
+
+--surface:rgba(255,255,255,.06);
+
+--surface2:rgba(255,255,255,.10);
+
+--border:rgba(255,255,255,.12);
+
+--text:#ffffff;
+
+--muted:#bfc9d9;
+
+--radius:18px;
+
+--shadow:
+0 15px 45px rgba(0,0,0,.35);
+
 }
 
-html {
-  scroll-behavior: smooth;
+/* ================= RESET ================= */
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  background: #0b1220;
-  color: #e5e7eb;
-  line-height: 1.6;
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:
+linear-gradient(135deg,#081120,#111d36,#081120);
+
+color:var(--text);
+
+overflow-x:hidden;
+
+min-height:100vh;
+
+}
+
+/* ================= BACKGROUND ================= */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background:
+
+radial-gradient(circle at 20% 20%,
+rgba(79,172,254,.18),
+transparent 45%),
+
+radial-gradient(circle at 80% 10%,
+rgba(0,242,254,.15),
+transparent 35%),
+
+radial-gradient(circle at 50% 90%,
+rgba(0,120,255,.12),
+transparent 40%);
+
+pointer-events:none;
+
+z-index:-2;
+
+}
+
+/* ================= LOADER ================= */
+
+#loader{
+
+position:fixed;
+
+inset:0;
+
+background:#081120;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+gap:18px;
+
+z-index:99999;
+
+transition:.5s;
+
+}
+
+.loader-book{
+
+font-size:70px;
+
+animation:floatBook 2s infinite ease-in-out;
+
+}
+
+#loader h2{
+
+font-size:20px;
+
+font-weight:500;
+
+color:#dbeafe;
+
+}
+
+@keyframes floatBook{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}
+
+/* ================= SCROLL BAR ================= */
+
+#progressBar{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:0;
+
+height:4px;
+
+background:
+linear-gradient(90deg,
+var(--primary),
+var(--secondary));
+
+z-index:9999;
+
 }
 
 /* ================= HEADER ================= */
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  padding: 18px 40px;
-  background: rgba(10, 15, 30, 0.7);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+.header{
+
+position:fixed;
+
+top:15px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:95%;
+
+max-width:1350px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:18px 35px;
+
+background:rgba(8,18,32,.70);
+
+backdrop-filter:blur(18px);
+
+border:1px solid var(--border);
+
+border-radius:22px;
+
+z-index:1000;
+
+box-shadow:var(--shadow);
+
 }
 
-.header .logo {
-  font-weight: 700;
-  font-size: 18px;
+.logo{
+
+font-size:24px;
+
+font-weight:700;
+
 }
 
-.header nav a {
-  margin: 0 10px;
-  color: #cbd5e1;
-  text-decoration: none;
-  transition: 0.3s;
+.logo span{
+
+color:var(--primary);
+
 }
 
-.header nav a:hover {
-  color: #00c6ff;
+.header nav{
+
+display:flex;
+
+gap:22px;
+
 }
 
-/* ================= SECTIONS ================= */
-section {
-  padding: 70px 40px;
-  max-width: 1200px;
-  margin: auto;
+.header nav a{
+
+text-decoration:none;
+
+color:var(--muted);
+
+font-weight:500;
+
+transition:.35s;
+
+position:relative;
+
 }
 
-/* ================= HERO ================= */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+.header nav a:hover{
+
+color:white;
+
 }
 
-.hero-image {
-  width: 50%;
-  border-radius: 18px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+.header nav a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-6px;
+
+width:0;
+
+height:2px;
+
+background:var(--primary);
+
+transition:.3s;
+
 }
 
-.hero-content h1 {
-  font-size: 44px;
+.header nav a:hover::after{
+
+width:100%;
+
 }
 
-.hero-content h2 {
-  color: #00c6ff;
+.menu-toggle{
+
+display:none;
+
+background:none;
+
+border:none;
+
+color:white;
+
+font-size:28px;
+
+cursor:pointer;
+
+}
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+min-height:100vh;
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+align-items:center;
+
+gap:60px;
+
+padding:120px 7% 80px;
+
 }
 
-.hero-content p {
-  opacity: 0.8;
-  max-width: 500px;
+.hero-content{
+
+animation:fadeLeft 1s ease;
+
 }
 
-/* ================= BUTTONS ================= */
-.btn {
-  display: inline-block;
-  padding: 12px 20px;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  color: white;
-  text-decoration: none;
-  margin-right: 10px;
-  transition: 0.3s;
+.hero-tag{
+
+display:inline-block;
+
+padding:8px 18px;
+
+border-radius:50px;
+
+background:rgba(79,172,254,.15);
+
+border:1px solid rgba(79,172,254,.25);
+
+margin-bottom:22px;
+
+font-size:14px;
+
 }
 
-.btn:hover {
-  transform: translateY(-3px);
+.hero h1{
+
+font-size:68px;
+
+line-height:1.1;
+
+margin-bottom:15px;
+
 }
 
-.btn.secondary {
-  background: transparent;
-  border: 1px solid #00c6ff;
+.hero h2{
+
+font-size:30px;
+
+font-weight:500;
+
+color:var(--primary);
+
+margin-bottom:22px;
+
 }
 
-/* ================= CARDS ================= */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+.hero p{
+
+font-size:18px;
+
+line-height:1.8;
+
+color:var(--muted);
+
+max-width:620px;
+
+margin-bottom:35px;
+
 }
 
-.card,
-.achievement-card,
-.contact-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 20px;
-  border-radius: 14px;
-  transition: 0.3s;
+.hero-buttons{
+
+display:flex;
+
+gap:18px;
+
+flex-wrap:wrap;
+
 }
 
-.card:hover,
-.achievement-card:hover,
-.contact-card:hover {
-  transform: translateY(-6px);
+.btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:15px 34px;
+
+border-radius:14px;
+
+background:
+linear-gradient(90deg,
+var(--primary),
+var(--secondary));
+
+color:white;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.35s;
+
+box-shadow:
+0 15px 35px rgba(79,172,254,.25);
+
 }
 
-/* ================= LEADERBOARD ================= */
-.leaderboard table {
-  width: 100%;
-  border-collapse: collapse;
-  background: rgba(255,255,255,0.03);
-  border-radius: 12px;
-  overflow: hidden;
+.btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 20px 45px rgba(79,172,254,.45);
+
 }
 
-.leaderboard th,
-.leaderboard td {
-  padding: 14px;
-  text-align: center;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+.secondary{
+
+background:transparent;
+
+border:1px solid rgba(255,255,255,.25);
+
 }
 
-.leaderboard th {
-  background: rgba(0,198,255,0.08);
-  color: #00c6ff;
+.hero-image-wrapper{
+
+display:flex;
+
+justify-content:center;
+
+animation:fadeRight 1s ease;
+
 }
 
-.leaderboard tr:hover {
-  background: rgba(255,255,255,0.05);
+.hero-image{
+
+width:100%;
+
+max-width:560px;
+
+border-radius:24px;
+
+box-shadow:
+0 30px 60px rgba(0,0,0,.45);
+
+transition:.45s;
+
 }
 
-.top1 {
-  background: rgba(255, 215, 0, 0.08);
+.hero-image:hover{
+
+transform:scale(1.03);
+
 }
 
-/* ================= GALLERY ================= */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
+@keyframes fadeLeft{
+
+from{
+
+opacity:0;
+
+transform:translateX(-50px);
+
 }
 
-.gallery-grid img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  transition: 0.3s;
+to{
+
+opacity:1;
+
+transform:none;
+
 }
 
-.gallery-grid img:hover {
-  transform: scale(1.05);
 }
 
-/* ================= FOOTER ================= */
-footer {
-  text-align: center;
-  padding: 30px;
-  opacity: 0.7;
+@keyframes fadeRight{
+
+from{
+
+opacity:0;
+
+transform:translateX(50px);
+
 }
 
-/* ================= ANIMATION ================= */
-section {
-  animation: fadeUp 0.7s ease;
+to{
+
+opacity:1;
+
+transform:none;
+
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
