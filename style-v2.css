@@ -172,3 +172,32 @@ tr:hover{
     0%{background-position:0%;}
     100%{background-position:200%;}
 }
+
+/* ===== ULTRA PREMIUM BASE ANIMATIONS ===== */
+
+section{
+    will-change: transform, opacity;
+}
+
+/* smooth floating effect for hero */
+.hero h1{
+    animation:float 4s ease-in-out infinite;
+}
+
+/* counters */
+.counter{
+    font-size:28px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+/* subtle glow on scroll active section */
+section.show{
+    filter:brightness(1);
+}
+
+/* floating animation */
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+}
