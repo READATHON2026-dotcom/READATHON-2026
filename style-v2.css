@@ -2888,3 +2888,25 @@ body{
 }
 
 }
+/* ================= VIDEO SECTION ================= */
+
+.video-section{
+    padding:80px 20px;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    text-align:center;
+}
+
+.video-wrapper{
+    max-width:1000px;
+    margin:40px auto 0;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+    border:2px solid rgba(255,255,255,.1);
+}
+
+.video-wrapper iframe{
+    width:100%;
+    aspect-ratio:16/9;
+    border:none;
+}
